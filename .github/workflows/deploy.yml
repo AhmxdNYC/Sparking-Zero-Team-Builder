@@ -3,24 +3,28 @@ name: Deploy GitHub Pages
 on:
   push:
     branches:
-      - main
+      - main # Adjust based on your default branch
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout the repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Build and Deploy
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20' # Adjust to your preferred version (could be 16, 18, or 20)
+
+      - name: Install dependencies and build
         run: |
-          cd docs
-          npm install  # Install dependencies
-          npm run build  # Build the project
+          npm install  # Install project dependencies
+          npm run build  # Build the project (output will go to docs/dist)
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs/dist # Change this to your actual build output folder (like website/build)
+          publish_dir: ./docs/dist # Point directly to the docs/dist folder for deployment
