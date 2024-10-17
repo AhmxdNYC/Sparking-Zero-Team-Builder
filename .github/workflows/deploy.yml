@@ -20,6 +20,8 @@ jobs:
 
       - name: Install dependencies and build
         run: |
+          git config --global --get user.name
+          git config --global --get user.email
           ls
           cd docs
           ls
@@ -29,5 +31,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GHUB_TOKEN }}
           publish_dir: ./docs/dist # Point directly to the docs/dist folder for deployment
