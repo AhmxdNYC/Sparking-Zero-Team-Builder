@@ -1,3 +1,4 @@
+/* eslint-disable prefer-const */
 'use client';
 import React, { useState } from 'react';
 import { RandomCharacterPicker, Character } from './ranCharSelect';
@@ -44,11 +45,13 @@ const GameTeamRandomizer: React.FC<GameTeamRandomizerProps> = ({
 		let pointsLeft = remainingPoints;
 
 		for (let i = 0; i < numCharacters - 1; i++) {
-			let randomPoint =
+			let randomPoint = Math.max(
+				1,
 				Math.floor(
 					Math.random() *
 						Math.min(pointsLeft - (numCharacters - i - 1), MAX_SINGLE_CHARACTER)
-				) + 1;
+				)
+			);
 
 			// Ensure no additional 1-point characters if one already exists
 			if (hasOnePointCharacter && randomPoint === MIN_SINGLE_CHARACTER) {
@@ -57,12 +60,16 @@ const GameTeamRandomizer: React.FC<GameTeamRandomizerProps> = ({
 				);
 			}
 
+			// Regenerate the point if it's greater than 10
+			while (randomPoint > MAX_SINGLE_CHARACTER) {
+				randomPoint = Math.floor(Math.random() * MAX_SINGLE_CHARACTER) + 1;
+			}
+
 			distributedPoints.push(randomPoint);
 			pointsLeft -= randomPoint;
 		}
 
-		// Ensure no additional 1-point character in the last one
-		let lastCharacterPoints = pointsLeft;
+		let lastCharacterPoints = Math.max(1, pointsLeft); // Ensure at least 1 point for the last character
 		if (hasOnePointCharacter && lastCharacterPoints === MIN_SINGLE_CHARACTER) {
 			lastCharacterPoints =
 				Math.floor(
@@ -70,7 +77,13 @@ const GameTeamRandomizer: React.FC<GameTeamRandomizerProps> = ({
 				) + 2;
 		}
 
-		distributedPoints.push(lastCharacterPoints); // Assign the remaining points to the last character
+		// Regenerate if the last character's points exceed 10
+		while (lastCharacterPoints > MAX_SINGLE_CHARACTER) {
+			lastCharacterPoints =
+				Math.floor(Math.random() * MAX_SINGLE_CHARACTER) + 1;
+		}
+
+		distributedPoints.push(lastCharacterPoints);
 
 		return distributedPoints;
 	};
@@ -113,33 +126,41 @@ const GameTeamRandomizer: React.FC<GameTeamRandomizerProps> = ({
 			return [];
 		}
 
-		// Randomly determine how many more characters to add
-		const numCharactersToAdd = getRandomNumOfCharacters(remainingCharacters);
+		let distributedPoints;
+		let totalDistributedPoints;
 
-		// Ensure the number of generated characters and their points don't exceed available DP
-		const distributedPoints = distributePointsRandomly(
-			remainingPoints,
-			numCharactersToAdd,
-			hasOnePointCharacter
+		do {
+			// Randomly determine how many more characters to add
+			const numCharactersToAdd = getRandomNumOfCharacters(remainingCharacters);
+
+			// Ensure the number of generated characters and their points don't exceed available DP
+			distributedPoints = distributePointsRandomly(
+				remainingPoints,
+				numCharactersToAdd,
+				hasOnePointCharacter
+			);
+
+			totalDistributedPoints = distributedPoints.reduce(
+				(acc, val) => acc + val,
+				0
+			);
+
+			// If the total points don't add up to the required remaining points, regenerate
+			if (totalDistributedPoints !== remainingPoints) {
+				console.log(
+					`Total points ${totalDistributedPoints} do not match remaining points. Regenerating...`
+				);
+			}
+		} while (totalDistributedPoints !== remainingPoints); // Regenerate until points match remaining DP
+
+		console.log(
+			`Generated team points: ${distributedPoints} = ${totalDistributedPoints}`
 		);
-
-		const totalDistributedPoints = distributedPoints.reduce(
-			(acc, val) => acc + val,
-			0
-		);
-
-		// Ensure that the sum of points does not exceed 15
-		if (totalDistributedPoints > remainingPoints) {
-			remainingPoints = 0;
-			return [];
-		}
-
-		console.log(`Generated team points: ${distributedPoints}`);
 		return distributedPoints;
 	};
 
 	const handleGenerateTeam = () => {
-		// Remove the previously generated team from the current team
+		// Get the manually selected characters from the current team
 		const manualSelectedCharacters = currentTeam.filter(
 			(char) => !generatedTeam.includes(char)
 		);
@@ -160,6 +181,7 @@ const GameTeamRandomizer: React.FC<GameTeamRandomizerProps> = ({
 			setGeneratedTeam(newGeneratedCharacters); // Update generated characters
 			setCurrentTeam([...manualSelectedCharacters, ...newGeneratedCharacters]); // Update the team
 
+			// Update available DP based on the newly generated team
 			const totalTeamPoints = generatedTeamPoints.reduce(
 				(acc, curr) => acc + curr,
 				0
@@ -174,7 +196,7 @@ const GameTeamRandomizer: React.FC<GameTeamRandomizerProps> = ({
 		<div>
 			<button
 				onClick={handleGenerateTeam}
-				className='mt-6 bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-6 py-3 rounded-md shadow hover:shadow-lg transition transform hover:scale-105'>
+				className='px-6 py-3 mt-6 text-white transition transform rounded-md shadow bg-gradient-to-r from-blue-500 to-indigo-500 hover:shadow-lg hover:scale-105'>
 				Random Gen (Char or Team)
 			</button>
 			<p>works most the time just redo it</p>

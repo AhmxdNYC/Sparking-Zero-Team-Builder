@@ -47,14 +47,18 @@ const App: React.FC = () => {
 	};
 
 	return (
-		<div className='min-h-screen bg-gray-900 text-white p-6'>
-			<div className='container mx-auto max-w-5xl'>
-				<h1 className='text-4xl font-bold mb-4 text-center'>
+		<div className='min-h-screen p-6 text-white bg-gray-900'>
+			<div className='container max-w-5xl mx-auto'>
+				<h1 className='mb-4 text-4xl font-bold text-center'>
 					Sparking Zero Team Builder
 				</h1>
-				<p className='text-gray-300 text-lg mb-8 text-center'>
+				<p className='mb-8 text-lg text-center text-gray-300'>
 					Build and share teams easily while having access to character stats
 					and notes.
+				</p>
+				<p className='mb-8 text-lg text-center text-gray-300'>
+					Note : The pictures aren't fully accurate but the names and DP points
+					are! will be updated soon
 				</p>
 				<div className='flex justify-center mb-8'>
 					<SearchBar

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 
 interface Character {
 	name: string;
@@ -18,9 +18,9 @@ const SearchBar: React.FC<SearchBarProps> = ({
 	onSelectCharacter,
 }) => {
 	const [searchTerm, setSearchTerm] = useState<string>('');
-	const [visible, setVisible] = useState<boolean>(false);
+	const [visible, setVisible] = useState<boolean>(false); // Control dropdown visibility
+	const [focused, setFocused] = useState<boolean>(false); // Control input focus
 	const inputRef = useRef<HTMLInputElement | null>(null);
-	const dropdownRef = useRef<HTMLDivElement | null>(null);
 
 	// Filter the list based on the search term
 	const filteredData = data.filter((character) =>
@@ -29,51 +29,71 @@ const SearchBar: React.FC<SearchBarProps> = ({
 
 	// Check if the character is too expensive
 	const isTooExpensive = (characterValue: number) => {
-		return Math.abs(characterValue) > availableDP;
+		return Math.abs(characterValue) > availableDP; // Compare DP value
 	};
 
-	// Handle blurring the input when dropdown is scrolled
-	useEffect(() => {
-		const handleScroll = () => {
+	// Handle clicking the search bar (toggle dropdown but don't focus yet)
+	const handleSearchBarClick = () => {
+		if (!visible) {
+			setVisible(true); // Show dropdown on first click
+		} else if (!focused) {
+			// Focus input on second click
 			if (inputRef.current) {
-				inputRef.current.blur(); // Blur the input when scrolling
+				inputRef.current.focus();
+				setFocused(true);
 			}
-		};
-
-		if (dropdownRef.current) {
-			dropdownRef.current.addEventListener('scroll', handleScroll);
 		}
+	};
 
-		// Clean up event listener on component unmount
-		return () => {
-			if (dropdownRef.current) {
-				// eslint-disable-next-line react-hooks/exhaustive-deps
-				dropdownRef.current.removeEventListener('scroll', handleScroll);
-			}
-		};
-	}, []);
+	// Handle clearing the dropdown and search
+	const handleExit = () => {
+		setVisible(false); // Hide dropdown
+		setFocused(false); // Remove focus
+		setSearchTerm(''); // Clear search term
+		if (inputRef.current) {
+			inputRef.current.blur(); // Blur the input if focused
+		}
+	};
+
+	// Handle selecting a character
+	const handleCharacterSelect = (character: Character) => {
+		onSelectCharacter(character); // Call the passed in character selection handler
+		handleExit(); // Exit search mode by closing dropdown and clearing input
+	};
 
 	return (
 		<div className='w-full'>
-			{/* Input field for searching */}
-			<div className='z-20 flex w-full mx-auto top-15'>
-				<input
-					type='text'
-					ref={inputRef}
-					placeholder='Search...'
-					value={searchTerm}
-					onChange={(e) => setSearchTerm(e.target.value)}
-					onFocus={() => setVisible(true)}
-					onBlur={() => setTimeout(() => setVisible(false), 200)}
-					className='w-[50%] sm:w-[25%] p-2 border border-gray-300 rounded-md focus:outline-none focus:border-gray-500 text-black mx-auto'
-				/>
+			{/* Search Bar with Exit Button */}
+			<div className='z-20 flex items-center justify-center w-full gap-2 mx-auto top-15'>
+				<div
+					className='relative w-[50%] sm:w-[25%] p-2 border border-gray-300 rounded-md cursor-pointer'
+					onClick={handleSearchBarClick}>
+					<input
+						type='text'
+						ref={inputRef}
+						placeholder='Search...'
+						value={searchTerm}
+						onChange={(e) => setSearchTerm(e.target.value)}
+						className={`w-full text-white bg-gray-900 focus:outline-none ${
+							focused ? '' : 'cursor-pointer'
+						}`} // Make input non-editable until focused
+						readOnly={!focused} // Disable typing until focused
+					/>
+				</div>
+
+				{/* Exit Button */}
+				{visible && (
+					<button
+						onClick={handleExit}
+						className='px-4 py-2 text-white bg-red-500 rounded-md'>
+						Exit
+					</button>
+				)}
 			</div>
 
 			{/* Scrollable dropdown list */}
 			{visible && (
-				<div
-					className='relative z-20 top-4'
-					ref={dropdownRef}>
+				<div className='relative z-20 top-4'>
 					<div className='absolute left-0 right-0 w-[85%] mx-auto bg-gray-900 border border-gray-300 rounded-lg shadow-lg max-h-[32.5rem] overflow-y-auto overflow-x-hidden custom-scrollbar'>
 						<ul className='grid grid-cols-1 gap-2 p-2 list-none sm:grid-cols-4'>
 							{filteredData.length > 0 ? (
@@ -92,14 +112,9 @@ const SearchBar: React.FC<SearchBarProps> = ({
 												if (tooExpensive) {
 													alert('Not enough DP to add this character!');
 												} else {
-													onSelectCharacter(character);
+													handleCharacterSelect(character); // Select the character and exit dropdown
 												}
 											}}>
-											{/* If too expensive, add a big X overlay */}
-											{tooExpensive && (
-												<div className='absolute inset-0 z-10 flex items-center justify-center bg-transparent'></div>
-											)}
-
 											{/* Name and DP */}
 											<li className='flex-1 text-lg font-medium text-gray-200'>
 												{character.name}

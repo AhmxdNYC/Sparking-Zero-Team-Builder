@@ -16,13 +16,13 @@ const Tracker: React.FC<TrackerProps> = ({
 }) => {
 	return (
 		<>
-			<p>DP Available: {availableDP}</p>
-			<h2>Current Team</h2>
-			<ul className='flex gap-4 justify-center flex-wrap'>
+			<p className='text-2xl'>DP Available: {availableDP}</p>
+			<h2 className='text-2xl'>Current Team</h2>
+			<ul className='flex flex-wrap justify-center gap-4'>
 				{currentTeam.map((character, index) => (
 					<div
 						key={character.name}
-						className='flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg hover:bg-gray-700 transition duration-300 ease-in-out'
+						className='flex flex-col items-center p-4 transition duration-300 ease-in-out bg-gray-800 rounded-lg shadow-lg hover:bg-gray-700'
 						style={{ width: '190px', height: '250px' }} // Set consistent card size
 					>
 						<li className='flex flex-col items-center'>
@@ -31,7 +31,7 @@ const Tracker: React.FC<TrackerProps> = ({
 								<img
 									src={character.img}
 									alt={character.name}
-									className='hexagon object-cover w-full h-full'
+									className='object-cover w-full h-full hexagon'
 								/>
 							</div>
 
@@ -42,7 +42,7 @@ const Tracker: React.FC<TrackerProps> = ({
 							</div>
 
 							{/* Placeholder for abilities or additional info */}
-							<div className='text-center mt-2'>
+							<div className='mt-2 text-center'>
 								{/* You can add abilities or other information here */}
 								<p className='text-xs text-gray-300'>Abilities: Coming soon</p>
 							</div>
@@ -50,7 +50,7 @@ const Tracker: React.FC<TrackerProps> = ({
 
 						<button
 							onClick={() => removeCharacter(index)}
-							className='mt-auto text-red-500 hover:text-red-700 transition'>
+							className='mt-auto text-red-500 transition hover:text-red-700'>
 							Remove
 						</button>
 					</div>
@@ -59,7 +59,7 @@ const Tracker: React.FC<TrackerProps> = ({
 
 			<button
 				onClick={resetTeam}
-				className='mt-6 bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-6 py-3 rounded-md shadow hover:shadow-lg transition transform hover:scale-105'>
+				className='mt-6  bg-[rgb(0,0,255)] text-white px-6 py-3 rounded-md shadow hover:shadow-lg transition transform hover:scale-105'>
 				Reset Team
 			</button>
 		</>

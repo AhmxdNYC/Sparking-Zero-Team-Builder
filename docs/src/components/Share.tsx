@@ -55,7 +55,7 @@ const ShareableLinkGenerator: React.FC<ShareableLinkGeneratorProps> = ({
 		<div className='flex justify-center mt-4'>
 			<button
 				onClick={handleGenerateLink}
-				className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>
+				className='bg-[rgb(0,0,255)] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>
 				Generate Shareable Link
 			</button>
 		</div>
