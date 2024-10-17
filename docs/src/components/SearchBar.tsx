@@ -94,7 +94,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
 			{/* Scrollable dropdown list */}
 			{visible && (
 				<div className='relative z-20 top-4'>
-					<div className='absolute left-0 right-0 w-[85%] mx-auto bg-gray-900 border border-gray-300 rounded-lg shadow-lg overflow-y-auto overflow-x-hidden custom-scrollbar max-h-[28rem] sm:max-h-[32.5rem] '>
+					<div className='absolute left-0 right-0 w-[100%] mx-auto bg-gray-900 border border-gray-300 rounded-lg shadow-lg overflow-y-auto overflow-x-hidden custom-scrollbar max-h-[28rem] sm:max-h-[32.5rem] '>
 						<ul className='grid grid-cols-1 gap-2 p-2 list-none sm:grid-cols-4'>
 							{filteredData.length > 0 ? (
 								filteredData.map((character, index) => {
@@ -104,38 +104,46 @@ const SearchBar: React.FC<SearchBarProps> = ({
 									return (
 										<div
 											key={index}
-											className={`relative flex justify-between items-center gap-1 p-3 bg-gray-800 rounded-lg shadow-lg hover:bg-gray-700 transition duration-300 ease-in-out ${
-												tooExpensive ? 'opacity-50 cursor-not-allowed' : ''
-											}`}
-											style={{ width: '100%', height: '120px' }}
-											onClick={() => {
-												if (tooExpensive) {
-													alert('Not enough DP to add this character!');
-												} else {
-													handleCharacterSelect(character); // Select the character and exit dropdown
-												}
-											}}>
-											{/* Name and DP */}
-											<li className='flex-1 text-lg font-medium text-gray-200'>
-												{character.name}
-												<br />
-												<span className='text-gray-400'>DP:</span>{' '}
-												<span className='font-semibold'>
-													{characterValue.toString()}
-												</span>
-											</li>
+											className='relative'
+											style={{ width: '100%', height: '120px' }}>
+											{/* Background Shape */}
+											<div className='absolute inset-0 z-0 Char-Card-Background'></div>
 
-											{/* Profile Image */}
-											<div className='relative w-28 h-28'>
-												<img
-													src={character.img}
-													alt={character.name}
-													width={110}
-													height={110}
-													className={`hexagon shadow object-cover ${
-														tooExpensive ? 'grayscale' : ''
-													}`}
-												/>
+											{/* Card Content */}
+											<div
+												className={` w-full h-[120px] relative flex justify-between items-center gap-1 p-3 bg-transparent rounded-lg shadow-lg hover:bg-gray-700 transition duration-300 ease-in-out ${
+													tooExpensive ? 'opacity-50 cursor-not-allowed' : ''
+												}`}
+												// style={{ width: '100%', height: '120px' }}
+												onClick={() => {
+													if (tooExpensive) {
+														alert('Not enough DP to add this character!');
+													} else {
+														handleCharacterSelect(character); // Select the character and exit dropdown
+													}
+												}}>
+												{/* Name and DP */}
+												<li className='z-10 flex-1 text-lg font-medium text-gray-200'>
+													{character.name}
+													<br />
+													<span className='text-gray-400'>DP:</span>{' '}
+													<span className='font-semibold'>
+														{characterValue.toString()}
+													</span>
+												</li>
+
+												{/* Profile Image */}
+												<div className='relative z-10 w-28 h-28'>
+													<img
+														src={character.img}
+														alt={character.name}
+														width={110}
+														height={110}
+														className={`hexagon shadow object-cover ${
+															tooExpensive ? 'grayscale' : ''
+														}`}
+													/>
+												</div>
 											</div>
 										</div>
 									);
