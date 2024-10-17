@@ -1,5 +1,4 @@
-'use client';
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 interface Character {
 	name: string;
@@ -9,7 +8,7 @@ interface Character {
 
 interface SearchBarProps {
 	data: Character[];
-	availableDP: number; // Add available DP as prop
+	availableDP: number;
 	onSelectCharacter: (character: Character) => void;
 }
 
@@ -20,6 +19,8 @@ const SearchBar: React.FC<SearchBarProps> = ({
 }) => {
 	const [searchTerm, setSearchTerm] = useState<string>('');
 	const [visible, setVisible] = useState<boolean>(false);
+	const inputRef = useRef<HTMLInputElement | null>(null);
+	const dropdownRef = useRef<HTMLDivElement | null>(null);
 
 	// Filter the list based on the search term
 	const filteredData = data.filter((character) =>
@@ -28,8 +29,29 @@ const SearchBar: React.FC<SearchBarProps> = ({
 
 	// Check if the character is too expensive
 	const isTooExpensive = (characterValue: number) => {
-		return Math.abs(characterValue) > availableDP; // Compare DP value
+		return Math.abs(characterValue) > availableDP;
 	};
+
+	// Handle blurring the input when dropdown is scrolled
+	useEffect(() => {
+		const handleScroll = () => {
+			if (inputRef.current) {
+				inputRef.current.blur(); // Blur the input when scrolling
+			}
+		};
+
+		if (dropdownRef.current) {
+			dropdownRef.current.addEventListener('scroll', handleScroll);
+		}
+
+		// Clean up event listener on component unmount
+		return () => {
+			if (dropdownRef.current) {
+				// eslint-disable-next-line react-hooks/exhaustive-deps
+				dropdownRef.current.removeEventListener('scroll', handleScroll);
+			}
+		};
+	}, []);
 
 	return (
 		<div className='w-full'>
@@ -37,6 +59,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
 			<div className='z-20 flex w-full mx-auto top-15'>
 				<input
 					type='text'
+					ref={inputRef}
 					placeholder='Search...'
 					value={searchTerm}
 					onChange={(e) => setSearchTerm(e.target.value)}
@@ -48,7 +71,9 @@ const SearchBar: React.FC<SearchBarProps> = ({
 
 			{/* Scrollable dropdown list */}
 			{visible && (
-				<div className='relative z-20 top-4'>
+				<div
+					className='relative z-20 top-4'
+					ref={dropdownRef}>
 					<div className='absolute left-0 right-0 w-[85%] mx-auto bg-gray-900 border border-gray-300 rounded-lg shadow-lg max-h-[32.5rem] overflow-y-auto overflow-x-hidden custom-scrollbar'>
 						<ul className='grid grid-cols-1 gap-2 p-2 list-none sm:grid-cols-4'>
 							{filteredData.length > 0 ? (
