@@ -20,8 +20,6 @@ jobs:
 
       - name: Install dependencies and build
         run: |
-          git config --global --get user.name
-          git config --global --get user.email
           ls
           cd docs
           ls
