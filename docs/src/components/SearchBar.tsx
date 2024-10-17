@@ -94,7 +94,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
 			{/* Scrollable dropdown list */}
 			{visible && (
 				<div className='relative z-20 top-4'>
-					<div className='absolute left-0 right-0 w-[85%] mx-auto bg-gray-900 border border-gray-300 rounded-lg shadow-lg max-h-[32.5rem] overflow-y-auto overflow-x-hidden custom-scrollbar'>
+					<div className='absolute left-0 right-0 w-[85%] mx-auto bg-gray-900 border border-gray-300 rounded-lg shadow-lg overflow-y-auto overflow-x-hidden custom-scrollbar max-h-[28rem] sm:max-h-[32.5rem] '>
 						<ul className='grid grid-cols-1 gap-2 p-2 list-none sm:grid-cols-4'>
 							{filteredData.length > 0 ? (
 								filteredData.map((character, index) => {
