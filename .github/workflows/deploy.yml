@@ -13,13 +13,14 @@ jobs:
       - name: Checkout the repository
         uses: actions/checkout@v3
 
-- name: Build and Deploy
-  run: |
-    cd website  # Navigate to your subfolder
-    npm install  # Install dependencies
-    npm run build  # Build the project
-- name: Deploy to GitHub Pages
-  uses: peaceiris/actions-gh-pages@v3
-  with:
-    github_token: ${{ secrets.GITHUB_TOKEN }}
-    publish_dir: ./website/dist  # Change this to your actual build output folder (like website/build)
+      - name: Build and Deploy
+        run: |
+          cd website  # Navigate to your subfolder
+          npm install  # Install dependencies
+          npm run build  # Build the project
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./website/dist # Change this to your actual build output folder (like website/build)
