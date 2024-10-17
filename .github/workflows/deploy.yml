@@ -15,7 +15,7 @@ jobs:
 
       - name: Build and Deploy
         run: |
-          ls
+          cd docs
           npm install  # Install dependencies
           npm run build  # Build the project
 
@@ -23,4 +23,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./website/dist # Change this to your actual build output folder (like website/build)
+          publish_dir: ./docs/dist # Change this to your actual build output folder (like website/build)
