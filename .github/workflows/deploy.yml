@@ -20,6 +20,9 @@ jobs:
 
       - name: Install dependencies and build
         run: |
+          ls
+          cd docs
+          ls
           npm install  # Install project dependencies
           npm run build  # Build the project (output will go to docs/dist)
 
