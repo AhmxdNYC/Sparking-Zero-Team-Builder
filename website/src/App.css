@@ -1,0 +1,47 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hexagon {
+	clip-path: polygon(
+		25% 6.7%,
+		75% 6.7%,
+		100% 50%,
+		75% 93.3%,
+		25% 93.3%,
+		0% 50%
+	);
+	transform: rotate(30deg); /* Rotate the hexagon to point upwards */
+}
+
+/* Prevent horizontal scrolling and hide horizontal scrollbar */
+
+/* For all elements, hide horizontal scrollbar */
+*::-webkit-scrollbar:horizontal {
+	display: none; /* Hide horizontal scrollbar in WebKit browsers */
+}
+
+* {
+	scrollbar-width: none; /* For Firefox, hide scrollbars */
+	-ms-overflow-style: none; /* For IE and Edge, hide scrollbars */
+}
+
+/* Custom scrollbar styling for dropdown */
+.custom-scrollbar {
+	scrollbar-width: thin;
+	scrollbar-color: blue transparent; /* For Firefox */
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+	width: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+	background-color: blue;
+	border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+	background: transparent;
+}
