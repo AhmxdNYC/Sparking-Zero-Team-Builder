@@ -26,6 +26,10 @@ jobs:
           npm install  # Install project dependencies
           npm run build  # Build the project (output will go to docs/dist)
 
+      - name: Disable Jekyll
+        run: |
+          touch docs/.nojekyll  # Create .nojekyll file in the docs folder to disable Jekyll
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
