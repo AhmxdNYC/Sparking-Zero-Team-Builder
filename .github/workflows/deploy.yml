@@ -1,0 +1,26 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Change this to your main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v2
+
+      - name: Build and Deploy
+        run: |
+          cd website  # Move into the website subfolder
+          npm install  # If you use npm (adjust based on your setup)
+          npm run build  # Build your project (adjust based on your setup)
+          cd ..  # Go back to the root folder
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Deploy site" || true
+          git push origin gh-pages  # Pushes to the gh-pages branch
