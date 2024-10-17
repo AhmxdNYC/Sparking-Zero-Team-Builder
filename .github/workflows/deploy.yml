@@ -15,7 +15,6 @@ jobs:
 
       - name: Build and Deploy
         run: |
-          cd website  # Navigate to your subfolder
           npm install  # Install dependencies
           npm run build  # Build the project
 
