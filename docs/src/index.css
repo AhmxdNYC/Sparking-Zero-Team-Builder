@@ -46,7 +46,7 @@
 	filter: none;
 	transition: filter 0.3s ease;
 }
-
+/*  */
 /* Hover state with laser-like intense shadow */
 .Char-Card:hover,
 .Char-Card:hover .hexagon {
