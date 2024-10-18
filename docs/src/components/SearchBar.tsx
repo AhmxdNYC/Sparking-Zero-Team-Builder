@@ -119,7 +119,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
 											{/* Card Content */}
 											<div
 												className={`relative w-full h-[120px] flex justify-between items-center gap-0 p-3 bg-transparent rounded-lg transition duration-300 ease-in-out sm:w-full ${
-													tooExpensive ? 'opacity-50 cursor-not-allowed' : ''
+													tooExpensive ? 'bg-opacity-50 cursor-not-allowed' : ''
 												}`}
 												onClick={() => {
 													if (tooExpensive) {
@@ -129,7 +129,10 @@ const SearchBar: React.FC<SearchBarProps> = ({
 													}
 												}}>
 												{/* Name and DP */}
-												<li className='z-10 flex-1 text-lg font-medium text-gray-200 max-w-[38%] text-center'>
+												<li
+													className={`z-10 flex-1 text-lg font-medium max-w-[38%] text-center ${
+														tooExpensive ? 'text-gray-400' : 'text-gray-200'
+													}`}>
 													{character.name}
 													<br />
 													<span className='text-gray-400'>DP:</span>{' '}
