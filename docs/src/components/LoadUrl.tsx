@@ -9,6 +9,7 @@ interface Character {
 
 interface UseLoadTeamFromURLProps {
 	setCurrentTeam: (team: Character[]) => void; // Function to set the team
+	setAvailableDP: (dp: number) => void; // Function to set the available DP
 	allCharacters: Character[]; // The full character list for reference
 }
 
@@ -16,6 +17,7 @@ interface UseLoadTeamFromURLProps {
 const useLoadTeamFromURL = ({
 	setCurrentTeam,
 	allCharacters,
+	setAvailableDP,
 }: UseLoadTeamFromURLProps) => {
 	const location = useLocation();
 
@@ -42,8 +44,16 @@ const useLoadTeamFromURL = ({
 
 			// Set the current team based on the selected characters
 			setCurrentTeam(selectedTeam);
+
+			const totalDPUsed = selectedTeam.reduce(
+				(acc, character) => acc + Math.abs(character.value),
+				0
+			);
+
+			// Update the available DP by subtracting the used DP from the default value (e.g., 15)
+			setAvailableDP(15 - totalDPUsed);
 		}
-	}, [location.hash, setCurrentTeam, allCharacters]);
+	}, [location.hash, setCurrentTeam, allCharacters, setAvailableDP]);
 };
 
 export default useLoadTeamFromURL;

@@ -13,7 +13,11 @@ const App: React.FC = () => {
 	>([]);
 
 	// Load the team from the URL when the app starts
-	useLoadTeamFromURL({ setCurrentTeam, allCharacters: characters });
+	useLoadTeamFromURL({
+		setCurrentTeam,
+		allCharacters: characters,
+		setAvailableDP,
+	});
 
 	// Handle character selection
 	const handleSelectCharacter = (character: {
