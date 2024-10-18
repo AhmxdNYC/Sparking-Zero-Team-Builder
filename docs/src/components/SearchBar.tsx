@@ -52,7 +52,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
 			{/* Add Character Button */}
 			<button
 				onClick={handleAddCharacterClick}
-				className='mt-6 bg-[rgb(0,0,255)] text-white px-6 py-3 rounded-md shadow hover:shadow-lg transition transform hover:scale-105'>
+				className=' bg-[rgb(0,0,255)] text-white p-3 rounded-md shadow hover:shadow-lg transition transform hover:scale-105'>
 				Add Character
 			</button>
 
@@ -83,7 +83,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
 
 					{/* Scrollable Dropdown List */}
 					<div className='relative z-20 top-4'>
-						<div className='absolute left-0 right-0 w-[85%] mx-auto bg-gray-900 border border-gray-300 rounded-lg shadow-lg overflow-y-auto overflow-x-hidden custom-scrollbar max-h-[28rem] sm:max-h-[32.5rem] sm:w-full'>
+						<div className='absolute left-0 right-0 w-[85%] mx-auto bg-gray-900 border border-gray-300 rounded-lg shadow-lg overflow-y-auto overflow-x-hidden custom-scrollbar max-h-[23rem] sm:max-h-[32.5rem] sm:w-full'>
 							<ul className='grid grid-cols-1 gap-2 p-2 list-none sm:grid-cols-4'>
 								{filteredData.length > 0 ? (
 									filteredData.map((character, index) => {
@@ -150,6 +150,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
 									</li>
 								)}
 							</ul>
+							<div></div>
 						</div>
 					</div>
 				</>
