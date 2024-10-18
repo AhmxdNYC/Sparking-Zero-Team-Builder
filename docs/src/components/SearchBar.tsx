@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 interface Character {
 	name: string;
@@ -22,33 +22,17 @@ const SearchBar: React.FC<SearchBarProps> = ({
 	const [focused, setFocused] = useState<boolean>(false); // Control input focus
 	const inputRef = useRef<HTMLInputElement | null>(null);
 
-	// Filter the list based on the search term
-	const filteredData = data.filter((character) =>
-		character.name.toLowerCase().includes(searchTerm.toLowerCase())
-	);
-
-	// Check if the character is too expensive
-	const isTooExpensive = (characterValue: number) => {
-		return Math.abs(characterValue) > availableDP; // Compare DP value
-	};
-
 	// Handle clicking the search bar (toggle dropdown and focus on second click)
 	const handleSearchBarClick = () => {
 		if (!visible) {
+			// First click shows dropdown but keeps input readonly
 			setVisible(true);
 		} else if (!focused) {
+			// Second click focuses input and makes it editable
 			if (inputRef.current) {
 				inputRef.current.focus();
 				setFocused(true);
 			}
-		}
-	};
-
-	// Add touchstart event handler to improve mobile behavior
-	const handleTouchStart = () => {
-		if (inputRef.current) {
-			inputRef.current.focus();
-			setFocused(true);
 		}
 	};
 
@@ -64,9 +48,17 @@ const SearchBar: React.FC<SearchBarProps> = ({
 
 	// Handle selecting a character
 	const handleCharacterSelect = (character: Character) => {
-		onSelectCharacter(character); // Call the passed in character selection handler
+		onSelectCharacter(character); // Call the passed-in character selection handler
 		handleExit(); // Exit search mode by closing dropdown and clearing input
 	};
+
+	// Auto-scroll and focus when the input field is focused
+	useEffect(() => {
+		if (focused && inputRef.current) {
+			inputRef.current.focus(); // Focus on input field
+			inputRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+		}
+	}, [focused]);
 
 	return (
 		<div className='w-full'>
@@ -75,17 +67,18 @@ const SearchBar: React.FC<SearchBarProps> = ({
 				<div
 					className={`relative w-[50%] sm:w-[25%] p-1 border border-gray-300 rounded-md cursor-pointer ${
 						focused ? 'z-30' : 'z-10'
-					}`} // Z-index adjustment
+					}`} // Adjust z-index for focused state
 					onClick={handleSearchBarClick}>
 					<input
 						type='text'
 						ref={inputRef}
-						placeholder='Search Character!'
+						placeholder='Search...'
 						value={searchTerm}
 						onChange={(e) => setSearchTerm(e.target.value)}
-						className={`w-full text-white bg-gray-900 focus:outline-none p-2`}
-						onClick={handleSearchBarClick}
-						onTouchStart={handleTouchStart} // Add touchstart for mobile behavior
+						className={`w-full text-white bg-gray-900 focus:outline-none p-2 ${
+							focused ? '' : 'cursor-pointer'
+						}`}
+						readOnly={!focused} // Disable typing until second click
 					/>
 				</div>
 
@@ -104,10 +97,10 @@ const SearchBar: React.FC<SearchBarProps> = ({
 				<div className='relative z-20 top-4'>
 					<div className='absolute left-0 right-0 w-[85%] mx-auto bg-gray-900 border border-gray-300 rounded-lg shadow-lg overflow-y-auto overflow-x-hidden custom-scrollbar max-h-[28rem] sm:max-h-[32.5rem] sm:w-full'>
 						<ul className='grid grid-cols-1 gap-2 p-2 list-none sm:grid-cols-4'>
-							{filteredData.length > 0 ? (
-								filteredData.map((character, index) => {
+							{data.length > 0 ? (
+								data.map((character, index) => {
 									const characterValue = Math.abs(character.value);
-									const tooExpensive = isTooExpensive(characterValue);
+									const tooExpensive = characterValue > availableDP;
 
 									return (
 										<div
