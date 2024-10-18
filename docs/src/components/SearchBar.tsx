@@ -67,9 +67,10 @@ const SearchBar: React.FC<SearchBarProps> = ({
 			{/* Search Bar with Exit Button */}
 			<div className='z-20 flex items-center justify-center w-full gap-2 mx-auto top-15'>
 				<div
-					className='relative w-[50%] sm:w-[25%] p-2 border border-gray-300 rounded-md cursor-pointer'
-					onClick={handleSearchBarClick}
-					style={{ zIndex: 1 }}>
+					className={`relative w-[50%] sm:w-[25%] p-2 border border-gray-300 rounded-md cursor-pointer ${
+						focused ? 'z-30' : 'z-10'
+					}`} // Z-index adjustment
+					onClick={handleSearchBarClick}>
 					<input
 						type='text'
 						ref={inputRef}
