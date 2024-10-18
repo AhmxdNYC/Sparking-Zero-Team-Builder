@@ -199,7 +199,6 @@ const GameTeamRandomizer: React.FC<GameTeamRandomizerProps> = ({
 				className='px-6 py-3 mt-6 text-white transition transform rounded-md shadow bg-gradient-to-r from-blue-500 to-indigo-500 hover:shadow-lg hover:scale-105'>
 				Random Gen (Char or Team)
 			</button>
-			<p>works most the time just redo it</p>
 		</div>
 	);
 };
