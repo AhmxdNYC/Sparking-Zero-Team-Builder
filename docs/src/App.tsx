@@ -37,8 +37,13 @@ const App: React.FC = () => {
 
 	// Reset the team and available DP
 	const resetTeam = () => {
+		// Reset the team and available DP
 		setCurrentTeam([]);
 		setAvailableDP(15);
+
+		// Update the URL to remove the 'team' parameter
+		const baseUrl = `${window.location.origin}${window.location.pathname}`;
+		window.history.replaceState({}, document.title, baseUrl);
 	};
 
 	// Remove a character and restore the available DP
