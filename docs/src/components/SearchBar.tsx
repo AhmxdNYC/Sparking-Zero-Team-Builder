@@ -32,30 +32,23 @@ const SearchBar: React.FC<SearchBarProps> = ({
 		return Math.abs(characterValue) > availableDP; // Compare DP value
 	};
 
-	// Scroll the input into view after a small delay to adjust for mobile keyboard
-	const scrollToInput = () => {
-		if (inputRef.current) {
-			setTimeout(() => {
-				inputRef.current?.scrollIntoView({
-					behavior: 'smooth',
-					block: 'center',
-				});
-			}, 300); // 300ms delay to wait for the virtual keyboard
-		}
-	};
-
 	// Handle clicking the search bar (toggle dropdown and focus on second click)
 	const handleSearchBarClick = () => {
 		if (!visible) {
-			// First click shows dropdown but keeps the input read-only
 			setVisible(true);
 		} else if (!focused) {
-			// Second click focuses on input and makes it editable
 			if (inputRef.current) {
 				inputRef.current.focus();
 				setFocused(true);
-				scrollToInput(); // Scroll the input into view after focusing
 			}
+		}
+	};
+
+	// Add touchstart event handler to improve mobile behavior
+	const handleTouchStart = () => {
+		if (inputRef.current) {
+			inputRef.current.focus();
+			setFocused(true);
 		}
 	};
 
@@ -87,13 +80,12 @@ const SearchBar: React.FC<SearchBarProps> = ({
 					<input
 						type='text'
 						ref={inputRef}
-						placeholder='Search...'
+						placeholder='Search Character!'
 						value={searchTerm}
 						onChange={(e) => setSearchTerm(e.target.value)}
-						className={`w-full text-white bg-gray-900 focus:outline-none p-2 ${
-							focused ? '' : 'cursor-pointer'
-						}`}
-						readOnly={!focused} // Disable typing until the second click
+						className={`w-full text-white bg-gray-900 focus:outline-none p-2`}
+						onClick={handleSearchBarClick}
+						onTouchStart={handleTouchStart} // Add touchstart for mobile behavior
 					/>
 				</div>
 
