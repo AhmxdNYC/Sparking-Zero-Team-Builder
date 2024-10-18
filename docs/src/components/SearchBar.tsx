@@ -119,23 +119,23 @@ const SearchBar: React.FC<SearchBarProps> = ({
 											{/* Card Content */}
 											<div
 												className={`relative w-full h-[120px] flex justify-between items-center gap-0 p-3 bg-transparent rounded-lg transition duration-300 ease-in-out sm:w-full ${
-													tooExpensive ? 'bg-opacity-50 cursor-not-allowed' : ''
+													tooExpensive ? 'cursor-not-allowed' : ''
 												}`}
 												onClick={() => {
 													if (tooExpensive) {
 														alert('Not enough DP to add this character!');
 													} else {
-														handleCharacterSelect(character); // Select the character and exit dropdown
+														handleCharacterSelect(character);
 													}
 												}}>
 												{/* Name and DP */}
 												<li
 													className={`z-10 flex-1 text-lg font-medium max-w-[38%] text-center ${
-														tooExpensive ? 'text-gray-400' : 'text-gray-200'
+														tooExpensive ? 'text-gray-500' : 'text-gray-200'
 													}`}>
 													{character.name}
 													<br />
-													<span className='text-gray-400'>DP:</span>{' '}
+													<span className='text-gray-400'>DP:</span>
 													<span className='font-semibold'>
 														{characterValue.toString()}
 													</span>
@@ -149,7 +149,9 @@ const SearchBar: React.FC<SearchBarProps> = ({
 														width={110}
 														height={110}
 														className={`hexagon shadow object-cover ${
-															tooExpensive ? 'grayscale' : ''
+															tooExpensive
+																? 'filter brightness-10 contrast-100 grayscale-100 opacity-50'
+																: ''
 														}`}
 													/>
 												</div>
