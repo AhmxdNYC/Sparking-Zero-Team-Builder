@@ -67,7 +67,10 @@ const SearchBar: React.FC<SearchBarProps> = ({
 			<div className='z-20 flex items-center justify-center w-full gap-2 mx-auto top-15'>
 				<div
 					className='relative w-[50%] sm:w-[25%] p-2 border border-gray-300 rounded-md cursor-pointer'
-					onClick={handleSearchBarClick}>
+					onClick={handleSearchBarClick}
+					style={{ zIndex: 1 }}>
+					{' '}
+					{/* Add z-index */}
 					<input
 						type='text'
 						ref={inputRef}
@@ -76,8 +79,9 @@ const SearchBar: React.FC<SearchBarProps> = ({
 						onChange={(e) => setSearchTerm(e.target.value)}
 						className={`w-full text-white bg-gray-900 focus:outline-none ${
 							focused ? '' : 'cursor-pointer'
-						}`} // Make input non-editable until focused
+						}`}
 						readOnly={!focused} // Disable typing until focused
+						onClick={() => setFocused(true)} // Make sure to focus when input is clicked
 					/>
 				</div>
 
@@ -94,8 +98,8 @@ const SearchBar: React.FC<SearchBarProps> = ({
 			{/* Scrollable dropdown list */}
 			{visible && (
 				<div className='relative z-20 top-4'>
-					<div className='absolute left-0 right-0 w-[100%] mx-auto bg-gray-900 border border-gray-300 rounded-lg shadow-lg overflow-y-auto overflow-x-hidden custom-scrollbar max-h-[28rem] sm:max-h-[32.5rem] '>
-						<ul className='grid grid-cols-1 gap-2 p-2 list-none sm:grid-cols-4'>
+					<div className='absolute left-0 right-0 w-[90%] mx-auto bg-gray-900 border border-gray-300 rounded-lg shadow-lg overflow-y-auto overflow-x-hidden custom-scrollbar max-h-[28rem] sm:max-h-[32.5rem] sm:w-full'>
+						<ul className='grid grid-cols-1 gap-2 p-2 list-none sm:grid-cols-4 js'>
 							{filteredData.length > 0 ? (
 								filteredData.map((character, index) => {
 									const characterValue = Math.abs(character.value);
@@ -104,17 +108,19 @@ const SearchBar: React.FC<SearchBarProps> = ({
 									return (
 										<div
 											key={index}
-											className='relative'
+											className='relative Char-Card left-1' // Use Char-Card for hover effect
 											style={{ width: '100%', height: '120px' }}>
+											{/* Outline Shape */}
+											<div className='absolute inset-0 z-0 Char-Card-Outline'></div>
+
 											{/* Background Shape */}
-											<div className='absolute inset-0 z-0 Char-Card-Background'></div>
+											<div className='absolute inset-0 z-10 Char-Card-Background'></div>
 
 											{/* Card Content */}
 											<div
-												className={` w-[95%] h-[120px] relative flex justify-between items-center gap-0 p-3 bg-transparent rounded-lg shadow-lg hover:bg-gray-700 transition duration-300 ease-in-out sm:w-full ${
+												className={`relative w-full h-[120px] flex justify-between items-center gap-0 p-3 bg-transparent rounded-lg transition duration-300 ease-in-out sm:w-full ${
 													tooExpensive ? 'opacity-50 cursor-not-allowed' : ''
 												}`}
-												// style={{ width: '100%', height: '120px' }}
 												onClick={() => {
 													if (tooExpensive) {
 														alert('Not enough DP to add this character!');
@@ -133,7 +139,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
 												</li>
 
 												{/* Profile Image */}
-												<div className='relative z-10 w-28 h-28'>
+												<div className='relative z-10 w-28 h-28 hex-img left-3 sm:left-0'>
 													<img
 														src={character.img}
 														alt={character.name}

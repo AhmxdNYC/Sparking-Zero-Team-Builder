@@ -29,7 +29,7 @@ const ShareableLinkGenerator: React.FC<ShareableLinkGeneratorProps> = ({
 		const serializedTeam = serializeTeam(currentTeam);
 
 		// Create the full URL with the team in the query parameter
-		const shareableLink = `${window.location.origin}/?team=${serializedTeam}`;
+		const shareableLink = `${window.location.origin}${window.location.pathname}?team=${serializedTeam}`;
 
 		// Update the URL without reloading the page
 		navigate(`/?team=${serializedTeam}`, { replace: true });
