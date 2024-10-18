@@ -111,7 +111,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
 
 											{/* Card Content */}
 											<div
-												className={` w-full h-[120px] relative flex justify-between items-center gap-1 p-3 bg-transparent rounded-lg shadow-lg hover:bg-gray-700 transition duration-300 ease-in-out ${
+												className={` w-[95%] h-[120px] relative flex justify-between items-center gap-0 p-3 bg-transparent rounded-lg shadow-lg hover:bg-gray-700 transition duration-300 ease-in-out sm:w-full ${
 													tooExpensive ? 'opacity-50 cursor-not-allowed' : ''
 												}`}
 												// style={{ width: '100%', height: '120px' }}
@@ -123,7 +123,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
 													}
 												}}>
 												{/* Name and DP */}
-												<li className='z-10 flex-1 text-lg font-medium text-gray-200'>
+												<li className='z-10 flex-1 text-lg font-medium text-gray-200 max-w-[38%] text-center'>
 													{character.name}
 													<br />
 													<span className='text-gray-400'>DP:</span>{' '}
