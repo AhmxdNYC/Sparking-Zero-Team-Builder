@@ -32,12 +32,13 @@ const SearchBar: React.FC<SearchBarProps> = ({
 		return Math.abs(characterValue) > availableDP; // Compare DP value
 	};
 
-	// Handle clicking the search bar (toggle dropdown but don't focus yet)
+	// Handle clicking the search bar (toggle dropdown and focus on second click)
 	const handleSearchBarClick = () => {
 		if (!visible) {
-			setVisible(true); // Show dropdown on first click
+			// First click shows dropdown but keeps the input read-only
+			setVisible(true);
 		} else if (!focused) {
-			// Focus input on second click
+			// Second click focuses on input and makes it editable
 			if (inputRef.current) {
 				inputRef.current.focus();
 				setFocused(true);
@@ -69,8 +70,6 @@ const SearchBar: React.FC<SearchBarProps> = ({
 					className='relative w-[50%] sm:w-[25%] p-2 border border-gray-300 rounded-md cursor-pointer'
 					onClick={handleSearchBarClick}
 					style={{ zIndex: 1 }}>
-					{' '}
-					{/* Add z-index */}
 					<input
 						type='text'
 						ref={inputRef}
@@ -80,8 +79,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
 						className={`w-full text-white bg-gray-900 focus:outline-none ${
 							focused ? '' : 'cursor-pointer'
 						}`}
-						readOnly={!focused} // Disable typing until focused
-						onClick={() => setFocused(true)} // Make sure to focus when input is clicked
+						readOnly={!focused} // Disable typing until the second click
 					/>
 				</div>
 
@@ -99,7 +97,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
 			{visible && (
 				<div className='relative z-20 top-4'>
 					<div className='absolute left-0 right-0 w-[85%] mx-auto bg-gray-900 border border-gray-300 rounded-lg shadow-lg overflow-y-auto overflow-x-hidden custom-scrollbar max-h-[28rem] sm:max-h-[32.5rem] sm:w-full'>
-						<ul className='grid grid-cols-1 gap-2 p-2 list-none sm:grid-cols-4 js'>
+						<ul className='grid grid-cols-1 gap-2 p-2 list-none sm:grid-cols-4'>
 							{filteredData.length > 0 ? (
 								filteredData.map((character, index) => {
 									const characterValue = Math.abs(character.value);
@@ -108,7 +106,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
 									return (
 										<div
 											key={index}
-											className='relative Char-Card left-6 sm:left-0' // Use Char-Card for hover effect
+											className='relative Char-Card left-6 sm:left-0'
 											style={{ width: '100%', height: '120px' }}>
 											{/* Outline Shape */}
 											<div className='absolute inset-0 z-0 Char-Card-Outline'></div>
@@ -171,4 +169,3 @@ const SearchBar: React.FC<SearchBarProps> = ({
 };
 
 export default SearchBar;
-//
