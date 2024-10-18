@@ -108,7 +108,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
 									return (
 										<div
 											key={index}
-											className='relative Char-Card left-4 sm:left-0' // Use Char-Card for hover effect
+											className='relative Char-Card left-6 sm:left-0' // Use Char-Card for hover effect
 											style={{ width: '100%', height: '120px' }}>
 											{/* Outline Shape */}
 											<div className='absolute inset-0 z-0 Char-Card-Outline'></div>
@@ -142,7 +142,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
 												</li>
 
 												{/* Profile Image */}
-												<div className='relative z-10 right-3 w-28 h-28 hex-img sm:right-0'>
+												<div className='relative z-10 right-7 w-28 h-28 hex-img sm:right-0 sm:left-4 sm:top-2 lg:top-0 lg:left-0'>
 													<img
 														src={character.img}
 														alt={character.name}
