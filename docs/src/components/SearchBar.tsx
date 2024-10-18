@@ -32,6 +32,18 @@ const SearchBar: React.FC<SearchBarProps> = ({
 		return Math.abs(characterValue) > availableDP; // Compare DP value
 	};
 
+	// Scroll the input into view after a small delay to adjust for mobile keyboard
+	const scrollToInput = () => {
+		if (inputRef.current) {
+			setTimeout(() => {
+				inputRef.current?.scrollIntoView({
+					behavior: 'smooth',
+					block: 'center',
+				});
+			}, 300); // 300ms delay to wait for the virtual keyboard
+		}
+	};
+
 	// Handle clicking the search bar (toggle dropdown and focus on second click)
 	const handleSearchBarClick = () => {
 		if (!visible) {
@@ -42,6 +54,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
 			if (inputRef.current) {
 				inputRef.current.focus();
 				setFocused(true);
+				scrollToInput(); // Scroll the input into view after focusing
 			}
 		}
 	};
