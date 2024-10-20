@@ -5,12 +5,11 @@ import { characters } from './components/Char List';
 import GameTeamRandomizer from './components/Randomizer';
 import ShareableLinkGenerator from './components/Share';
 import useLoadTeamFromURL from './components/LoadUrl'; // Import the custom hook
+import { Character } from './components/Tracker';
 
 const App: React.FC = () => {
 	const [availableDP, setAvailableDP] = useState(15);
-	const [currentTeam, setCurrentTeam] = useState<
-		Array<{ name: string; value: number; img: string }>
-	>([]);
+	const [currentTeam, setCurrentTeam] = useState<Character[]>([]);
 
 	// Load the team from the URL when the app starts
 	useLoadTeamFromURL({
@@ -20,11 +19,7 @@ const App: React.FC = () => {
 	});
 
 	// Handle character selection
-	const handleSelectCharacter = (character: {
-		name: string;
-		value: number;
-		img: string;
-	}) => {
+	const handleSelectCharacter = (character: Character) => {
 		const characterValue = Math.abs(character.value);
 
 		if (availableDP > 0 && availableDP >= characterValue) {
@@ -64,10 +59,6 @@ const App: React.FC = () => {
 				<p className='mb-8 text-lg text-center text-gray-300'>
 					Build and share teams easily while having access to character stats
 					and notes.
-				</p>
-				<p className='mb-8 text-lg text-center text-gray-300'>
-					Note : The pictures aren't fully accurate but the names and DP points
-					are! will be updated soon
 				</p>
 				<div className='flex justify-center mb-8'>
 					<SearchBar

@@ -1,10 +1,6 @@
 import React, { useState, useRef } from 'react';
 
-interface Character {
-	name: string;
-	value: number;
-	img: string;
-}
+import { Character } from './Tracker';
 
 interface SearchBarProps {
 	data: Character[];
@@ -133,7 +129,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
 															alt={character.name}
 															width={110}
 															height={110}
-															className={`hexagon shadow object-cover ${
+															className={`hexagon shadow ${
 																tooExpensive
 																	? 'filter brightness-10 contrast-100 grayscale-100 opacity-50'
 																	: ''

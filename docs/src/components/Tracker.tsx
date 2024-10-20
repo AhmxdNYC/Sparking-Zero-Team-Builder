@@ -1,9 +1,22 @@
 'use client';
 import React from 'react';
 
+export type Ability = {
+	name: string;
+	value: number | string; // in case it's '?'
+	description: string[]; // array of description strings
+};
+
+export type Character = {
+	name: string;
+	value: number;
+	img: string;
+	abilities: Ability[];
+};
+
 interface TrackerProps {
 	availableDP: number;
-	currentTeam: Array<{ name: string; value: number; img: string }>;
+	currentTeam: Array<Character>;
 	resetTeam: () => void;
 	removeCharacter: (index: number) => void;
 }
@@ -14,17 +27,17 @@ const Tracker: React.FC<TrackerProps> = ({
 	resetTeam,
 	removeCharacter,
 }) => {
+	console.log('cur team', currentTeam[0]);
 	return (
 		<>
-			<p className='text-2xl'>DP Available: {availableDP}</p>
-			<h2 className='text-2xl'>Current Team</h2>
-			<ul className='flex flex-wrap justify-center gap-4'>
+			<p className='text-2xl text-center'>DP Available: {availableDP}</p>
+			<h2 className='text-2xl text-center'>Team</h2>
+			<ul className='flex flex-wrap justify-center gap-4 mt-2'>
 				{currentTeam.map((character, index) => (
 					<div
 						key={character.name}
 						className='flex flex-col items-center p-4 transition duration-300 ease-in-out bg-gray-800 rounded-lg shadow-lg hover:bg-gray-700'
-						style={{ width: '190px', height: '250px' }} // Set consistent card size
-					>
+						style={{ width: '190px', height: '340px', overflow: 'hidden' }}>
 						<li className='flex flex-col items-center'>
 							{/* Hexagon image styling */}
 							<div className='relative w-20 h-20 mb-2'>
@@ -41,10 +54,25 @@ const Tracker: React.FC<TrackerProps> = ({
 								<p className='text-sm text-gray-400'>DP: {character.value}</p>
 							</div>
 
-							{/* Placeholder for abilities or additional info */}
-							<div className='mt-2 text-center'>
-								{/* You can add abilities or other information here */}
-								<p className='text-xs text-gray-300'>Abilities: Coming soon</p>
+							{/* Abilities section */}
+							<div
+								className='mt-2 overflow-auto text-center custom-scrollbar'
+								style={{ maxHeight: '100px' }}>
+								<p className='font-bold text-white text-md'>Abilities</p>
+								{character.abilities.map((ability, idx) => (
+									<div
+										key={idx}
+										className='mb-2'>
+										<p className='text-sm font-bold text-white'>
+											{ability.name}
+										</p>
+										<div className='text-xs text-gray-300'>
+											{ability.description.map((desc, idx) => (
+												<p key={idx}>{desc}</p>
+											))}
+										</div>
+									</div>
+								))}
 							</div>
 						</li>
 
@@ -59,7 +87,7 @@ const Tracker: React.FC<TrackerProps> = ({
 
 			<button
 				onClick={resetTeam}
-				className='mt-6  bg-[rgb(0,0,255)] text-white px-6 py-3 rounded-md shadow hover:shadow-lg transition transform hover:scale-105'>
+				className='mt-6 bg-[rgb(0,0,255)] text-white px-6 py-3 rounded-md shadow hover:shadow-lg transition transform hover:scale-105'>
 				Reset Team
 			</button>
 		</>

@@ -1,8 +1,10 @@
 /* eslint-disable prefer-const */
 'use client';
 import React, { useState } from 'react';
-import { RandomCharacterPicker, Character } from './ranCharSelect';
+import { RandomCharacterPicker } from './ranCharSelect';
+import { Character } from './Tracker';
 
+// skewed towards 2 points and above since hercule is 1 point and no one wants him
 interface GameTeamRandomizerProps {
 	availableDP: number;
 	setAvailableDP: (dp: number) => void;
@@ -18,7 +20,7 @@ const GameTeamRandomizer: React.FC<GameTeamRandomizerProps> = ({
 	setCurrentTeam,
 	currentTeam, // Pass already selected characters as a prop
 }) => {
-	const [generatedTeam, setGeneratedTeam] = useState<Character[]>([]); // Track previously generated characters
+	const [generatedTeam, setGeneratedTeam] = useState<Character[]>([]);
 
 	const MAX_POINTS = 15;
 	const MAX_CHARACTERS = 5;
@@ -44,32 +46,30 @@ const GameTeamRandomizer: React.FC<GameTeamRandomizerProps> = ({
 		const distributedPoints = [];
 		let pointsLeft = remainingPoints;
 
+		// Get minimum amount between max points and (points left - number of characters while leaving atleasst 1 point for the next character)
+		// Generate random point starting from 1 up to that minimum
+		// Changed to -2 might make better teams but not sure
 		for (let i = 0; i < numCharacters - 1; i++) {
 			let randomPoint = Math.max(
-				1,
+				2,
 				Math.floor(
 					Math.random() *
-						Math.min(pointsLeft - (numCharacters - i - 1), MAX_SINGLE_CHARACTER)
+						Math.min(pointsLeft - (numCharacters - i - 2), MAX_SINGLE_CHARACTER)
 				)
 			);
 
-			// Ensure no additional 1-point characters if one already exists
+			// Make sure random point is not 1 if there is already a 1-point character
+			// Incase if 0 or 1 add 2
 			if (hasOnePointCharacter && randomPoint === MIN_SINGLE_CHARACTER) {
 				randomPoint = Math.floor(
 					Math.random() * (MAX_SINGLE_CHARACTER - MIN_SINGLE_CHARACTER) + 2
 				);
 			}
-
-			// Regenerate the point if it's greater than 10
-			while (randomPoint > MAX_SINGLE_CHARACTER) {
-				randomPoint = Math.floor(Math.random() * MAX_SINGLE_CHARACTER) + 1;
-			}
-
 			distributedPoints.push(randomPoint);
 			pointsLeft -= randomPoint;
 		}
-
-		let lastCharacterPoints = Math.max(1, pointsLeft); // Ensure at least 1 point for the last character
+		// Make sure last character gets alteast 2 if 1 exists and 1 if not
+		let lastCharacterPoints = Math.max(1, pointsLeft);
 		if (hasOnePointCharacter && lastCharacterPoints === MIN_SINGLE_CHARACTER) {
 			lastCharacterPoints =
 				Math.floor(
@@ -78,9 +78,10 @@ const GameTeamRandomizer: React.FC<GameTeamRandomizerProps> = ({
 		}
 
 		// Regenerate if the last character's points exceed 10
+		// atleast 2
 		while (lastCharacterPoints > MAX_SINGLE_CHARACTER) {
 			lastCharacterPoints =
-				Math.floor(Math.random() * MAX_SINGLE_CHARACTER) + 1;
+				Math.floor(Math.random() * MAX_SINGLE_CHARACTER) + 2;
 		}
 
 		distributedPoints.push(lastCharacterPoints);
@@ -88,7 +89,7 @@ const GameTeamRandomizer: React.FC<GameTeamRandomizerProps> = ({
 		return distributedPoints;
 	};
 
-	// Validate that no characters have the same name, regenerate if duplicates exist ✅
+	// Validate that no characters have the same name, regenerate if duplicates exist
 	const validateUniqueCharacters = (
 		selectedCharacters: Character[],
 		retries = 5
@@ -98,29 +99,32 @@ const GameTeamRandomizer: React.FC<GameTeamRandomizerProps> = ({
 
 		if (names.length !== uniqueNames.size && retries > 0) {
 			console.log('Duplicate characters found, regenerating team...');
-			// If duplicates are found, regenerate the team (with a retry limit to avoid infinite loop)
 			const generatedTeamPoints = generateRandomTeam();
 			const newSelectedCharacters = RandomCharacterPicker(
 				characters,
 				generatedTeamPoints
 			);
-			return validateUniqueCharacters(newSelectedCharacters, retries - 1); // Retry
+			return validateUniqueCharacters(newSelectedCharacters, retries - 1);
 		}
 
 		return selectedCharacters; // Return the valid, unique team
 	};
 
 	const generateRandomTeam = () => {
-		const manualSelectedPoints = currentTeam
-			.filter((char) => !generatedTeam.includes(char)) // Only consider manually selected characters
-			.reduce((acc, character) => acc + Math.abs(character.value), 0); // Calculate total points from manual characters
+		// Filters out manually selected characters and calculates their total points
 
-		let remainingPoints = MAX_POINTS - manualSelectedPoints; // Reset points for generated characters
+		const manualSelectedPoints = currentTeam
+			.filter((char) => !generatedTeam.includes(char))
+			.reduce((acc, character) => acc + Math.abs(character.value), 0);
+
+		let remainingPoints = MAX_POINTS - manualSelectedPoints;
+
+		// Get remaining characters that can be added to the team by excluding characters already present (prior gen or manual)
 		const remainingCharacters =
 			MAX_CHARACTERS -
 			currentTeam.filter((char) => !generatedTeam.includes(char)).length;
 
-		// Make sure that we cannot generate points that would exceed the total available points
+		// When to stop generating characters
 		if (remainingPoints <= 0 || remainingCharacters <= 0) {
 			console.log('No more characters can be added');
 			return [];

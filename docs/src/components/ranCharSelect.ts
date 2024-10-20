@@ -1,8 +1,4 @@
-export interface Character {
-	name: string;
-	value: number; // DP value
-	img: string;
-}
+import { Character } from './Tracker';
 
 /**
  * This function filters characters based on matching points and returns a random selection
