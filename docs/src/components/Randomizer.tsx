@@ -200,7 +200,7 @@ const GameTeamRandomizer: React.FC<GameTeamRandomizerProps> = ({
 		<div>
 			<button
 				onClick={handleGenerateTeam}
-				className='mt-6  bg-[rgb(0,0,255)] text-white px-6 py-3 rounded-md shadow hover:shadow-lg transition transform hover:scale-105'>
+				className='mt-6  bg-[rgb(0,0,255)] text-white px-6 py-3 rounded-md font-open-sans font-bold  shadow hover:shadow-lg transition transform hover:scale-105'>
 				Random Gen (Char or Team)
 			</button>
 		</div>

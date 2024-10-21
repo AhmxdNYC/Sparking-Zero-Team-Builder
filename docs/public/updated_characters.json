@@ -8,14 +8,17 @@
         "name": "Android Barrier",
         "value": 3,
         "description": [
-          "Character creates a barrier around themselves to defend against atks. Can be used while under atk by an opponent."
+          "Character creates a barrier around themselves to defend against ATKS Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Pump Up",
         "value": 2,
         "description": [
-          "Melee atk power and Ki Blast atk power greatly increase for 15 sec. Move spd greatly decreases."
+          "++Melee ATK",
+          "++Ki Blast ATK",
+          "--Move SPEED",
+          "(15s)"
         ]
       },
       {
@@ -41,11 +44,14 @@
           "In Sparking Mode",
           "Unguardable",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Androids",
+      "Movies"
+    ]
   },
   {
     "name": "Android 13 (Z)",
@@ -56,14 +62,17 @@
         "name": "Wild Sense",
         "value": 2,
         "description": [
-          "Auto dodge a single melee atk from opponent and counteratk."
+          "Auto dodge a single melee ATK from opponent and counter ATK"
         ]
       },
       {
         "name": "High-Tension",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, and ki recovery spd increase for 15 sec."
+          "+Melee ATK",
+          "+Ki blast ATK",
+          "+Ki recovery SPEED",
+          "(15s)"
         ]
       },
       {
@@ -80,7 +89,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -93,7 +102,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Androids",
+      "Movies"
+    ]
   },
   {
     "name": "Android 16",
@@ -104,14 +116,14 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Pump Up",
         "value": 2,
         "description": [
-          "Melee atk power and Ki Blast atk power greatly increase for 10 sec. Move spd decreases slightly."
+          "Melee ATK power and Ki Blast ATK power greatly increase (10s) Move SPEED decreases slightly"
         ]
       },
       {
@@ -128,7 +140,7 @@
           "Rush",
           "Unguardable",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -140,11 +152,13 @@
           "Unguardable",
           "Played after a hit",
           "You also take DMG",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Androids"
+    ]
   },
   {
     "name": "Android 17 (Super)",
@@ -155,14 +169,20 @@
         "name": "Android Barrier",
         "value": 2,
         "description": [
-          "Character creates a barrier around themselves to defend against atks. Can be used while under atk by an opponent."
+          "Character creates a barrier around themselves to defend against ATKS Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Time to Get Serious",
         "value": 3,
         "description": [
-          "Enter Sparking Mode; melee atk power, Ki Blast atk power, Blast power, def, and move spd increase for 15 sec."
+          "Instant Sparking Mode",
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "+Blast ATK",
+          "+DEF",
+          "+Move SPEED",
+          "(15s)"
         ]
       },
       {
@@ -175,7 +195,7 @@
       },
       {
         "name": "Super Electric Strike",
-        "value": "?",
+        "value": 3,
         "description": [
           "Fire"
         ]
@@ -188,11 +208,14 @@
           "In Sparking Mode",
           "Played after a hit",
           "You also take DMG",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Androids",
+      "Super"
+    ]
   },
   {
     "name": "Android 17 (Z)",
@@ -203,14 +226,17 @@
         "name": "Android Barrier",
         "value": 2,
         "description": [
-          "Character creates a barrier around themselves to defend against atks. Can be used while under atk by an opponent."
+          "Character creates a barrier around themselves to defend against ATKS Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Finish Sign",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, and Blast power increase for 15 sec."
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "+Blast ATK",
+          "(15s)"
         ]
       },
       {
@@ -235,11 +261,13 @@
           "Rush",
           "In Sparking Mode",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Androids"
+    ]
   },
   {
     "name": "Android 18",
@@ -250,14 +278,17 @@
         "name": "Android Barrier",
         "value": 3,
         "description": [
-          "Character creates a barrier around themselves to defend against atks. Can be used while under atk by an opponent."
+          "Character creates a barrier around themselves to defend against ATKS Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Super Unyielding Spirit",
         "value": 3,
         "description": [
-          "Enter Sparking Mode; melee atk power and Ki Blast atk power increase for 15 sec."
+          "Instant Sparking Mode",
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "(15s)"
         ]
       },
       {
@@ -265,7 +296,7 @@
         "value": 2,
         "description": [
           "Continuous Fire",
-          "."
+          ""
         ]
       },
       {
@@ -283,11 +314,13 @@
           "Rush",
           "In Sparking Mode",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Androids"
+    ]
   },
   {
     "name": "Android 19",
@@ -296,16 +329,19 @@
     "abilities": [
       {
         "name": "False Courage",
-        "value": 1,
+        "value": 2,
         "description": [
-          "Def and resistance to being stunned by atks increases for 10 sec."
+          "+DEF and ARMOR to being stunned by ATKS (10s)"
         ]
       },
       {
         "name": "Pump Up",
         "value": 2,
         "description": [
-          "Melee atk power and Ki Blast atk power greatly increase for 15 sec. Move spd greatly decreases."
+          "++Melee ATK",
+          "++Ki Blast ATK",
+          "--Move SPEED",
+          "(15s)"
         ]
       },
       {
@@ -322,18 +358,20 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
         "name": "Drain Life 19",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Androids"
+    ]
   },
   {
     "name": "Anilaza",
@@ -342,41 +380,49 @@
     "abilities": [
       {
         "name": "Ultrasonic Sensor",
-        "value": "?",
+        "value": 2,
         "description": [
-          "Coming Soon."
+          "Dodge 1 ATK"
         ]
       },
       {
         "name": "Howl",
         "value": 3,
         "description": [
-          "Coming Soon.Enter Sparking Mode; melee atk power and Ki Blast atk power increase, and def decreases slightly for 15 sec."
+          "Instant Sparking Mode",
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "-DEF",
+          "(15s)"
         ]
       },
       {
         "name": "Warp Punch",
-        "value": "?",
+        "value": 4,
         "description": [
-          "Coming Soon."
+          "Rush"
         ]
       },
       {
         "name": "Spread Energy Blast",
-        "value": "?",
+        "value": 3,
         "description": [
-          "Coming Soon."
+          "Projectiles"
         ]
       },
       {
         "name": "Destruction Burst",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "Projectile",
+          "In Sparking Mode"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Super",
+      "T.O.P"
+    ]
   },
   {
     "name": "Babidi",
@@ -385,41 +431,46 @@
     "abilities": [
       {
         "name": "Demon Eye",
-        "value": "?",
+        "value": 2,
         "description": [
-          "Coming Soon."
+          "Unguardable ATK Render opponent paralyzed (4s)"
         ]
       },
       {
         "name": "Wizard Barrier",
-        "value": "?",
+        "value": 2,
         "description": [
-          "Coming Soon."
+          "Push Enemy Away",
+          "Combo Breaker"
         ]
       },
       {
         "name": "Pui Pui Nice Shot",
-        "value": "?",
+        "value": 3,
         "description": [
-          "Coming Soon."
+          "Rush"
         ]
       },
       {
         "name": "Ultimate Explosive Power",
-        "value": "?",
+        "value": 4,
         "description": [
-          "Coming Soon."
+          "Explosion on enemy"
         ]
       },
       {
         "name": "Super Electroshock Sorcery",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "Wave",
+          "Unblockable",
+          "In Sparking Mode"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Buu-Saga"
+    ]
   },
   {
     "name": "Baby Vegeta (GT)",
@@ -430,14 +481,17 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "High-Tension",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, and ki recovery spd increase for 15 sec."
+          "+Melee ATK",
+          "+Ki blast ATK",
+          "+Ki recovery SPEED",
+          "(15s)"
         ]
       },
       {
@@ -466,7 +520,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Z-Fighters",
+      "GT"
+    ]
   },
   {
     "name": "Bardock",
@@ -477,14 +534,18 @@
         "name": "Shockwave of Rebellion",
         "value": 4,
         "description": [
-          "Enter Sparking mode. Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Instant Sparking Mode Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Saiyan Spirit",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, Smash Atk charge spd and Smash Ki Blast charging spd increase for 15 sec."
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "+Smash ATK charge SPEED",
+          "+Smash Ki Blast charging SPEED",
+          "(15s)"
         ]
       },
       {
@@ -501,7 +562,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -515,7 +576,9 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      ""
+    ]
   },
   {
     "name": "Beerus",
@@ -526,14 +589,14 @@
         "name": "Sleep",
         "value": 4,
         "description": [
-          "Sleep for 3 sec to recover all ki gauges and 30% of max HP."
+          "Sleep (3s) to recover all ki gauges and 30% of max HP"
         ]
       },
       {
         "name": "Verdict of Vindication",
         "value": 3,
         "description": [
-          "Enter Sparking Mode."
+          "Instant Sparking Mode"
         ]
       },
       {
@@ -550,7 +613,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -565,7 +628,9 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Gods&Angels"
+    ]
   },
   {
     "name": "Bergamo",
@@ -576,14 +641,18 @@
         "name": "Howl",
         "value": 3,
         "description": [
-          "Enter Sparking Mode; melee atk power and Ki Blast atk power increase, and def decreases slightly for 15 sec."
+          "Instant Sparking Mode",
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "-DEF",
+          "(15s)"
         ]
       },
       {
         "name": "Come at Me!",
         "value": 3,
         "description": [
-          "After taking an atk, melee atk power, Ki Blast atk power, Blast power, and def increase for 15 sec; you will also perform a counteratk."
+          "After taking an ATK, melee ATK power, Ki Blast ATK power, Blast power, and DEF increase (15s); you will also perform a counter ATK"
         ]
       },
       {
@@ -600,7 +669,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -610,11 +679,13 @@
           "Rush",
           "In Sparking Mode",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "T.O.P"
+    ]
   },
   {
     "name": "BoJack",
@@ -623,41 +694,45 @@
     "abilities": [
       {
         "name": "Psycho Barrier",
-        "value": "?",
+        "value": 3,
         "description": [
-          "Coming Soon."
+          "Push Enemy Away",
+          "Combo Breaker"
         ]
       },
       {
         "name": "Full Power",
         "value": 3,
         "description": [
-          "Enter Sparking Mode."
+          "Instant Sparking Mode"
         ]
       },
       {
         "name": "Full Power Energy Ball",
-        "value": "?",
+        "value": 3,
         "description": [
-          "Coming Soon."
+          "Projectile"
         ]
       },
       {
         "name": "Trap Shooter",
-        "value": "?",
+        "value": 2,
         "description": [
-          "Coming Soon."
+          "Projectiles"
         ]
       },
       {
         "name": "Grand Smasher",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "Projectile",
+          "In Sparking Mode"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Movies"
+    ]
   },
   {
     "name": "BoJack (Full)",
@@ -666,41 +741,48 @@
     "abilities": [
       {
         "name": "Psycho Barrier",
-        "value": "?",
+        "value": 3,
         "description": [
-          "Coming Soon."
+          "Push Enemy Away",
+          "Combo Breaker"
         ]
       },
       {
         "name": "Pump Up",
         "value": 2,
         "description": [
-          "Melee atk power and Ki Blast atk power greatly increase for 15 sec. Move spd greatly decreases."
+          "++Melee ATK",
+          "++Ki Blast ATK",
+          "--Move SPEED",
+          "(15s)"
         ]
       },
       {
         "name": "Grand Smasher",
-        "value": "?",
+        "value": 3,
         "description": [
-          "Coming Soon."
+          "Projectile"
         ]
       },
       {
         "name": "Galactic Tyrant",
-        "value": "?",
+        "value": 3,
         "description": [
-          "Coming Soon."
+          "Rush"
         ]
       },
       {
         "name": "Galactic Buster",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "Projectile",
+          "In Sparking Mode"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Movies"
+    ]
   },
   {
     "name": "Broly (Super)",
@@ -711,14 +793,14 @@
         "name": "Full-Power Charge",
         "value": 2,
         "description": [
-          "Ki gauge fully recovers."
+          "Ki gauge fully recovers"
         ]
       },
       {
         "name": "Going Berserk",
         "value": 3,
         "description": [
-          "Enter Sparking Mode."
+          "Instant Sparking Mode"
         ]
       },
       {
@@ -736,7 +818,7 @@
           "Rush",
           "Unguardable",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -746,11 +828,14 @@
           "Rush",
           "In Sparking Mode",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Movies",
+      "Super"
+    ]
   },
   {
     "name": "Broly (Super) SSJ1",
@@ -761,14 +846,18 @@
         "name": "Saiyan Spirit",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, Blast power, and dmg inflicted from consecutive hits (such as combos) increase for 15 sec."
+          "Melee ATK power, Ki blast ATK power, Blast power, and dmg inflicted from consecutive hits (such as combos) increase (15s)"
         ]
       },
       {
         "name": "Howl",
         "value": 3,
         "description": [
-          "Enter Sparking Mode; melee atk power and Ki Blast atk power increase, and def decreases slightly for 15 sec."
+          "Instant Sparking Mode",
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "-DEF",
+          "(15s)"
         ]
       },
       {
@@ -785,7 +874,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -799,7 +888,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Movies",
+      "Super"
+    ]
   },
   {
     "name": "Broly (Super) SSJ2",
@@ -810,14 +902,14 @@
         "name": "Wild Move",
         "value": 2,
         "description": [
-          "Instantly move behind opponent."
+          "Teleport behind opponent"
         ]
       },
       {
-        "name": "Untamed Instinct",
-        "value": "?",
+        "name": "Howl",
+        "value": 3,
         "description": [
-          "Enter Sparking Mode; melee atk power, Ki Blast atk power, and Blast power increase for 15 sec."
+          "Instant Sparking Mode; melee ATK power, Ki Blast ATK power, and Blast power increase (15s)"
         ]
       },
       {
@@ -846,7 +938,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Movies",
+      "Super"
+    ]
   },
   {
     "name": "Broly (Z)",
@@ -857,14 +952,14 @@
         "name": "Wild Sense",
         "value": 2,
         "description": [
-          "Auto dodge a single melee atk from opponent and counteratk."
+          "Auto dodge a single melee ATK from opponent and counter ATK"
         ]
       },
       {
         "name": "Kakarottt!",
         "value": 3,
         "description": [
-          "Enter Sparking Mode."
+          "Instant Sparking Mode"
         ]
       },
       {
@@ -881,7 +976,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -894,7 +989,9 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Movies"
+    ]
   },
   {
     "name": "Broly (Z) SSJ1",
@@ -905,14 +1002,14 @@
         "name": "Saiyan Spirit",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power and Blast power increase for 15 sec."
+          "Melee ATK power, Ki blast ATK power and Blast power increase (15s)"
         ]
       },
       {
         "name": "Kakarottt!",
         "value": 3,
         "description": [
-          "Enter Sparking Mode."
+          "Instant Sparking Mode"
         ]
       },
       {
@@ -921,7 +1018,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -941,7 +1038,9 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Movies"
+    ]
   },
   {
     "name": "Broly (Z) SSJL",
@@ -952,14 +1051,18 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Kakarottt!",
         "value": 3,
         "description": [
-          "Enter Sparking Mode; melee atk power, Ki blast atk power, and def greatly increase for 15 sec."
+          "Instant Sparking Mode",
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "++DEF",
+          "(15s)"
         ]
       },
       {
@@ -977,7 +1080,7 @@
           "Rush",
           "Unguardable",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -992,7 +1095,9 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Movies"
+    ]
   },
   {
     "name": "Burter",
@@ -1003,39 +1108,47 @@
         "name": "Afterimage",
         "value": 2,
         "description": [
-          "Auto dodge a single atk of any kind, except for Ki Blasts."
+          "Dodge 1 ATK except Ki blasts"
         ]
       },
       {
         "name": "SP Fighting Pose 2",
-        "value": "?",
+        "value": 3,
         "description": [
-          "Coming Soon."
+          "Instant Sparking Mode"
         ]
       },
       {
         "name": "Full-Power Energy Ball",
-        "value": "?",
+        "value": 3,
         "description": [
-          "Coming Soon."
+          "Projectile",
+          "Blast Impact"
         ]
       },
       {
         "name": "Space Mach Attack",
-        "value": "?",
+        "value": 3,
         "description": [
-          "Coming Soon."
+          "Rush",
+          "Played after a hit",
+          "SPEED Impact"
         ]
       },
       {
         "name": "Purple Comet Attack",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "Rush",
+          "Spead Impact",
+          "In Sparking Mode",
+          "Played after a hit"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Namek-Saga"
+    ]
   },
   {
     "name": "Cabba",
@@ -1046,14 +1159,14 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Full Power",
         "value": 3,
         "description": [
-          "Enter Sparking Mode."
+          "Instant Sparking Mode"
         ]
       },
       {
@@ -1070,7 +1183,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -1080,11 +1193,13 @@
           "Rush",
           "In Sparking Mode",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Universe-6"
+    ]
   },
   {
     "name": "Cabba SSJ1",
@@ -1095,14 +1210,14 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Wild Sense",
         "value": 2,
         "description": [
-          "Auto dodge a single melee atk from opponent and counteratk."
+          "Auto dodge a single melee ATK from opponent and counter ATK"
         ]
       },
       {
@@ -1118,7 +1233,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -1132,7 +1247,9 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Universe-6"
+    ]
   },
   {
     "name": "Cabba SSJ2",
@@ -1143,14 +1260,14 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Growth",
         "value": 3,
         "description": [
-          "Enter Sparking Mode."
+          "Instant Sparking Mode"
         ]
       },
       {
@@ -1179,7 +1296,9 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Universe-6"
+    ]
   },
   {
     "name": "Caulifla",
@@ -1188,16 +1307,16 @@
     "abilities": [
       {
         "name": "False Courage",
-        "value": 1,
+        "value": 2,
         "description": [
-          "Def and resistance to being stunned by atks increases for 10 sec."
+          "+DEF and ARMOR to being stunned by ATKS (10s)"
         ]
       },
       {
         "name": "Wild Sense",
         "value": 2,
         "description": [
-          "Auto dodge a single melee atk from opponent and counteratk."
+          "Auto dodge a single melee ATK from opponent and counter ATK"
         ]
       },
       {
@@ -1224,7 +1343,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Universe-6",
+      "T.O.P"
+    ]
   },
   {
     "name": "Caulifla SSJ2",
@@ -1235,14 +1357,14 @@
         "name": "Wild Sense",
         "value": 2,
         "description": [
-          "Auto dodge a single melee atk from opponent and counteratk."
+          "Auto dodge a single melee ATK from opponent and counter ATK"
         ]
       },
       {
         "name": "Full Power",
         "value": 3,
         "description": [
-          "Enter Sparking Mode."
+          "Instant Sparking Mode"
         ]
       },
       {
@@ -1259,7 +1381,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -1274,7 +1396,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Universe-6",
+      "T.O.P"
+    ]
   },
   {
     "name": "Cell (1st Form)",
@@ -1285,14 +1410,14 @@
         "name": "Solar Flare",
         "value": 2,
         "description": [
-          "Unguardable atk. Renders opponent defenseless for 5 sec."
+          "Blinds opponent"
         ]
       },
       {
         "name": "Afterimage",
         "value": 2,
         "description": [
-          "Auto dodge a single atk of any kind, except for Ki Blasts."
+          "Dodge 1 ATK except Ki blasts"
         ]
       },
       {
@@ -1323,7 +1448,9 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      ""
+    ]
   },
   {
     "name": "Cell (2nd Form)",
@@ -1334,14 +1461,17 @@
         "name": "Solar Flare",
         "value": 2,
         "description": [
-          "Unguardable atk. Renders opponent defenseless for 5 sec."
+          "Blinds opponent"
         ]
       },
       {
         "name": "Pump Up",
         "value": 2,
         "description": [
-          "Melee atk power and Ki Blast atk power greatly increase for 15 sec. Move spd greatly decreases."
+          "++Melee ATK",
+          "++Ki Blast ATK",
+          "--Move SPEED",
+          "(15s)"
         ]
       },
       {
@@ -1372,7 +1502,9 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      ""
+    ]
   },
   {
     "name": "Cell (Perfect)",
@@ -1383,14 +1515,14 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Afterimage",
         "value": 2,
         "description": [
-          "Auto dodge a single atk of any kind, except for Ki Blasts."
+          "Dodge 1 ATK except Ki blasts"
         ]
       },
       {
@@ -1418,7 +1550,9 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      ""
+    ]
   },
   {
     "name": "Cell Jr.",
@@ -1429,14 +1563,14 @@
         "name": "Solar Flare",
         "value": 2,
         "description": [
-          "Unguardable atk. Renders opponent defenseless for 5 sec."
+          "Blinds opponent"
         ]
       },
       {
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
@@ -1449,9 +1583,9 @@
       },
       {
         "name": "Innocence Rush",
-        "value": "?",
+        "value": 3,
         "description": [
-          "Coming Soon."
+          "Rush"
         ]
       },
       {
@@ -1464,7 +1598,9 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      ""
+    ]
   },
   {
     "name": "Chiaotzu",
@@ -1475,14 +1611,14 @@
         "name": "Telekinesis",
         "value": 2,
         "description": [
-          "Unguardable atk. Render opponent paralyzed for 5 sec."
+          "Unguardable ATK Render opponent paralyzed (5s)"
         ]
       },
       {
         "name": "Afterimage",
         "value": 2,
         "description": [
-          "Auto dodge a single atk of any kind, except for Ki Blasts."
+          "Dodge 1 ATK except Ki blasts"
         ]
       },
       {
@@ -1506,11 +1642,13 @@
           "Rush",
           "In Sparking Mode",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Cooler",
@@ -1521,14 +1659,14 @@
         "name": "Psychokinesis",
         "value": 2,
         "description": [
-          "Unguardable atk. Render opponent paralyzed for 5 sec."
+          "Unguardable ATK Render opponent paralyzed (5s)"
         ]
       },
       {
         "name": "Afterimage",
         "value": 2,
         "description": [
-          "Auto dodge a single atk of any kind, except for Ki Blasts."
+          "Dodge 1 ATK except Ki blasts"
         ]
       },
       {
@@ -1541,20 +1679,24 @@
       },
       {
         "name": "Darkness Eye Beam",
-        "value": "?",
+        "value": 2,
         "description": [
-          "Coming Soon."
+          "Wave on enemy"
         ]
       },
       {
         "name": "Death Ball",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "In Sparking Mode",
+          "Projectile"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Movies",
+      "Freiza-Family"
+    ]
   },
   {
     "name": "Cooler (Final)",
@@ -1565,39 +1707,44 @@
         "name": "Psychokinesis",
         "value": 2,
         "description": [
-          "Unguardable atk. Render opponent paralyzed for 5 sec."
+          "Unguardable ATK Render opponent paralyzed (5s)"
         ]
       },
       {
         "name": "Psycho Barrier",
-        "value": "?",
+        "value": 3,
         "description": [
-          "Coming Soon."
+          "Push Enemy Away",
+          "Combo Breaker"
         ]
       },
       {
         "name": "Death Beam",
-        "value": "?",
+        "value": 2,
         "description": [
-          "Coming Soon."
+          "Beam"
         ]
       },
       {
         "name": "Death Chaser",
-        "value": "?",
+        "value": 3,
         "description": [
-          "Coming Soon."
+          "Rush"
         ]
       },
       {
         "name": "Supernova",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "In Sparking Mode",
+          "Projectile"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Movies",
+      "Freiza-Family"
+    ]
   },
   {
     "name": "Cui",
@@ -1606,16 +1753,16 @@
     "abilities": [
       {
         "name": "False Courage",
-        "value": 1,
+        "value": 2,
         "description": [
-          "Def and resistance to being stunned by atks increases for 10 sec."
+          "+DEF and ARMOR to being stunned by ATKS (10s)"
         ]
       },
       {
         "name": "Sleep",
         "value": 4,
         "description": [
-          "Sleep for 3 sec to recover all ki gauges and 30% of max HP."
+          "Sleep (3s) to recover all ki gauges and 30% of max HP"
         ]
       },
       {
@@ -1628,20 +1775,25 @@
       },
       {
         "name": "Full-Power Energy Wave Combo",
-        "value": "?",
+        "value": 3,
         "description": [
-          "Coming Soon."
+          "Projectiles"
         ]
       },
       {
         "name": "Ah! Lord Frieza!",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "In Sparking Mode",
+          "Rush",
+          "Spead Impact",
+          "Played after a hit"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Namek-Saga"
+    ]
   },
   {
     "name": "Dabura",
@@ -1652,14 +1804,14 @@
         "name": "Evil Breath",
         "value": 1,
         "description": [
-          "Unguardable atk. Short range only."
+          "Unguardable ATK Short range only"
         ]
       },
       {
         "name": "Afterimage Strike",
         "value": 3,
         "description": [
-          "Auto dodge all atks except for Ki Blasts for 15 sec."
+          "Dodge all ATKS except Ki blasts (15s)"
         ]
       },
       {
@@ -1674,7 +1826,7 @@
         "name": "Evil Flame",
         "value": 3,
         "description": [
-          "Shortrange energy atk",
+          "Shortrange energy ATK",
           "Unguardable"
         ]
       },
@@ -1689,7 +1841,9 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Buu-Saga"
+    ]
   },
   {
     "name": "Dodoria",
@@ -1698,16 +1852,19 @@
     "abilities": [
       {
         "name": "False Courage",
-        "value": 1,
+        "value": 2,
         "description": [
-          "Def and resistance to being stunned by atks increases for 10 sec."
+          "+DEF and ARMOR to being stunned by ATKS (10s)"
         ]
       },
       {
         "name": "Pump Up",
         "value": 2,
         "description": [
-          "Melee atk power and Ki Blast atk power greatly increase for 15 sec. Move spd greatly decreases."
+          "++Melee ATK",
+          "++Ki Blast ATK",
+          "--Move SPEED",
+          "(15s)"
         ]
       },
       {
@@ -1720,20 +1877,24 @@
       },
       {
         "name": "Dodria Head Ram",
-        "value": "?",
+        "value": 4,
         "description": [
-          "Coming Soon."
+          "Unblockable",
+          "Rush",
+          "SPEED Impact"
         ]
       },
       {
         "name": "Maximum Buster",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Namek-Saga"
+    ]
   },
   {
     "name": "Dr. Gero",
@@ -1742,16 +1903,19 @@
     "abilities": [
       {
         "name": "False Courage",
-        "value": 1,
+        "value": 2,
         "description": [
-          "Def and resistance to being stunned by atks increases for 15 sec. Melee atk power and Ki Blast atk power decrease."
+          "+DEF and ARMOR to being stunned by ATKS (10s)"
         ]
       },
       {
         "name": "Finish Sign",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, and Blast power increase for 15 sec."
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "+Blast ATK",
+          "(15s)"
         ]
       },
       {
@@ -1780,7 +1944,9 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      ""
+    ]
   },
   {
     "name": "Dr. Wheelo",
@@ -1791,39 +1957,44 @@
         "name": "Barrier",
         "value": 3,
         "description": [
-          "Character creates a barrier around themselves to defend against atks. Can be used while under atk by an opponent."
+          "Character creates a barrier around themselves to defend against ATKS Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Full Power",
         "value": 3,
         "description": [
-          "Enter Sparking Mode."
+          "Instant Sparking Mode"
         ]
       },
       {
         "name": "Photon Strike",
-        "value": "?",
+        "value": 3,
         "description": [
-          "Coming Soon."
+          "Projectile"
         ]
       },
       {
         "name": "Gigantic Bomber",
-        "value": "?",
+        "value": 4,
         "description": [
-          "Coming Soon."
+          "Unblockable",
+          "Rush"
         ]
       },
       {
         "name": "Planet Geyser",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "In Sparking Mode",
+          "Beam"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Movies",
+      "Giants"
+    ]
   },
   {
     "name": "Dyspo",
@@ -1834,14 +2005,14 @@
         "name": "Super Maximum Light Speed Mode",
         "value": 3,
         "description": [
-          "Move spd greatlly increases for 15 sec."
+          "Move SPEED greatly increases (15s)"
         ]
       },
       {
         "name": "Pride Trooper Pose 2",
         "value": 3,
         "description": [
-          "Enter Sparking Mode; melee atk power and Ki Blast atk power increase for 15 sec."
+          "Instant Sparking Mode; melee ATK power and Ki Blast ATK power increase (15s)"
         ]
       },
       {
@@ -1858,7 +2029,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -1872,7 +2043,9 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "T.O.P"
+    ]
   },
   {
     "name": "Frieza (1st Form)",
@@ -1883,14 +2056,14 @@
         "name": "Psychokinesis",
         "value": 2,
         "description": [
-          "Unguardable atk. Render opponent paralyzed for 3 sec."
+          "Unguardable ATK Render opponent paralyzed (3s)"
         ]
       },
       {
         "name": "Pump Up",
         "value": 2,
         "description": [
-          "Melee atk power and Ki Blast atk power greatly increase for 15 sec. Ki recovers more slowly."
+          "Melee ATK power and Ki Blast ATK power greatly increase,Ki recovers more slowly"
         ]
       },
       {
@@ -1906,7 +2079,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -1919,7 +2092,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Freiza-Family",
+      "Namek-Saga"
+    ]
   },
   {
     "name": "Frieza (2nd Form)",
@@ -1930,14 +2106,17 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Finish Sign",
         "value": 3,
         "description": [
-          "Melee atk power and Ki blast atk power increase for 15 sec. Blast power greatly increases."
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "++Blast ATK",
+          "(15s)"
         ]
       },
       {
@@ -1966,7 +2145,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Freiza-Family",
+      "Namek-Saga"
+    ]
   },
   {
     "name": "Frieza (3rd Form)",
@@ -1977,14 +2159,17 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "High-Tension",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, and ki recovery spd increase for 15 sec."
+          "+Melee ATK",
+          "+Ki blast ATK",
+          "+Ki recovery SPEED",
+          "(15s)"
         ]
       },
       {
@@ -2000,7 +2185,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -2014,7 +2199,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Freiza-Family",
+      "Namek-Saga"
+    ]
   },
   {
     "name": "Frieza (4th Form)",
@@ -2025,14 +2213,14 @@
         "name": "Psychokinesis",
         "value": 2,
         "description": [
-          "Unguardable atk. Render opponent paralyzed for 3 sec."
+          "Unguardable ATK Render opponent paralyzed (3s)"
         ]
       },
       {
         "name": "Your Arrogance Disgusts Me!",
         "value": 3,
         "description": [
-          "Enter Sparking Mode."
+          "Instant Sparking Mode"
         ]
       },
       {
@@ -2060,7 +2248,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Freiza-Family",
+      "Namek-Saga"
+    ]
   },
   {
     "name": "Frieza (Full)",
@@ -2071,14 +2262,14 @@
         "name": "Psychokinesis",
         "value": 2,
         "description": [
-          "Unguardable atk. Render opponent paralyzed for 3 sec."
+          "Unguardable ATK Render opponent paralyzed (3s)"
         ]
       },
       {
         "name": "Long Awaited-for 100%",
         "value": 3,
         "description": [
-          "Enter Sparking Mode."
+          "Instant Sparking Mode"
         ]
       },
       {
@@ -2095,7 +2286,7 @@
         "description": [
           "Rush",
           "Unguardable",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -2109,7 +2300,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Freiza-Family",
+      "Namek-Saga"
+    ]
   },
   {
     "name": "Frieza (Super)",
@@ -2120,14 +2314,18 @@
         "name": "Psychokinesis",
         "value": 2,
         "description": [
-          "Unguardable atk. Render opponent paralyzed for 5 sec."
+          "Unguardable ATK Render opponent paralyzed (5s)"
         ]
       },
       {
         "name": "Power of Revenge",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, Blast power, and dmg inflicted from consecutive hits (such as combos) increase for 15 sec."
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "+Blast ATK",
+          "+Combo DMG",
+          "(15s)"
         ]
       },
       {
@@ -2144,7 +2342,7 @@
           "Rush",
           "Unguardable",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -2158,7 +2356,11 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Freiza-Family",
+      "Namek-Saga",
+      "Super"
+    ]
   },
   {
     "name": "Frieza Force Soldier",
@@ -2169,14 +2371,14 @@
         "name": "Full-Power Charge",
         "value": 2,
         "description": [
-          "Ki gauge fully recovers."
+          "Ki gauge fully recovers"
         ]
       },
       {
         "name": "Sleep",
         "value": 4,
         "description": [
-          "Sleep for 3 sec to recover all ki gauges and 30% of max HP."
+          "Sleep (3s) to recover all ki gauges and 30% of max HP"
         ]
       },
       {
@@ -2199,11 +2401,14 @@
         "name": "Life-Risking Blow!",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Freiza-Family",
+      "Namek-Saga"
+    ]
   },
   {
     "name": "Frost",
@@ -2214,39 +2419,48 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Welcome to My World",
-        "value": "?",
+        "value": 3,
         "description": [
-          "Coming Soon."
+          "Instant Sparking Mode"
         ]
       },
       {
         "name": "Choas Beam",
-        "value": "?",
+        "value": 3,
         "description": [
-          "Coming Soon."
+          "Beam"
         ]
       },
       {
         "name": "Secret Poison",
-        "value": "?",
+        "value": 3,
         "description": [
-          "Coming Soon."
+          "Rush",
+          "Played after a hit",
+          "SPEED Impact"
         ]
       },
       {
         "name": "Chaos Ball",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "In Sparking Mode",
+          "Projectile",
+          "Blast Impact",
+          "Played after a hit"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Universe-6",
+      "T.O.P",
+      "Freiza-Family"
+    ]
   },
   {
     "name": "Fused Zamasu",
@@ -2257,14 +2471,14 @@
         "name": "Immortal Body",
         "value": 4,
         "description": [
-          "HP recovers by 20% of max."
+          "HP recovers by 20% of max"
         ]
       },
       {
         "name": "This is True Justice!",
         "value": 3,
         "description": [
-          "Enter Sparking Mode."
+          "Instant Sparking Mode"
         ]
       },
       {
@@ -2289,11 +2503,13 @@
           "Rush",
           "In Sparking Mode",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Fusions"
+    ]
   },
   {
     "name": "Fused Zamasu (Corrupted)",
@@ -2304,14 +2520,18 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Light of Justice!",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, Blast power, and dmg inflicted from consecutive hits (such as combos) increase for 15 sec."
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "+Blast ATK",
+          "+Combo DMG",
+          "(15s)"
         ]
       },
       {
@@ -2328,7 +2548,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -2338,11 +2558,13 @@
           "Rush",
           "In Sparking Mode",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Fusions"
+    ]
   },
   {
     "name": "Ginyu",
@@ -2353,14 +2575,18 @@
         "name": "SP Fighting Pose 5",
         "value": 3,
         "description": [
-          "Enter Sparking Mode."
+          "Instant Sparking Mode"
         ]
       },
       {
         "name": "Dangerous Shock",
         "value": 1,
         "description": [
-          "Inflict dmg on self; melee atk power, Ki Blast atk power, and Blast power increase for 15 sec."
+          "-HP Self DMG",
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "+Blast ATK",
+          "(15s)"
         ]
       },
       {
@@ -2388,11 +2614,13 @@
           "Unguardable",
           "Played after a hit",
           "Switch Body",
-          "When you and your opponent switch bodies, you cannot use Transformation, Switch, skills, Blasts, or Ultimate Blasts."
+          "When you and your opponent switch bodies, you cannot use Transformation, Switch, skills, Blasts, or Ultimate Blasts"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Namek-Saga"
+    ]
   },
   {
     "name": "Gogeta (GT) SSJ4",
@@ -2403,39 +2631,43 @@
         "name": "Wild Sense",
         "value": 2,
         "description": [
-          "Auto dodge a single melee atk from opponent and counteratk."
+          "Auto dodge a single melee ATK from opponent and counter ATK"
         ]
       },
       {
         "name": "Power Up to the Very Limit",
         "value": 3,
         "description": [
-          "Enter Sparking Mode."
+          "Instant Sparking Mode"
         ]
       },
       {
         "name": "Big Bang Kamehameha",
-        "value": "?",
+        "value": 3,
         "description": [
-          "Coming Soon."
+          "Projectile"
         ]
       },
       {
         "name": "Ultimate Impact",
-        "value": "?",
+        "value": 3,
         "description": [
-          "Coming Soon."
+          "Rush"
         ]
       },
       {
         "name": "Ultra Big Bang Kamehameha",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "In Sparking Mode",
+          "Beam"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "GT",
+      "Fusions"
+    ]
   },
   {
     "name": "Gogeta (Super)",
@@ -2446,14 +2678,20 @@
         "name": "Wild Sense",
         "value": 2,
         "description": [
-          "Auto dodge a single melee atk from opponent and counteratk."
+          "Auto dodge a single melee ATK from opponent and counter ATK"
         ]
       },
       {
         "name": "Here We Go!",
-        "value": "?",
+        "value": 3,
         "description": [
-          "Enter Sparking Mode; melee atk power, Ki Blast atk power, Blast power, def, and ki recovery spd increase for 15 sec."
+          "Instant Sparking Mode",
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "+Blast ATK",
+          "+DEF",
+          "+Ki recovery SPEED",
+          "(15s)"
         ]
       },
       {
@@ -2483,7 +2721,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Fusions",
+      "Super"
+    ]
   },
   {
     "name": "Gogeta (Super) SSJ1",
@@ -2494,14 +2735,17 @@
         "name": "Instant Transmission",
         "value": 2,
         "description": [
-          "Instantly move behind opponent."
+          "Teleport behind opponent"
         ]
       },
       {
         "name": "Finish Sign",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, and Blast power increase for 15 sec."
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "+Blast ATK",
+          "(15s)"
         ]
       },
       {
@@ -2519,7 +2763,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -2529,11 +2773,14 @@
           "Rush",
           "In Sparking Mode",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Fusions",
+      "Super"
+    ]
   },
   {
     "name": "Gogeta (Super) SSJB",
@@ -2544,14 +2791,14 @@
         "name": "Instant Transmission",
         "value": 2,
         "description": [
-          "Instantly move behind opponent."
+          "Teleport behind opponent"
         ]
       },
       {
         "name": "Stardust Barrier",
         "value": 1,
         "description": [
-          "Character creates a barrier around themselves to defend against atks. Can be used while under atk by an opponent."
+          "Character creates a barrier around themselves to defend against ATKS Can be used while under ATK by an opponent"
         ]
       },
       {
@@ -2567,7 +2814,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -2581,7 +2828,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Fusions",
+      "Super"
+    ]
   },
   {
     "name": "Gogeta (Z) SSJ1",
@@ -2590,41 +2840,52 @@
     "abilities": [
       {
         "name": "Immovable Stance",
-        "value": "?",
+        "value": 2,
         "description": [
-          "Coming Soon."
+          "+DEF and ARMOR to being stunned by ATKS (10s)"
         ]
       },
       {
         "name": "I'm the One Who Will Defeat You!",
-        "value": "?",
+        "value": 3,
         "description": [
-          "Coming Soon."
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "+Blast ATK",
+          "(15s)"
         ]
       },
       {
         "name": "Big Bang Kamehameha",
-        "value": "?",
+        "value": 3,
         "description": [
-          "Coming Soon."
+          "Beam",
+          "Chargeable",
+          "Blast Impact"
         ]
       },
       {
         "name": "Punisher Drive",
-        "value": "?",
+        "value": 4,
         "description": [
-          "Coming Soon."
+          "Rush",
+          "Played after a hit",
+          "SPEED Impact"
         ]
       },
       {
         "name": "Stardust Breaker",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "In Sparking Mode",
+          "Rush",
+          "SPEED Impact"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Fusions"
+    ]
   },
   {
     "name": "Gohan (Adult)",
@@ -2635,21 +2896,21 @@
         "name": "Wild Sense",
         "value": 2,
         "description": [
-          "Auto dodge a single melee atk from opponent and counteratk."
+          "Auto dodge a single melee ATK from opponent and counter ATK"
         ]
       },
       {
         "name": "Full-Power Charge",
         "value": 2,
         "description": [
-          "Ki gauge fully recovers."
+          "Ki gauge fully recovers"
         ]
       },
       {
         "name": "Explosive Cannon",
         "value": 2,
         "description": [
-          "Shortrange energy atk"
+          "Shortrange energy ATK"
         ]
       },
       {
@@ -2670,7 +2931,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Half Saiyans",
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Gohan (Adult) SSJ1",
@@ -2681,21 +2945,21 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Full-Power Charge",
         "value": 2,
         "description": [
-          "Ki gauge fully recovers."
+          "Ki gauge fully recovers"
         ]
       },
       {
         "name": "Explosive Cannon",
         "value": 2,
         "description": [
-          "Shortrange energy atk"
+          "Shortrange energy ATK"
         ]
       },
       {
@@ -2717,7 +2981,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Half Saiyans",
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Gohan (Adult) SSJ2",
@@ -2728,21 +2995,21 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Full Power",
         "value": 3,
         "description": [
-          "Enter Sparking Mode."
+          "Instant Sparking Mode"
         ]
       },
       {
         "name": "Super Explosive Cannon",
         "value": 2,
         "description": [
-          "Shortrange energy atk"
+          "Shortrange energy ATK"
         ]
       },
       {
@@ -2764,7 +3031,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Half Saiyans",
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Gohan (Future)",
@@ -2775,14 +3045,14 @@
         "name": "Wild Sense",
         "value": 2,
         "description": [
-          "Auto dodge a single melee atk from opponent and counteratk."
+          "Auto dodge a single melee ATK from opponent and counter ATK"
         ]
       },
       {
         "name": "Full-Power Charge",
         "value": 2,
         "description": [
-          "Ki gauge fully recovers."
+          "Ki gauge fully recovers"
         ]
       },
       {
@@ -2810,7 +3080,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Half Saiyans",
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Gohan (Future) SSJ1",
@@ -2821,14 +3094,20 @@
         "name": "Evil Barrier",
         "value": 3,
         "description": [
-          "Character creates a barrier around themselves to defend against atks. Can be used while under atk by an opponent."
+          "Character creates a barrier around themselves to defend against ATKS Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Power Up to the Very Limit",
         "value": 3,
         "description": [
-          "Enter Sparking Mode; melee atk power, Ki Blast atk power, Blast power, def, and ki recovery spd increase for 15 sec."
+          "Instant Sparking Mode",
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "+Blast ATK",
+          "+DEF",
+          "+Ki recovery SPEED",
+          "(15s)"
         ]
       },
       {
@@ -2854,11 +3133,14 @@
           "Rush",
           "In Sparking Mode",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Half Saiyans",
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Gohan (Kid)",
@@ -2869,14 +3151,14 @@
         "name": "Super Unyielding Spirit",
         "value": 3,
         "description": [
-          "Enter Sparking Mode."
+          "Instant Sparking Mode"
         ]
       },
       {
         "name": "Afterimage Strike",
         "value": 3,
         "description": [
-          "Auto dodge all atks except for Ki Blasts for 15 sec."
+          "Dodge all ATKS except Ki blasts (15s)"
         ]
       },
       {
@@ -2901,11 +3183,14 @@
           "Rush",
           "In Sparking Mode",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Half Saiyans",
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Gohan (Teen)",
@@ -2916,14 +3201,14 @@
         "name": "Wild Sense",
         "value": 2,
         "description": [
-          "Auto dodge a single melee atk from opponent and counteratk."
+          "Auto dodge a single melee ATK from opponent and counter ATK"
         ]
       },
       {
         "name": "Full-Power Charge",
         "value": 2,
         "description": [
-          "Ki gauge fully recovers."
+          "Ki gauge fully recovers"
         ]
       },
       {
@@ -2951,7 +3236,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Half Saiyans",
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Gohan (Teen) SSJ1",
@@ -2962,14 +3250,14 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Full Power",
         "value": 3,
         "description": [
-          "Enter Sparking Mode."
+          "Instant Sparking Mode"
         ]
       },
       {
@@ -2987,7 +3275,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -3000,7 +3288,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Half Saiyans",
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Gohan (Teen) SSJ2",
@@ -3011,14 +3302,18 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Unforgivable",
         "value": 3,
         "description": [
-          "Enter Sparking Mode; melee atk power, Ki Blast atk power, and def greatly increase for 15 sec."
+          "Instant Sparking Mode",
+          "++Melee ATK",
+          "++Ki Blast ATK",
+          "++DEF",
+          "(15s)"
         ]
       },
       {
@@ -3035,7 +3330,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -3050,7 +3345,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Half Saiyans",
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Goku (Daima)",
@@ -3061,14 +3359,18 @@
         "name": "Sleep",
         "value": 4,
         "description": [
-          "Sleep for 3 sec to recover all ki gauges and 30% of max HP."
+          "Sleep (3s) to recover all ki gauges and 30% of max HP"
         ]
       },
       {
         "name": "Warm Up Exercise",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, Blast power, and dmg inflicted from consecutive hits (such as combos) increase for 15 sec."
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "+Blast ATK",
+          "+Combo DMG",
+          "(15s)"
         ]
       },
       {
@@ -3077,7 +3379,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -3086,7 +3388,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -3096,11 +3398,14 @@
           "Rush",
           "In Sparking Mode",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Gokus",
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Goku (GT)",
@@ -3111,14 +3416,14 @@
         "name": "Solar Flare",
         "value": 2,
         "description": [
-          "Unguardable atk. Renders opponent defenseless for 5 sec."
+          "Blinds opponent"
         ]
       },
       {
         "name": "Afterimage Strike",
         "value": 3,
         "description": [
-          "Auto dodge all atks of any kind, except for Ki Blasts for 15 sec."
+          "Dodge all ATKS except Ki blasts (15s)"
         ]
       },
       {
@@ -3132,20 +3437,29 @@
       },
       {
         "name": "Dragon Fist",
-        "value": "?",
+        "value": 3,
         "description": [
-          "Coming Soon."
+          "Rush",
+          "Spead Impact",
+          "Played after a hit"
         ]
       },
       {
         "name": "Spirit Bomb",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "Unblockable",
+          "Projectile",
+          "Blast Impact",
+          "Played after a hit"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Gokus",
+      "Z-Fighters",
+      "GT"
+    ]
   },
   {
     "name": "Goku (GT) SSJ1",
@@ -3156,14 +3470,14 @@
         "name": "Wild Sense",
         "value": 2,
         "description": [
-          "Auto dodge a single melee atk from opponent and counteratk."
+          "Auto dodge a single melee ATK from opponent and counter ATK"
         ]
       },
       {
         "name": "Full Power",
         "value": 3,
         "description": [
-          "Enter Sparking Mode."
+          "Instant Sparking Mode"
         ]
       },
       {
@@ -3192,7 +3506,11 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Gokus",
+      "Z-Fighters",
+      "GT"
+    ]
   },
   {
     "name": "Goku (GT) SSJ3",
@@ -3203,14 +3521,21 @@
         "name": "Saiyan Spirit",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, Blast power, and dmg inflicted from consecutive hits (such as combos) increase for 15 sec."
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "+Blast ATK",
+          "+Combo DMG",
+          "(15s)"
         ]
       },
       {
         "name": "High-Tension",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, and ki recovery spd increase for 15 sec."
+          "+Melee ATK",
+          "+Ki blast ATK",
+          "+Ki recovery SPEED",
+          "(15s)"
         ]
       },
       {
@@ -3233,11 +3558,15 @@
         "name": "Dragon Fist",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Gokus",
+      "Z-Fighters",
+      "GT"
+    ]
   },
   {
     "name": "Goku (GT) SSJ4",
@@ -3248,39 +3577,44 @@
         "name": "Instant Transmission",
         "value": 2,
         "description": [
-          "Instantly move behind opponent."
+          "Teleport behind opponent"
         ]
       },
       {
         "name": "All I Need is Five Seconds!",
-        "value": "?",
+        "value": 3,
         "description": [
-          "Coming Soon."
+          "Melee, Ki blast, blast power increase (5s)"
         ]
       },
       {
         "name": "x10 Kamehameha",
-        "value": "?",
+        "value": 3,
         "description": [
-          "Coming Soon."
+          "Beam"
         ]
       },
       {
         "name": "Meteor Crash",
-        "value": "?",
+        "value": 3,
         "description": [
-          "Coming Soon."
+          "Rush"
         ]
       },
       {
         "name": "Dragon Fist",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "In Sparking Mode",
+          "Rush"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Gokus",
+      "Z-Fighters",
+      "GT"
+    ]
   },
   {
     "name": "Goku (Super)",
@@ -3291,14 +3625,14 @@
         "name": "Instant Transmission",
         "value": 2,
         "description": [
-          "Instantly move behind opponent."
+          "Teleport behind opponent"
         ]
       },
       {
         "name": "All Fired Up",
         "value": 3,
         "description": [
-          "Enter Sparking Mode."
+          "Instant Sparking Mode"
         ]
       },
       {
@@ -3316,7 +3650,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -3331,7 +3665,11 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Gokus",
+      "Z-Fighters",
+      "Super"
+    ]
   },
   {
     "name": "Goku (Super) SSJ1",
@@ -3342,14 +3680,14 @@
         "name": "Wild Sense",
         "value": 2,
         "description": [
-          "Auto dodge a single melee atk from opponent and counteratk."
+          "Auto dodge a single melee ATK from opponent and counter ATK"
         ]
       },
       {
         "name": "All Encompasing Power",
         "value": 3,
         "description": [
-          "Ki gauge fully recovers; melee atk power, Ki Blast atk power, Blast power, and def increase for 15 sec."
+          "Ki gauge fully recovers; melee ATK power, Ki Blast ATK power, Blast power, and DEF increase (15s)"
         ]
       },
       {
@@ -3367,7 +3705,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -3377,11 +3715,15 @@
           "Rush",
           "In Sparking Mode",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Gokus",
+      "Z-Fighters",
+      "Super"
+    ]
   },
   {
     "name": "Goku (Super) SSJB",
@@ -3392,14 +3734,17 @@
         "name": "Instant Transmission",
         "value": 2,
         "description": [
-          "Instantly move behind opponent."
+          "Teleport behind opponent"
         ]
       },
       {
         "name": "Kaioken",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, and Blast power increase for 15 sec."
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "+Blast ATK",
+          "(15s)"
         ]
       },
       {
@@ -3417,7 +3762,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -3431,7 +3776,11 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Gokus",
+      "Z-Fighters",
+      "Super"
+    ]
   },
   {
     "name": "Goku (Super) SSJG",
@@ -3442,14 +3791,14 @@
         "name": "God Bind",
         "value": 2,
         "description": [
-          "Unguardable atk. Render opponent paralyzed for 5 sec."
+          "Unguardable ATK Render opponent paralyzed (5s)"
         ]
       },
       {
         "name": "Shenron Aura",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, and def increase for 15 sec."
+          "Melee ATK power, Ki blast ATK power, and DEF increase (15s)"
         ]
       },
       {
@@ -3467,7 +3816,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -3481,7 +3830,11 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Gokus",
+      "Z-Fighters",
+      "Super"
+    ]
   },
   {
     "name": "Goku (Super) UI",
@@ -3492,14 +3845,14 @@
         "name": "Ultra Movement",
         "value": 2,
         "description": [
-          "Auto dodge a single melee atk from opponent and counteratk."
+          "Auto dodge a single melee ATK from opponent and counter ATK"
         ]
       },
       {
         "name": "No Backing Down",
         "value": 3,
         "description": [
-          "Enter Sparking Mode; melee atk power, Ki blast atk power, Blast power, def, and ki recovery spd increase for 15 sec."
+          "Instant Sparking Mode; melee ATK power, Ki blast ATK power, Blast power, DEF, and ki recovery SPEED increase (15s)"
         ]
       },
       {
@@ -3517,7 +3870,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -3527,11 +3880,15 @@
           "Rush",
           "In Sparking Mode",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Gokus",
+      "Z-Fighters",
+      "Super"
+    ]
   },
   {
     "name": "Goku (Super) UIS",
@@ -3542,14 +3899,14 @@
         "name": "Even Greater Potential",
         "value": 2,
         "description": [
-          "Ki gauge fully recovers; melee atk power, def, and move spd increase for 15 sec."
+          "Ki gauge fully recovers; melee ATK power, DEF, and move SPEED increase (15s)"
         ]
       },
       {
         "name": "You'll Never Beat Me",
         "value": 3,
         "description": [
-          "Enter Sparking Mode; Ki Blast atk power and Blast power increase for 15 sec."
+          "Instant Sparking Mode; Ki Blast ATK power and Blast power increase (15s)"
         ]
       },
       {
@@ -3566,7 +3923,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -3576,11 +3933,15 @@
           "Rush",
           "In Sparking Mode",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Gokus",
+      "Z-Fighters",
+      "Super"
+    ]
   },
   {
     "name": "Goku (Teen)",
@@ -3591,14 +3952,14 @@
         "name": "Afterimage Strike",
         "value": 3,
         "description": [
-          "Auto dodge all atks of any kind, except for Ki Blasts for 15 sec."
+          "Dodge all ATKS except Ki blasts (15s)"
         ]
       },
       {
         "name": "False Courage",
-        "value": 1,
+        "value": 2,
         "description": [
-          "Def and resistance to being stunned by atks increases for 10 sec."
+          "+DEF and ARMOR to being stunned by ATKS (10s)"
         ]
       },
       {
@@ -3616,7 +3977,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -3626,11 +3987,14 @@
           "Rush",
           "In Sparking Mode",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Gokus",
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Goku (Z-Early)",
@@ -3641,14 +4005,14 @@
         "name": "Solar Flare",
         "value": 2,
         "description": [
-          "Unguardable atk. Renders opponent defenseless for 5 sec."
+          "Blinds opponent"
         ]
       },
       {
         "name": "Kaioken",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, and def increase for 15 sec."
+          "Melee ATK power, Ki blast ATK power, and DEF increase (15s)"
         ]
       },
       {
@@ -3666,7 +4030,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -3681,7 +4045,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Gokus",
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Goku (Z-End)",
@@ -3692,14 +4059,14 @@
         "name": "Instant Transmission",
         "value": 2,
         "description": [
-          "Instantly move behind opponent."
+          "Teleport behind opponent"
         ]
       },
       {
         "name": "Wild Sense",
         "value": 2,
         "description": [
-          "Auto dodge a single melee atk from opponent and counteratk."
+          "Auto dodge a single melee ATK from opponent and counter ATK"
         ]
       },
       {
@@ -3717,7 +4084,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -3732,7 +4099,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Gokus",
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Goku (Z-End) SSJ1",
@@ -3743,14 +4113,18 @@
         "name": "Wild Sense",
         "value": 2,
         "description": [
-          "Auto dodge a single melee atk from opponent and counteratk."
+          "Auto dodge a single melee ATK from opponent and counter ATK"
         ]
       },
       {
         "name": "Saiyan Spirit",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, Blast power, and dmg inflicted from consecutive hits (such as combos) increase for 15 sec."
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "+Blast ATK",
+          "+Combo DMG",
+          "(15s)"
         ]
       },
       {
@@ -3781,7 +4155,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Gokus",
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Goku (Z-End) SSJ2",
@@ -3792,14 +4169,14 @@
         "name": "Instant Transmission",
         "value": 2,
         "description": [
-          "Instantly move behind opponent."
+          "Teleport behind opponent"
         ]
       },
       {
         "name": "Full Power",
         "value": 3,
         "description": [
-          "Enter Sparking Mode."
+          "Instant Sparking Mode"
         ]
       },
       {
@@ -3817,7 +4194,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -3831,7 +4208,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Gokus",
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Goku (Z-End) SSJ3",
@@ -3842,14 +4222,14 @@
         "name": "Instant Transmission",
         "value": 2,
         "description": [
-          "Instantly move behind opponent."
+          "Teleport behind opponent"
         ]
       },
       {
         "name": "Power Up to the Very Limit",
         "value": 3,
         "description": [
-          "Enter Sparking Mode."
+          "Instant Sparking Mode"
         ]
       },
       {
@@ -3867,7 +4247,7 @@
         "description": [
           "Rush",
           "Played after hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -3877,11 +4257,14 @@
           "Rush",
           "In Sparking Mode",
           "Played after hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Gokus",
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Goku (Z-Mid)",
@@ -3892,14 +4275,14 @@
         "name": "Give Me Your Energy",
         "value": 2,
         "description": [
-          "Increases Ultimate Blast Spirit Bomb power. Can be used together up to three times."
+          "Increases Ultimate Blast Spirit Bomb power Can be used together up to three times"
         ]
       },
       {
         "name": "I Can't Wait",
         "value": 3,
         "description": [
-          "Melee atk power, Ki Blast atk power, Blast power, def, and move speed increase for 15 sec."
+          "Melee ATK power, Ki Blast ATK power, Blast power, DEF, and move SPEED increase (15s)"
         ]
       },
       {
@@ -3916,7 +4299,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -3931,7 +4314,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Gokus",
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Goku (Z-Mid) SSJ1",
@@ -3942,14 +4328,14 @@
         "name": "Wild Sense",
         "value": 2,
         "description": [
-          "Auto dodge a single melee atk from opponent and counteratk."
+          "Auto dodge a single melee ATK from opponent and counter ATK"
         ]
       },
       {
         "name": "Now I'm Angry",
         "value": 3,
         "description": [
-          "Enter Sparking Mode; melee atk power, Ki Blast atk power, Blast power, and def increase for 15 sec."
+          "Instant Sparking Mode; melee ATK power, Ki Blast ATK power, Blast power, and DEF increase (15s)"
         ]
       },
       {
@@ -3967,7 +4353,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -3981,7 +4367,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Gokus",
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Goku Black",
@@ -3992,14 +4381,17 @@
         "name": "Wild Sense",
         "value": 2,
         "description": [
-          "Auto dodge a single melee atk from opponent and counteratk."
+          "Auto dodge a single melee ATK from opponent and counter ATK"
         ]
       },
       {
         "name": "Finish Sign",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, and Blast power increase for 15 sec."
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "+Blast ATK",
+          "(15s)"
         ]
       },
       {
@@ -4017,7 +4409,7 @@
           "Rush",
           "Played after a hit",
           "Unguardable",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -4030,7 +4422,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Gokus",
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Goku Black (Rosé)",
@@ -4041,14 +4436,14 @@
         "name": "Instant Transmission",
         "value": 2,
         "description": [
-          "Instantly move behind opponent."
+          "Teleport behind opponent"
         ]
       },
       {
         "name": "Audacious Laugh",
         "value": 3,
         "description": [
-          "Enter Sparking Mode."
+          "Instant Sparking Mode"
         ]
       },
       {
@@ -4058,7 +4453,7 @@
           "Beam",
           "Chargeable",
           "Blast Impact",
-          "."
+          ""
         ]
       },
       {
@@ -4081,7 +4476,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Gokus",
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Golden Frieza",
@@ -4092,14 +4490,14 @@
         "name": "Wild Sense",
         "value": 2,
         "description": [
-          "Auto dodge a single melee atk from opponent and counteratk."
+          "Auto dodge a single melee ATK from opponent and counter ATK"
         ]
       },
       {
         "name": "True Golden Frieza",
         "value": 3,
         "description": [
-          "Enter Sparking mode."
+          "Instant Sparking Mode"
         ]
       },
       {
@@ -4115,7 +4513,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -4125,11 +4523,14 @@
           "Rush",
           "In Sparking Mode",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Freiza-Family",
+      "Namek-Saga"
+    ]
   },
   {
     "name": "Goten",
@@ -4140,14 +4541,14 @@
         "name": "Afterimage",
         "value": 2,
         "description": [
-          "Auto dodge a single atk of any kind, except for Ki Blasts."
+          "Dodge 1 ATK except Ki blasts"
         ]
       },
       {
         "name": "Sleep",
         "value": 4,
         "description": [
-          "Sleep for 3 sec to recover all ki gauges and 30% of max HP."
+          "Sleep (3s) to recover all ki gauges and 30% of max HP"
         ]
       },
       {
@@ -4163,7 +4564,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -4177,7 +4578,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Half Saiyans",
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Goten SSJ1",
@@ -4188,14 +4592,14 @@
         "name": "Wild Sense",
         "value": 2,
         "description": [
-          "Auto dodge a single melee atk from opponent and counteratk."
+          "Auto dodge a single melee ATK from opponent and counter ATK"
         ]
       },
       {
         "name": "False Courage",
-        "value": 1,
+        "value": 2,
         "description": [
-          "Def and resistance to being stunned by atks increases for 10 sec."
+          "+DEF and ARMOR to being stunned by ATKS (10s)"
         ]
       },
       {
@@ -4213,7 +4617,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -4227,7 +4631,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Half Saiyans",
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Gotenks",
@@ -4238,14 +4645,14 @@
         "name": "Afterimage",
         "value": 2,
         "description": [
-          "Auto dodge a single atk of any kind, except for Ki Blasts."
+          "Dodge 1 ATK except Ki blasts"
         ]
       },
       {
         "name": "Ta-Dah!",
         "value": 2,
         "description": [
-          "Def and resistance to being stunned by atks increase for 15 sec. Melee atk power and Ki Blast atk power decrease."
+          "DEF and resistance to being stunned by ATKS increase (15s) Melee ATK power and Ki Blast ATK power decrease"
         ]
       },
       {
@@ -4262,7 +4669,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -4276,7 +4683,11 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Half Saiyans",
+      "Z-Fighters",
+      "Fusions"
+    ]
   },
   {
     "name": "Gotenks SSJ1",
@@ -4285,16 +4696,19 @@
     "abilities": [
       {
         "name": "False Courage",
-        "value": 1,
+        "value": 2,
         "description": [
-          "Def and resistance to being stunned by atks increases for 15 sec. Melee atk power and Ki Blast atk power decrease."
+          "+DEF and ARMOR to being stunned by ATKS (10s)"
         ]
       },
       {
         "name": "High-Tension",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, and ki recovery spd increase for 15 sec. Fully recover all ki gauges."
+          "+Melee ATK",
+          "+Ki blast ATK",
+          "+Ki recovery SPEED",
+          "(15s)"
         ]
       },
       {
@@ -4324,7 +4738,11 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Half Saiyans",
+      "Z-Fighters",
+      "Fusions"
+    ]
   },
   {
     "name": "Gotenks SSJ3",
@@ -4335,14 +4753,17 @@
         "name": "Vice Shout",
         "value": 2,
         "description": [
-          "Unguardable atk. Renders opponent paralyzed for 3 sec."
+          "Unguardable ATK Renders opponent paralyzed (3s)"
         ]
       },
       {
         "name": "Finish Sign",
         "value": 3,
         "description": [
-          "Melee atk power and Ki blast atk power increase for 15 sec. Blast power greatly increases."
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "++Blast ATK",
+          "(15s)"
         ]
       },
       {
@@ -4367,11 +4788,15 @@
           "Rush",
           "In Sparking Mode",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Half Saiyans",
+      "Z-Fighters",
+      "Fusions"
+    ]
   },
   {
     "name": "Great Ape Baby (GT)",
@@ -4382,39 +4807,48 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Howl",
         "value": 3,
         "description": [
-          "Enter Sparking Mode; melee atk power and Ki Blast atk power increase, and def decreases slightly for 15 sec."
+          "Instant Sparking Mode",
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "-DEF",
+          "(15s)"
         ]
       },
       {
         "name": "Super Galick Gun",
-        "value": "?",
+        "value": 3,
         "description": [
-          "Coming Soon."
+          "Beam"
         ]
       },
       {
         "name": "Gigantic Flame",
-        "value": "?",
+        "value": 3,
         "description": [
-          "Coming Soon."
+          "Unblockable",
+          "Wave"
         ]
       },
       {
         "name": "Revenge Death Ball Final",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "In Sparking Mode",
+          "Projectile"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "GT",
+      "Giants"
+    ]
   },
   {
     "name": "Great Ape Vegeta",
@@ -4425,14 +4859,18 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Howl",
         "value": 3,
         "description": [
-          "Enter Sparking Mode; melee atk power and Ki Blast atk power increase, and def decreases slightly for 15 sec."
+          "Instant Sparking Mode",
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "-DEF",
+          "(15s)"
         ]
       },
       {
@@ -4461,7 +4899,11 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Z-Fighters",
+      "Saiyan-Saga",
+      "Giants"
+    ]
   },
   {
     "name": "Great Saiyaman",
@@ -4470,41 +4912,52 @@
     "abilities": [
       {
         "name": "Justice Pose",
-        "value": "?",
+        "value": 2,
         "description": [
-          "Coming Soon."
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "+Blast ATK",
+          "+Combo DMG",
+          "(15s)"
         ]
       },
       {
         "name": "Justice Finishing Pose",
-        "value": "?",
+        "value": 2,
         "description": [
-          "Coming Soon."
+          "Blast ATK power increase (15s)"
         ]
       },
       {
         "name": "Justice Bomber",
-        "value": "?",
+        "value": 4,
         "description": [
-          "Coming Soon."
+          "Explosion"
         ]
       },
       {
         "name": "Justice Rush",
-        "value": "?",
+        "value": 3,
         "description": [
-          "Coming Soon."
+          "Rush",
+          "Played after a hit",
+          "SPEED Impact"
         ]
       },
       {
         "name": "Justice Judgement",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "In Sparking Mode",
+          "Rush",
+          "Played after a hit",
+          "SPEED Impact"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      ""
+    ]
   },
   {
     "name": "Guldo",
@@ -4513,41 +4966,47 @@
     "abilities": [
       {
         "name": "Paralysis",
-        "value": "?",
+        "value": 2,
         "description": [
-          "Coming Soon."
+          "Unblockable",
+          "Paralyze opponent (3s)"
         ]
       },
       {
         "name": "SP Fighting Pose 4",
-        "value": "?",
+        "value": 3,
         "description": [
-          "Coming Soon."
+          "Instant Sparking Mode"
         ]
       },
       {
         "name": "Psychic Rock Throw",
-        "value": "?",
+        "value": 3,
         "description": [
-          "Coming Soon."
+          "Projectile"
         ]
       },
       {
         "name": "Full-Power Energy Blast Volley",
         "value": 3,
         "description": [
-          "Continuous Fire"
+          "Projectiles"
         ]
       },
       {
         "name": "Guldo Special",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "In Sparking Mode",
+          "Unblockable",
+          "Projectile",
+          "Played after a hit"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Namek-Saga"
+    ]
   },
   {
     "name": "Hirudegarn",
@@ -4558,39 +5017,43 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Dark Eyes",
-        "value": "?",
+        "value": 2,
         "description": [
-          "Coming Soon."
+          "Dodge 1 ATK"
         ]
       },
       {
         "name": "Chou Makousen",
-        "value": "?",
+        "value": 2,
         "description": [
-          "Coming Soon."
+          "Wave"
         ]
       },
       {
         "name": "Super Explosive Wave",
         "value": 4,
         "description": [
-          "Explosive Wave"
+          "Explosion"
         ]
       },
       {
         "name": "Gigantic Flame",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "In Sparking Mode",
+          "Beam"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Movies",
+      "Giants"
+    ]
   },
   {
     "name": "Hit",
@@ -4601,14 +5064,14 @@
         "name": "Ki Clone",
         "value": 2,
         "description": [
-          "Auto dodge a single atk of any kind, except for Ki Blasts."
+          "Auto dodge a single ATK of any kind, except for Ki Blasts"
         ]
       },
       {
         "name": "Time Skip",
         "value": 2,
         "description": [
-          "Instantly move behind opponent."
+          "Instantly move behind opponent"
         ]
       },
       {
@@ -4624,7 +5087,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -4634,11 +5097,14 @@
           "Rush",
           "In Sparking Mode",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Universe-6",
+      "T.O.P"
+    ]
   },
   {
     "name": "Janemba",
@@ -4647,16 +5113,22 @@
     "abilities": [
       {
         "name": "Mystic Breath",
-        "value": "?",
+        "value": 1,
         "description": [
-          "Coming Soon."
+          "Unblockable",
+          "Deals min DMG",
+          "Short Range"
         ]
       },
       {
         "name": "Howl",
         "value": 3,
         "description": [
-          "Enter Sparking Mode; melee atk power and Ki Blast atk power increase, and def decreases slightly for 15 sec."
+          "Instant Sparking Mode",
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "-DEF",
+          "(15s)"
         ]
       },
       {
@@ -4669,20 +5141,24 @@
       },
       {
         "name": "Rapid Cannon",
-        "value": "?",
+        "value": 3,
         "description": [
-          "Coming Soon."
+          "Projectiles"
         ]
       },
       {
         "name": "Illusion Smash",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "In Sparking Mode",
+          "Rush"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Movies",
+      "Giants"
+    ]
   },
   {
     "name": "Jeice",
@@ -4693,14 +5169,14 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "SP Fighting Pose 3",
-        "value": "?",
+        "value": 3,
         "description": [
-          "Coming Soon."
+          "Instant Sparking Mode"
         ]
       },
       {
@@ -4713,20 +5189,25 @@
       },
       {
         "name": "Crusher Ball",
-        "value": "?",
+        "value": 3,
         "description": [
-          "Coming Soon."
+          "Projectile"
         ]
       },
       {
         "name": "Purple Comet Attack",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "Rush",
+          "Spead Impact",
+          "In Sparking Mode",
+          "Played after a hit"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Namek-Saga"
+    ]
   },
   {
     "name": "Jiren",
@@ -4737,14 +5218,14 @@
         "name": "Ki Pressure",
         "value": 2,
         "description": [
-          "Character creates a barrier around themselves to defend against atks. Can be used while under atk by an opponent."
+          "Character creates a barrier around themselves to defend against ATKS Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Meditation",
         "value": 4,
         "description": [
-          "HP recovers by 20% of max."
+          "HP recovers by 20% of max"
         ]
       },
       {
@@ -4761,7 +5242,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -4771,11 +5252,13 @@
           "Rush",
           "In Sparking Mode",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "T.O.P"
+    ]
   },
   {
     "name": "Jiren (Full)",
@@ -4786,14 +5269,20 @@
         "name": "Ki Storm",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Strength is Absolute!",
         "value": 3,
         "description": [
-          "Enter Sparking Mode; melee atk power, Ki Blast atk power, Blast power, def, and ki recovery spd increase for 15 sec."
+          "Instant Sparking Mode",
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "+Blast ATK",
+          "+DEF",
+          "+Ki recovery SPEED",
+          "(15s)"
         ]
       },
       {
@@ -4823,7 +5312,9 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "T.O.P"
+    ]
   },
   {
     "name": "Kakunsa",
@@ -4834,14 +5325,14 @@
         "name": "Wild Sense",
         "value": 2,
         "description": [
-          "Auto dodge a single melee atk from opponent and counteratk."
+          "Auto dodge a single melee ATK from opponent and counter ATK"
         ]
       },
       {
         "name": "Maiden's Fury",
         "value": 3,
         "description": [
-          "Enter Sparking Mode."
+          "Instant Sparking Mode"
         ]
       },
       {
@@ -4850,7 +5341,7 @@
         "description": [
           "Rush",
           "Unguardable",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -4859,7 +5350,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -4872,7 +5363,9 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "T.O.P"
+    ]
   },
   {
     "name": "Kale",
@@ -4883,14 +5376,14 @@
         "name": "Full-Power Charge",
         "value": 2,
         "description": [
-          "Ki gauge fully recovers."
+          "Ki gauge fully recovers"
         ]
       },
       {
         "name": "Going Berserk",
         "value": 3,
         "description": [
-          "Enter Sparking Mode."
+          "Instant Sparking Mode"
         ]
       },
       {
@@ -4918,7 +5411,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Universe-6",
+      "T.O.P"
+    ]
   },
   {
     "name": "Kale (Berserk) SSJ1",
@@ -4929,14 +5425,14 @@
         "name": "Cry of Rage",
         "value": 2,
         "description": [
-          "Unguardable atk. Renders opponent paralyzed for 3 sec."
+          "Unguardable ATK Renders opponent paralyzed (3s)"
         ]
       },
       {
         "name": "Berserk Rage",
         "value": 3,
         "description": [
-          "Enter Sparking Mode; When opponent is Goku, melee atk power, Ki Blast atk power, Blast power and def greatly increase for 15 sec."
+          "Instant Sparking Mode; When opponent is Goku, melee ATK power, Ki Blast ATK power, Blast power and DEF greatly increase (15s)"
         ]
       },
       {
@@ -4953,7 +5449,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -4966,7 +5462,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Universe-6",
+      "T.O.P"
+    ]
   },
   {
     "name": "Kale SSJ1",
@@ -4977,14 +5476,18 @@
         "name": "Wild Sense",
         "value": 2,
         "description": [
-          "Auto dodge a single melee atk from opponent and counteratk."
+          "Auto dodge a single melee ATK from opponent and counter ATK"
         ]
       },
       {
         "name": "Saiyan Spirit",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, Smash Atk charge spd and Smash Ki Blast charging spd increase for 15 sec."
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "+Smash ATK charge SPEED",
+          "+Smash Ki Blast charging SPEED",
+          "(15s)"
         ]
       },
       {
@@ -5013,7 +5516,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Universe-6",
+      "T.O.P"
+    ]
   },
   {
     "name": "Kefla",
@@ -5024,14 +5530,17 @@
         "name": "Wild Sense",
         "value": 2,
         "description": [
-          "Auto dodge a single melee atk from opponent and counteratk."
+          "Auto dodge a single melee ATK from opponent and counter ATK"
         ]
       },
       {
         "name": "High-Tension",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, and ki recovery spd increase for 15 sec."
+          "+Melee ATK",
+          "+Ki blast ATK",
+          "+Ki recovery SPEED",
+          "(15s)"
         ]
       },
       {
@@ -5048,7 +5557,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -5061,7 +5570,11 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Universe-6",
+      "T.O.P",
+      "Fusions"
+    ]
   },
   {
     "name": "Kefla SSJ1",
@@ -5070,16 +5583,19 @@
     "abilities": [
       {
         "name": "False Courage",
-        "value": 1,
+        "value": 2,
         "description": [
-          "Def and resistance to being stunned by atks increases for 10 sec."
+          "+DEF and ARMOR to being stunned by ATKS (10s)"
         ]
       },
       {
         "name": "Finish Sign",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, and Blast power increase for 15 sec."
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "+Blast ATK",
+          "(15s)"
         ]
       },
       {
@@ -5096,7 +5612,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -5109,7 +5625,11 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Universe-6",
+      "T.O.P",
+      "Fusions"
+    ]
   },
   {
     "name": "Kefla SSJ2",
@@ -5120,14 +5640,18 @@
         "name": "Saiyan Spirit",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, Blast power, and dmg inflicted from consecutive hits (such as combos) increase for 15 sec."
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "+Blast ATK",
+          "+Combo DMG",
+          "(15s)"
         ]
       },
       {
         "name": "I'm Number One!",
         "value": 3,
         "description": [
-          "Enter Sparking Mode; melee atk power, Ki Blast atk power, and def increase for 15 sec."
+          "Instant Sparking Mode; melee ATK power, Ki Blast ATK power, and DEF increase (15s)"
         ]
       },
       {
@@ -5155,7 +5679,11 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Universe-6",
+      "T.O.P",
+      "Fusions"
+    ]
   },
   {
     "name": "Kid Buu",
@@ -5166,14 +5694,14 @@
         "name": "Instant Transmission",
         "value": 2,
         "description": [
-          "Instantly move behind opponent."
+          "Teleport behind opponent"
         ]
       },
       {
         "name": "Sleep",
         "value": 4,
         "description": [
-          "Sleep for 3 sec to recover all ki gauges and 30% of max HP."
+          "Sleep (3s) to recover all ki gauges and 30% of max HP"
         ]
       },
       {
@@ -5186,21 +5714,25 @@
         ]
       },
       {
-        "name": "Mystic Combination",
-        "value": "?",
+        "name": "Mystic Breath",
+        "value": 1,
         "description": [
-          "Coming Soon."
+          "Unblockable",
+          "Deals min DMG",
+          "Short Range"
         ]
       },
       {
         "name": "Planet Burst",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Buu-Saga"
+    ]
   },
   {
     "name": "King Cold",
@@ -5211,39 +5743,47 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "King's Dignity",
-        "value": "?",
+        "value": 3,
         "description": [
-          "Coming Soon."
+          "+Melee ATK",
+          "+Ki blast ATK",
+          "+Ki recovery SPEED",
+          "(15s)"
         ]
       },
       {
         "name": "Full-Power Death Beam",
-        "value": "?",
+        "value": 2,
         "description": [
-          "Coming Soon."
+          "Beam"
         ]
       },
       {
         "name": "Super Explosive Wave",
         "value": 4,
         "description": [
-          "Explosive Wave"
+          "Explosion"
         ]
       },
       {
         "name": "Power of the Cold Clan",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "In Sparking Mode",
+          "Rush",
+          "Played after a hit",
+          "Spead Impact"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Freiza-Family"
+    ]
   },
   {
     "name": "Krillin",
@@ -5254,14 +5794,14 @@
         "name": "Solar Flare",
         "value": 2,
         "description": [
-          "Unguardable atk. Renders opponent defenseless for 5 sec."
+          "Blinds opponent"
         ]
       },
       {
         "name": "Afterimage Strike",
         "value": 3,
         "description": [
-          "Auto dodge all atks except for Ki Blasts for 15 sec."
+          "Dodge all ATKS except Ki blasts (15s)"
         ]
       },
       {
@@ -5291,7 +5831,9 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Lord Slug",
@@ -5302,39 +5844,46 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "High-Tension",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, and ki recovery spd increase for 15 sec."
+          "+Melee ATK",
+          "+Ki blast ATK",
+          "+Ki recovery SPEED",
+          "(15s)"
         ]
       },
       {
         "name": "Finger Beam",
-        "value": "?",
+        "value": 2,
         "description": [
-          "Coming Soon."
+          "Beam"
         ]
       },
       {
         "name": "Darkness Eye Beam",
-        "value": "?",
+        "value": 3,
         "description": [
-          "Coming Soon."
+          "Wave around enemy"
         ]
       },
       {
         "name": "Power of Darkness",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "In Sparking Mode",
+          "Rush"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Movies",
+      "Giants"
+    ]
   },
   {
     "name": "Lord Slug (Giant)",
@@ -5345,21 +5894,24 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Pump Up",
         "value": 2,
         "description": [
-          "Melee atk power and Ki Blast atk power greatly increase for 15 sec. Move spd greatly decreases."
+          "++Melee ATK",
+          "++Ki Blast ATK",
+          "--Move SPEED",
+          "(15s)"
         ]
       },
       {
         "name": "Darkness Eye Beam",
-        "value": "?",
+        "value": 3,
         "description": [
-          "Coming Soon."
+          "Wave on enemy"
         ]
       },
       {
@@ -5373,11 +5925,15 @@
         "name": "Darkness Blaster",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "In Sparking Mode",
+          "Beam"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Movies",
+      "Giants"
+    ]
   },
   {
     "name": "Majin Buu",
@@ -5388,14 +5944,14 @@
         "name": "Paralyze Beam",
         "value": 2,
         "description": [
-          "Unguardable atk. Render opponent paralyzed for 3 sec."
+          "Unguardable ATK Render opponent paralyzed (3s)"
         ]
       },
       {
         "name": "Sleep",
         "value": 4,
         "description": [
-          "Sleep for 3 sec to recover all ki gauges and 30% of max HP."
+          "Sleep (3s) to recover all ki gauges and 30% of max HP"
         ]
       },
       {
@@ -5426,7 +5982,9 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Buu-Saga"
+    ]
   },
   {
     "name": "Majin Buu (Evil)",
@@ -5435,16 +5993,19 @@
     "abilities": [
       {
         "name": "Paralyze Beam",
-        "value": "?",
+        "value": 2,
         "description": [
-          "Coming Soon."
+          "Unblockable",
+          "Paralyze opponent (3s)"
         ]
       },
       {
         "name": "Mystic Breath",
-        "value": "?",
+        "value": 1,
         "description": [
-          "Coming Soon."
+          "Unblockable",
+          "Deals min DMG",
+          "Short Range"
         ]
       },
       {
@@ -5458,20 +6019,24 @@
       },
       {
         "name": "Flame Shower Breath",
-        "value": "?",
+        "value": 3,
         "description": [
-          "Coming Soon."
+          "Unblockable",
+          "Wave"
         ]
       },
       {
         "name": "Guilty Flash",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "In Sparking Mode",
+          "Rush"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Buu-Saga"
+    ]
   },
   {
     "name": "Majin Vegeta",
@@ -5482,14 +6047,14 @@
         "name": "Prince's Pride",
         "value": 2,
         "description": [
-          "Ki charging spd and resistance to being stunned by atks increases for 15 sec."
+          "Ki charging SPEED and resistance to being stunned by ATKS increases (15s)"
         ]
       },
       {
         "name": "Majin's Awakening",
         "value": 3,
         "description": [
-          "Enter Sparking Mode; Blast power increases for 15 sec."
+          "Instant Sparking Mode; Blast power increases (15s)"
         ]
       },
       {
@@ -5520,7 +6085,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Z-Fighters",
+      "Buu-Saga"
+    ]
   },
   {
     "name": "Majuub (GT)",
@@ -5531,14 +6099,14 @@
         "name": "Paralyze Beam",
         "value": 2,
         "description": [
-          "Unguardable atk. Renders opponent paralyzed for 3 sec."
+          "Unguardable ATK Renders opponent paralyzed (3s)"
         ]
       },
       {
         "name": "Mystic Breath",
         "value": 1,
         "description": [
-          "Unguardable atk. Short range only."
+          "Unguardable ATK Short range only"
         ]
       },
       {
@@ -5564,11 +6132,14 @@
           "Rush",
           "In Sparking Mode",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "GT",
+      "Buu-Saga"
+    ]
   },
   {
     "name": "Master Roshi",
@@ -5579,14 +6150,14 @@
         "name": "Afterimage Strike",
         "value": 3,
         "description": [
-          "Auto dodge all atks of any kind, except for Ki Blasts for 15 sec."
+          "Dodge all ATKS except Ki blasts (15s)"
         ]
       },
       {
         "name": "False Courage",
-        "value": 1,
+        "value": 2,
         "description": [
-          "Def and resistance to being stunned by atks increases for 10 sec."
+          "+DEF and ARMOR to being stunned by ATKS (10s)"
         ]
       },
       {
@@ -5610,7 +6181,7 @@
         "name": "Evil Containment Wave",
         "value": 5,
         "description": [
-          "Shortrange energy atk",
+          "Shortrange energy ATK",
           "In Sparking Mode",
           "Unguardable",
           "Played after a hit",
@@ -5619,7 +6190,9 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Master Roshi (Max)",
@@ -5628,16 +6201,19 @@
     "abilities": [
       {
         "name": "False Courage",
-        "value": 1,
+        "value": 2,
         "description": [
-          "Def and resistance to being stunned by atks increases for 10 sec."
+          "+DEF and ARMOR to being stunned by ATKS (10s)"
         ]
       },
       {
         "name": "Pump Up",
         "value": 2,
         "description": [
-          "Melee atk power and Ki Blast atk power greatly increase for 15 sec. Move spd greatly decreases."
+          "++Melee ATK",
+          "++Ki Blast ATK",
+          "--Move SPEED",
+          "(15s)"
         ]
       },
       {
@@ -5654,7 +6230,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -5667,7 +6243,9 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Mecha Frieza",
@@ -5678,39 +6256,48 @@
         "name": "Psychokinesis",
         "value": 2,
         "description": [
-          "Unguardable atk. Render opponent paralyzed for 5 sec."
+          "Unguardable ATK Render opponent paralyzed (5s)"
         ]
       },
       {
         "name": "Finish Sign",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, and Blast power increase for 15 sec."
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "+Blast ATK",
+          "(15s)"
         ]
       },
       {
         "name": "Death Beam",
-        "value": "?",
+        "value": 2,
         "description": [
-          "Coming Soon."
+          "Beam"
         ]
       },
       {
         "name": "Fissure Slash",
-        "value": "?",
+        "value": 3,
         "description": [
-          "Coming Soon."
+          "Unblockable",
+          "Projectile"
         ]
       },
       {
         "name": "Supernova",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "Projectile",
+          "Blast Impact",
+          "Played after a hit"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Freiza-Family",
+      "Namek-Saga"
+    ]
   },
   {
     "name": "Metal Cooler",
@@ -5721,39 +6308,46 @@
         "name": "Instant Transmission",
         "value": 2,
         "description": [
-          "Instantly move behind opponent."
+          "Teleport behind opponent"
         ]
       },
       {
         "name": "Regeneration",
-        "value": "?",
+        "value": 4,
         "description": [
-          "Coming Soon."
+          "HP recovers by 40% of max"
         ]
       },
       {
         "name": "Lock-On Buster",
-        "value": "?",
+        "value": 4,
         "description": [
-          "Coming Soon."
+          "Unblockable",
+          "Projectile"
         ]
       },
       {
         "name": "Finger Blitz Barrage",
-        "value": "?",
+        "value": 2,
         "description": [
-          "Coming Soon."
+          "Projectiles"
         ]
       },
       {
         "name": "Supernova",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "In Sparking Mode",
+          "Projectile",
+          "Blast Impact",
+          "Played after a hit"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Movies",
+      "Freiza-Family"
+    ]
   },
   {
     "name": "Mr. Satan",
@@ -5762,16 +6356,21 @@
     "abilities": [
       {
         "name": "False Courage",
-        "value": 1,
+        "value": 2,
         "description": [
-          "Def and resistance to being stunned by atks increases for 10 sec."
+          "+DEF and ARMOR to being stunned by ATKS (10s)"
         ]
       },
       {
         "name": "Royal Raiment",
         "value": 3,
         "description": [
-          "Melee atk power, Ki Blast atk power, defense, Blast power, and ki recovery speed increase for 15 sec."
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "+DEF",
+          "+Blast ATK",
+          "+Ki Recovery SPEED",
+          "(15s)"
         ]
       },
       {
@@ -5780,7 +6379,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -5799,11 +6398,13 @@
           "Rush",
           "In Sparking Mode",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      ""
+    ]
   },
   {
     "name": "Nail",
@@ -5814,14 +6415,14 @@
         "name": "Buying Time",
         "value": "?",
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       },
       {
         "name": "Full Power",
         "value": 3,
         "description": [
-          "Enter Sparking Mode."
+          "Instant Sparking Mode"
         ]
       },
       {
@@ -5836,18 +6437,21 @@
         "name": "Super Destructive Wave",
         "value": "?",
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       },
       {
         "name": "Mystic Flasher",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Z-Fighters",
+      "Namek-Saga"
+    ]
   },
   {
     "name": "Nappa",
@@ -5858,21 +6462,21 @@
         "name": "Saiyan Spirit",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, Blast power, and Smash Ki Blast spd increase for 15 sec."
+          "Melee ATK power, Ki blast ATK power, Blast power, and Smash Ki Blast SPEED increase (15s)"
         ]
       },
       {
         "name": "Pump Up",
         "value": 2,
         "description": [
-          "Melee atk power and Ki Blast atk power greatly increase for 10 sec. Ki recovers more slowly."
+          "Melee ATK power and Ki Blast ATK power greatly increase (10s) Ki recovers more slowly"
         ]
       },
       {
         "name": "Volcano Explosion",
         "value": 4,
         "description": [
-          "Attack opponent location"
+          "ATK opponent location"
         ]
       },
       {
@@ -5893,7 +6497,9 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Saiyan-Saga"
+    ]
   },
   {
     "name": "Omega Shenron (GT)",
@@ -5904,39 +6510,41 @@
         "name": "Wild Sense",
         "value": 2,
         "description": [
-          "Auto dodge a single melee atk from opponent and counteratk."
+          "Auto dodge a single melee ATK from opponent and counter ATK"
         ]
       },
       {
         "name": "Power Up to the Very Limit",
         "value": 3,
         "description": [
-          "Enter Sparking Mode."
+          "Instant Sparking Mode"
         ]
       },
       {
         "name": "Gigantic Blaze",
         "value": "?",
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       },
       {
         "name": "Dragon Thunder",
         "value": "?",
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       },
       {
         "name": "Minus Energy Power Ball",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "GT"
+    ]
   },
   {
     "name": "Pan (GT)",
@@ -5947,14 +6555,18 @@
         "name": "Afterimage Strike",
         "value": 3,
         "description": [
-          "Auto dodge all atks except for Ki Blasts for 15 sec."
+          "Dodge all ATKS except Ki blasts (15s)"
         ]
       },
       {
         "name": "Saiyan Spirit",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, Blast power, and dmg inflicted from consecutive hits (such as combos) increase for 15 sec."
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "+Blast ATK",
+          "+Combo DMG",
+          "(15s)"
         ]
       },
       {
@@ -5970,18 +6582,20 @@
         "name": "Giru Missile",
         "value": "?",
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       },
       {
         "name": "Maiden's Rage",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "GT"
+    ]
   },
   {
     "name": "Perfect Cell",
@@ -5992,14 +6606,14 @@
         "name": "Instant Transmission",
         "value": 2,
         "description": [
-          "Instantly move behind opponent."
+          "Teleport behind opponent"
         ]
       },
       {
         "name": "Wild Sense",
         "value": 2,
         "description": [
-          "Auto dodge a single melee atk from opponent and counteratk."
+          "Auto dodge a single melee ATK from opponent and counter ATK"
         ]
       },
       {
@@ -6015,7 +6629,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -6029,7 +6643,9 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      ""
+    ]
   },
   {
     "name": "Piccolo",
@@ -6040,21 +6656,21 @@
         "name": "Paralyze Beam",
         "value": 2,
         "description": [
-          "Unguardable atk. Renders opponent paralyzed for 3 sec."
+          "Unguardable ATK Renders opponent paralyzed (3s)"
         ]
       },
       {
         "name": "All Out",
         "value": 3,
         "description": [
-          "Enter Sparking Mode."
+          "Instant Sparking Mode"
         ]
       },
       {
         "name": "Explosive Demon Wave",
         "value": 2,
         "description": [
-          "Shortrange energy atk"
+          "Shortrange energy ATK"
         ]
       },
       {
@@ -6063,7 +6679,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -6075,7 +6691,9 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Piccolo (Fused)",
@@ -6086,14 +6704,14 @@
         "name": "Wild Sense",
         "value": 2,
         "description": [
-          "Auto dodge a single melee atk from opponent and counteratk."
+          "Auto dodge a single melee ATK from opponent and counter ATK"
         ]
       },
       {
         "name": "False Courage",
-        "value": 1,
+        "value": 2,
         "description": [
-          "Def and resistance to being stunned by atks increases for 10 sec."
+          "+DEF and ARMOR to being stunned by ATKS (10s)"
         ]
       },
       {
@@ -6108,18 +6726,20 @@
         "name": "Light Grenade",
         "value": "?",
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       },
       {
         "name": "Hellzone Grenade",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Raditz",
@@ -6130,39 +6750,45 @@
         "name": "Saiyan Spirit",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, Blast power, and dmg inflicted from consecutive hits (such as combos) increase for 15 sec."
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "+Blast ATK",
+          "+Combo DMG",
+          "(15s)"
         ]
       },
       {
         "name": "Full Power",
         "value": 3,
         "description": [
-          "Enter Sparking Mode."
+          "Instant Sparking Mode"
         ]
       },
       {
         "name": "Energy Crash",
         "value": "?",
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       },
       {
         "name": "Sonic Assault",
         "value": "?",
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       },
       {
         "name": "Begone!",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Saiyan-Saga"
+    ]
   },
   {
     "name": "Recoome",
@@ -6171,41 +6797,43 @@
     "abilities": [
       {
         "name": "False Courage",
-        "value": 1,
+        "value": 2,
         "description": [
-          "Def and resistance to being stunned by atks increases for 10 sec."
+          "+DEF and ARMOR to being stunned by ATKS (10s)"
         ]
       },
       {
         "name": "SP Fighting Pose 1",
         "value": "?",
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       },
       {
         "name": "Recoome Eraser Gun",
         "value": "?",
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       },
       {
         "name": "Recoome Grenade Bomber",
         "value": "?",
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       },
       {
         "name": "Recoome Fighting Bomber",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Namek-Saga"
+    ]
   },
   {
     "name": "Ribrianne",
@@ -6216,14 +6844,14 @@
         "name": "Light of Love",
         "value": 2,
         "description": [
-          "Unguardable atk. Renders opponent paralyzed for 4 sec."
+          "Unguardable ATK Renders opponent paralyzed (4s)"
         ]
       },
       {
         "name": "Maiden's Fury",
         "value": 3,
         "description": [
-          "Enter Sparking Mode."
+          "Instant Sparking Mode"
         ]
       },
       {
@@ -6232,7 +6860,7 @@
         "description": [
           "Fire",
           "Blast Impact",
-          "."
+          ""
         ]
       },
       {
@@ -6251,11 +6879,13 @@
           "Rush",
           "In Sparking Mode",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "T.O.P"
+    ]
   },
   {
     "name": "Roasie",
@@ -6266,21 +6896,21 @@
         "name": "Full-Power Charge",
         "value": 2,
         "description": [
-          "Ki gauge fully recovers."
+          "Ki gauge fully recovers"
         ]
       },
       {
         "name": "Maiden's Fury",
         "value": 3,
         "description": [
-          "Enter Sparking Mode."
+          "Instant Sparking Mode"
         ]
       },
       {
         "name": "Yatchaina Fist",
         "value": "?",
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       },
       {
@@ -6294,11 +6924,13 @@
         "name": "Love Symphony",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      ""
+    ]
   },
   {
     "name": "Saibaman",
@@ -6309,14 +6941,14 @@
         "name": "Acid",
         "value": "?",
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       },
       {
         "name": "Afterimage",
         "value": 2,
         "description": [
-          "Auto dodge a single atk of any kind, except for Ki Blasts."
+          "Dodge 1 ATK except Ki blasts"
         ]
       },
       {
@@ -6333,18 +6965,20 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
         "name": "Saibaman Bomb",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Saiyan-Saga"
+    ]
   },
   {
     "name": "Spopovich",
@@ -6355,14 +6989,17 @@
         "name": "A Servant's Latent Power",
         "value": 1,
         "description": [
-          "Melee atk power and Ki blast atk power greatly increase for 15 sec. Ki recovers more slowly."
+          "++Melee ATK",
+          "++Ki Blast ATK",
+          "-Ki Recovery SPEED",
+          "(15s)"
         ]
       },
       {
         "name": "Berserker",
         "value": 2,
         "description": [
-          "Def greatly increases for 15 sec."
+          "DEF greatly increases (15s)"
         ]
       },
       {
@@ -6393,7 +7030,9 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      ""
+    ]
   },
   {
     "name": "Super Baby (GT) SSJ1",
@@ -6404,14 +7043,17 @@
         "name": "Afterimage",
         "value": 2,
         "description": [
-          "Auto dodge a single atk of any kind, except for Ki Blasts."
+          "Dodge 1 ATK except Ki blasts"
         ]
       },
       {
         "name": "High-Tension",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, and ki recovery spd increase for 15 sec."
+          "+Melee ATK",
+          "+Ki blast ATK",
+          "+Ki recovery SPEED",
+          "(15s)"
         ]
       },
       {
@@ -6428,7 +7070,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speeed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -6442,7 +7084,9 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "GT"
+    ]
   },
   {
     "name": "Super Baby (GT) SSJ2",
@@ -6453,14 +7097,14 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Full Power",
         "value": 3,
         "description": [
-          "Enter Sparking Mode."
+          "Instant Sparking Mode"
         ]
       },
       {
@@ -6490,7 +7134,9 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "GT"
+    ]
   },
   {
     "name": "Super Buu",
@@ -6501,14 +7147,14 @@
         "name": "Vice Shout",
         "value": 2,
         "description": [
-          "Unguardable atk. Renders opponent paralyzed for 3 sec."
+          "Unguardable ATK Renders opponent paralyzed (3s)"
         ]
       },
       {
         "name": "Regeneration",
         "value": 4,
         "description": [
-          "HP recovers by 40% of max."
+          "HP recovers by 40% of max"
         ]
       },
       {
@@ -6539,7 +7185,9 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Buu-Saga"
+    ]
   },
   {
     "name": "Super Buuhan",
@@ -6550,14 +7198,17 @@
         "name": "Afterimage",
         "value": 2,
         "description": [
-          "Auto dodge a single atk of any kind, except for Ki Blasts."
+          "Dodge 1 ATK except Ki blasts"
         ]
       },
       {
         "name": "High-Tension",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, and Blast power increase for 15 sec. Ki recovers by two gauges."
+          "+Melee ATK",
+          "+Ki blast ATK",
+          "+Ki recovery SPEED",
+          "(15s)"
         ]
       },
       {
@@ -6589,7 +7240,9 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Buu-Saga"
+    ]
   },
   {
     "name": "Super Buutenks",
@@ -6600,14 +7253,14 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Regeneration",
         "value": 4,
         "description": [
-          "HP recovers by 40% of max."
+          "HP recovers by 40% of max"
         ]
       },
       {
@@ -6636,7 +7289,9 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Buu-Saga"
+    ]
   },
   {
     "name": "Super Garlic Jr.",
@@ -6647,39 +7302,41 @@
         "name": "Sealing Paralyze Beam",
         "value": "?",
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       },
       {
         "name": "Makyo Star",
         "value": "?",
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       },
       {
         "name": "Death Impact",
         "value": "?",
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       },
       {
         "name": "Darkness Illusion",
         "value": "?",
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       },
       {
         "name": "Dead Zone",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Movies"
+    ]
   },
   {
     "name": "Super Janemba",
@@ -6690,39 +7347,42 @@
         "name": "Mystic Breath",
         "value": "?",
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       },
       {
         "name": "Dimension Shift",
         "value": "?",
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       },
       {
         "name": "Evil Cannon",
         "value": "?",
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       },
       {
         "name": "Lightning Shower Rain",
         "value": "?",
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       },
       {
         "name": "Dimsension Sword Attack",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Movies",
+      "Giants"
+    ]
   },
   {
     "name": "Super Trunks",
@@ -6733,14 +7393,14 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Inexperienced Power Up",
         "value": 3,
         "description": [
-          "Enter Sparking Mode; melee attack power and Ki Blast atk power increase for 15 sec."
+          "Instant Sparking Mode; melee ATK power and Ki Blast ATK power increase (15s)"
         ]
       },
       {
@@ -6769,7 +7429,9 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Super Vegeta",
@@ -6780,14 +7442,14 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "I Am Super Vegeta",
         "value": 3,
         "description": [
-          "Enter Sparking Mode; Blast power increase for 15 sec."
+          "Instant Sparking Mode; Blast power increase (15s)"
         ]
       },
       {
@@ -6804,7 +7466,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -6818,7 +7480,9 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Super Vegito",
@@ -6829,14 +7493,17 @@
         "name": "Afterimage Strike",
         "value": 3,
         "description": [
-          "Auto dodge all atks except for Ki Blasts for 15 sec."
+          "Dodge all ATKS except Ki blasts (15s)"
         ]
       },
       {
         "name": "Finish Sign",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, and Blast power increase for 15 sec."
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "+Blast ATK",
+          "(15s)"
         ]
       },
       {
@@ -6862,11 +7529,13 @@
           "Rush",
           "In Sparking Mode",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Fusions"
+    ]
   },
   {
     "name": "Super Zarbon",
@@ -6875,44 +7544,49 @@
     "abilities": [
       {
         "name": "False Courage",
-        "value": 1,
+        "value": 2,
         "description": [
-          "Def and resistance to being stunned by atks increases for 10 sec."
+          "+DEF and ARMOR to being stunned by ATKS (10s)"
         ]
       },
       {
         "name": "High-Tension",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, and ki recovery spd increase for 15 sec."
+          "+Melee ATK",
+          "+Ki blast ATK",
+          "+Ki recovery SPEED",
+          "(15s)"
         ]
       },
       {
         "name": "Elegant Blaster",
         "value": "?",
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       },
       {
         "name": "Wild Pressure",
         "value": "?",
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       },
       {
         "name": "Monster Crusher",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Namek-Saga"
+    ]
   },
   {
-    "name": "Syn Shenron",
+    "name": "Syn Shenron (GT)",
     "value": -7,
     "img": "https://media.graphassets.com/1hZK8lc5RdKpzyrbZquV",
     "abilities": [
@@ -6920,39 +7594,41 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Mystic Breath",
         "value": "?",
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       },
       {
         "name": "Trap Shooter",
         "value": "?",
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       },
       {
         "name": "Blazing Storm",
         "value": "?",
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       },
       {
         "name": "Gigantic Blaze",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "GT"
+    ]
   },
   {
     "name": "Tapion",
@@ -6963,39 +7639,41 @@
         "name": "Hero's Flute",
         "value": "?",
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       },
       {
         "name": "Afterimage",
         "value": 2,
         "description": [
-          "Auto dodge a single atk of any kind, except for Ki Blasts."
+          "Dodge 1 ATK except Ki blasts"
         ]
       },
       {
         "name": "Brave Cannon",
         "value": "?",
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       },
       {
         "name": "Brave Slash",
         "value": "?",
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       },
       {
         "name": "Brave Sword Attack",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      ""
+    ]
   },
   {
     "name": "Tien",
@@ -7006,14 +7684,14 @@
         "name": "Solar Flare",
         "value": 2,
         "description": [
-          "Unguardable atk. Renders opponent defenseless for 5 sec."
+          "Blinds opponent"
         ]
       },
       {
         "name": "Wild Sense",
         "value": 2,
         "description": [
-          "Auto dodge a single melee atk from opponent and counteratk."
+          "Auto dodge a single melee ATK from opponent and counter ATK"
         ]
       },
       {
@@ -7041,7 +7719,9 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Toppo",
@@ -7052,14 +7732,14 @@
         "name": "Justice!",
         "value": 3,
         "description": [
-          "Ki blast atk power, ki recovery spd, and ki charging spd increase for 15 sec."
+          "Ki blast ATK power, ki recovery SPEED, and ki charging SPEED increase (15s)"
         ]
       },
       {
         "name": "Pride Trooper Pose 1",
         "value": 3,
         "description": [
-          "Enter Sparking Mode; Blast power and ki recovery spd increase for 15 sec."
+          "Instant Sparking Mode; Blast power and ki recovery SPEED increase (15s)"
         ]
       },
       {
@@ -7075,7 +7755,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -7089,7 +7769,9 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "T.O.P"
+    ]
   },
   {
     "name": "Toppo (God)",
@@ -7100,14 +7782,17 @@
         "name": "Resolution",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, and Blast power increase for 15 sec."
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "+Blast ATK",
+          "(15s)"
         ]
       },
       {
         "name": "Hakai Aura",
         "value": 3,
         "description": [
-          "Character creates a barrier around themselves to defend against atks. Can be used while under atk by an opponent."
+          "Character creates a barrier around themselves to defend against ATKS Can be used while under ATK by an opponent"
         ]
       },
       {
@@ -7137,7 +7822,9 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "T.O.P"
+    ]
   },
   {
     "name": "Trunks (Future)",
@@ -7148,14 +7835,14 @@
         "name": "Solar Flare",
         "value": 2,
         "description": [
-          "Unguardable atk. Renders opponent defenseless for 5 sec."
+          "Blinds opponent"
         ]
       },
       {
         "name": "Wild Sense",
         "value": 2,
         "description": [
-          "Auto dodge a single melee atk from opponent and counteratk."
+          "Auto dodge a single melee ATK from opponent and counter ATK"
         ]
       },
       {
@@ -7187,7 +7874,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Half Saiyans",
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Trunks (Future) SSJ1",
@@ -7198,14 +7888,14 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Power Up to the Very Limit",
         "value": 3,
         "description": [
-          "Enter Sparking Mode; melee atk power, Ki Blast atk power, Blast power, and def, increase for 15 sec."
+          "Instant Sparking Mode; melee ATK power, Ki Blast ATK power, Blast power, and DEF, increase (15s)"
         ]
       },
       {
@@ -7231,11 +7921,14 @@
           "Rush",
           "In Sparking Mode",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Half Saiyans",
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Trunks (Kid)",
@@ -7246,14 +7939,17 @@
         "name": "Afterimage",
         "value": 2,
         "description": [
-          "Auto dodge a single atk of any kind, except for Ki Blasts."
+          "Dodge 1 ATK except Ki blasts"
         ]
       },
       {
         "name": "Finish Sign",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, and Blast power increase for 15 sec."
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "+Blast ATK",
+          "(15s)"
         ]
       },
       {
@@ -7270,7 +7966,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -7283,7 +7979,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Half Saiyans",
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Trunks (Kid) SSJ1",
@@ -7294,14 +7993,17 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Super Unyielding Spirit",
         "value": 3,
         "description": [
-          "Enter Sparking Mode; melee atk power and Ki Blast atk power increase for 15 sec."
+          "Instant Sparking Mode",
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "(15s)"
         ]
       },
       {
@@ -7318,7 +8020,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -7332,7 +8034,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Half Saiyans",
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Trunks (Melee)",
@@ -7343,14 +8048,14 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Wild Sense",
         "value": 2,
         "description": [
-          "Auto dodge a single melee atk from opponent and counteratk."
+          "Auto dodge a single melee ATK from opponent and counter ATK"
         ]
       },
       {
@@ -7367,7 +8072,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -7380,7 +8085,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Half Saiyans",
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Trunks (Melee) SSJ1",
@@ -7391,14 +8099,17 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Finish Sign",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, and Blast power increase for 15 sec."
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "+Blast ATK",
+          "(15s)"
         ]
       },
       {
@@ -7415,7 +8126,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -7425,11 +8136,14 @@
           "Rush",
           "In Sparking Mode",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Half Saiyans",
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Trunks (Sword)",
@@ -7440,14 +8154,14 @@
         "name": "Afterimage",
         "value": 2,
         "description": [
-          "Auto dodge a single atk of any kind, except for Ki Blasts."
+          "Dodge 1 ATK except Ki blasts"
         ]
       },
       {
         "name": "Power Up to the Very Limit",
         "value": 3,
         "description": [
-          "Enter Sparking Mode; melee atk power, Ki Blast atk power, Blast power, and def increase for 15 sec."
+          "Instant Sparking Mode; melee ATK power, Ki Blast ATK power, Blast power, and DEF increase (15s)"
         ]
       },
       {
@@ -7476,7 +8190,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Half Saiyans",
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Trunks (Sword) SSJ1",
@@ -7487,14 +8204,14 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Burning Heart",
         "value": 3,
         "description": [
-          "Enter Sparking Mode; Blast power increases for 15 sec."
+          "Instant Sparking Mode; Blast power increases (15s)"
         ]
       },
       {
@@ -7519,11 +8236,14 @@
           "Rush",
           "In Sparking Mode",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Half Saiyans",
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Turles",
@@ -7534,39 +8254,41 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Fruit of the Tree of Might",
         "value": "?",
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       },
       {
         "name": "Kill Driver",
         "value": "?",
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       },
       {
         "name": "Full-Power Energy Wave Combo",
         "value": "?",
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       },
       {
         "name": "Meteor Burst",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Movies"
+    ]
   },
   {
     "name": "Ultimate Gohan",
@@ -7577,14 +8299,14 @@
         "name": "Wild Sense",
         "value": 2,
         "description": [
-          "Auto dodge a single melee atk from opponent and counteratk."
+          "Auto dodge a single melee ATK from opponent and counter ATK"
         ]
       },
       {
         "name": "Power Up to the Very Limit",
         "value": 3,
         "description": [
-          "Enter Sparking Mode."
+          "Instant Sparking Mode"
         ]
       },
       {
@@ -7602,7 +8324,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -7612,11 +8334,13 @@
           "Rush",
           "In Sparking Mode",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Uub (GT)",
@@ -7627,14 +8351,14 @@
         "name": "Wild Sense",
         "value": 2,
         "description": [
-          "Auto dodge a single melee atk from opponent and counteratk."
+          "Auto dodge a single melee ATK from opponent and counter ATK"
         ]
       },
       {
         "name": "Power Up to the Very Limit",
         "value": 3,
         "description": [
-          "Enter Sparking Mode; def increases for 15 sec."
+          "Instant Sparking Mode; DEF increases (15s)"
         ]
       },
       {
@@ -7663,7 +8387,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "GT",
+      "Buu-Saga"
+    ]
   },
   {
     "name": "Vegeta (GT) SSJ4",
@@ -7674,14 +8401,17 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Finish Sign",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, and Blast power increase for 15 sec."
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "+Blast ATK",
+          "(15s)"
         ]
       },
       {
@@ -7698,7 +8428,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -7712,7 +8442,11 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Saiyans",
+      "Z-Fighters",
+      "GT"
+    ]
   },
   {
     "name": "Vegeta (Scouter)",
@@ -7723,14 +8457,18 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Saiyan Spirit",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, Smash Atk charge spd and Smash Ki Blast charging spd increase for 15 sec."
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "+Smash ATK charge SPEED",
+          "+Smash Ki Blast charging SPEED",
+          "(15s)"
         ]
       },
       {
@@ -7747,7 +8485,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -7757,11 +8495,15 @@
           "Rush",
           "In Sparking Mode",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Saiyans",
+      "Z-Fighters",
+      "Saiyan-Saga"
+    ]
   },
   {
     "name": "Vegeta (Super)",
@@ -7772,14 +8514,14 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "All Warmed Up",
         "value": 3,
         "description": [
-          "Enter Sparking Mode."
+          "Instant Sparking Mode"
         ]
       },
       {
@@ -7796,7 +8538,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -7809,7 +8551,11 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Saiyans",
+      "Z-Fighters",
+      "Super"
+    ]
   },
   {
     "name": "Vegeta (Super) SSJ1",
@@ -7820,14 +8566,18 @@
         "name": "Saiyan Spirit",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, Blast power, and dmg inflicted from consecutive hits (such as combos) increase for 15 sec."
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "+Blast ATK",
+          "+Combo DMG",
+          "(15s)"
         ]
       },
       {
         "name": "I'll Get You For This...",
         "value": 3,
         "description": [
-          "Enter Sparking Mode."
+          "Instant Sparking Mode"
         ]
       },
       {
@@ -7844,7 +8594,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -7854,11 +8604,15 @@
           "Rush",
           "In Sparking Mode",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Saiyans",
+      "Z-Fighters",
+      "Super"
+    ]
   },
   {
     "name": "Vegeta (Super) SSJB",
@@ -7869,14 +8623,14 @@
         "name": "I'm No Pushover",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, and ki recovery spd increase for 15 sec."
+          "Melee ATK power, Ki blast ATK power, and ki recovery SPEED increase (15s)"
         ]
       },
       {
         "name": "Limits?! I Break Them!",
         "value": 5,
         "description": [
-          "Melee atk power, Ki blast atk power, and Blast power increase during battle."
+          "Melee ATK power, Ki blast ATK power, and Blast power increase during battle"
         ]
       },
       {
@@ -7891,7 +8645,7 @@
         "name": "Gamma Burst Flash",
         "value": 2,
         "description": [
-          "Shortrange energy atk"
+          "Shortrange energy ATK"
         ]
       },
       {
@@ -7906,7 +8660,11 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Saiyans",
+      "Z-Fighters",
+      "Super"
+    ]
   },
   {
     "name": "Vegeta (Super) SSJG",
@@ -7917,14 +8675,18 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Saiyan Spirit",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, Blast power, and dmg inflicted from consecutive hits (such as combos) increase for 15 sec."
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "+Blast ATK",
+          "+Combo DMG",
+          "(15s)"
         ]
       },
       {
@@ -7941,7 +8703,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -7955,7 +8717,11 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Saiyans",
+      "Z-Fighters",
+      "Super"
+    ]
   },
   {
     "name": "Vegeta (Z-Early)",
@@ -7966,14 +8732,14 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Full Power",
         "value": 3,
         "description": [
-          "Enter Sparking Mode."
+          "Instant Sparking Mode"
         ]
       },
       {
@@ -8001,7 +8767,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Saiyans",
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Vegeta (Z-Early) SSJ1",
@@ -8012,14 +8781,14 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Awakened By Anger",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, and Blast power, increase for 15 sec."
+          "Melee, Ki blast, blast power increase (15s)"
         ]
       },
       {
@@ -8036,7 +8805,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -8050,7 +8819,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Saiyans",
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Vegeta (Z-End)",
@@ -8061,14 +8833,14 @@
         "name": "Afterimage",
         "value": 2,
         "description": [
-          "Auto dodge a single atk of any kind, except for Ki Blasts."
+          "Dodge 1 ATK except Ki blasts"
         ]
       },
       {
         "name": "Saiyan Spirit",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, Blast power, increase for 15 sec."
+          "Melee, Ki blast, blast power increase (15s)"
         ]
       },
       {
@@ -8077,7 +8849,7 @@
         "description": [
           "Rush",
           "Played after hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -8098,7 +8870,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Saiyans",
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Vegeta (Z-End) SSJ1",
@@ -8109,14 +8884,14 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Saiyan Spirit",
         "value": 2,
         "description": [
-          "Melee atk power, Ki blast atk power, Blast power increase for 15 sec."
+          "Melee, Ki blast, blast power increase (15s)"
         ]
       },
       {
@@ -8144,7 +8919,10 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Saiyans",
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Vegeta (Z-End) SSJ2",
@@ -8155,14 +8933,14 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Wild Sense",
         "value": 2,
         "description": [
-          "Auto dodge a single melee atk from opponent and counteratk."
+          "Auto dodge a single melee ATK from opponent and counter ATK"
         ]
       },
       {
@@ -8187,11 +8965,14 @@
           "Rush",
           "In Sparking Mode",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Saiyans",
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Vegito",
@@ -8202,14 +8983,17 @@
         "name": "Explosive Wave",
         "value": 2,
         "description": [
-          "Creates a ki explosion, blowing away opponents. Can be used while under atk by an opponent."
+          "Creates a ki explosion, blowing away opponents Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "High-Tension",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, and ki recovery spd increase for 15 sec."
+          "+Melee ATK",
+          "+Ki blast ATK",
+          "+Ki recovery SPEED",
+          "(15s)"
         ]
       },
       {
@@ -8239,7 +9023,9 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Fusions"
+    ]
   },
   {
     "name": "Vegito SSJB",
@@ -8250,14 +9036,14 @@
         "name": "Settling the Score",
         "value": 3,
         "description": [
-          "Melee atk power, Ki blast atk power, and Blast power increase for 15 sec."
+          "Melee, Ki blast, blast power increase (15s)"
         ]
       },
       {
         "name": "Full-Power Charge",
         "value": 2,
         "description": [
-          "Ki gauge fully recovers."
+          "Ki gauge fully recovers"
         ]
       },
       {
@@ -8275,7 +9061,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -8289,7 +9075,9 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Fusions"
+    ]
   },
   {
     "name": "Videl",
@@ -8300,39 +9088,44 @@
         "name": "Afterimage Strike",
         "value": 3,
         "description": [
-          "Auto dodge all atks except for Ki Blasts for 15 sec."
+          "Dodge all ATKS except Ki blasts (15s)"
         ]
       },
       {
         "name": "Super Unyielding Spirit",
         "value": 3,
         "description": [
-          "Enter Sparking Mode; melee atk power and Ki Blast atk power increase for 15 sec."
+          "Instant Sparking Mode",
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "(15s)"
         ]
       },
       {
         "name": "Videl Kick",
         "value": "?",
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       },
       {
         "name": "Desperado Rush",
         "value": "?",
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       },
       {
         "name": "Videl Rush",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      ""
+    ]
   },
   {
     "name": "Whis",
@@ -8343,14 +9136,14 @@
         "name": "Barrier",
         "value": 3,
         "description": [
-          "Character creates a barrier around themselves to defend against atks. Can be used while under atk by an opponent."
+          "Character creates a barrier around themselves to defend against ATKS Can be used while under ATK by an opponent"
         ]
       },
       {
         "name": "Snack Time",
         "value": 4,
         "description": [
-          "HP recovery by 20% of max."
+          "HP recovery by 20% of max"
         ]
       },
       {
@@ -8364,7 +9157,7 @@
         "name": "Symphonic Destruction",
         "value": 2,
         "description": [
-          "Shortrange energy atk"
+          "Shortrange energy ATK"
         ]
       },
       {
@@ -8374,11 +9167,13 @@
           "Rush",
           "In Sparking Mode",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Gods&Angels"
+    ]
   },
   {
     "name": "Yajirobe",
@@ -8389,14 +9184,17 @@
         "name": "Super Unyielding Spirit",
         "value": 3,
         "description": [
-          "Enter Sparking Mode; melee atk power and Ki Blast atk power increase for 15 sec."
+          "Instant Sparking Mode",
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "(15s)"
         ]
       },
       {
         "name": "Senzu Beans",
         "value": 5,
         "description": [
-          "HP fully recovers."
+          "HP fully recovers"
         ]
       },
       {
@@ -8405,7 +9203,7 @@
         "description": [
           "Rush",
           "Unguardable",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -8414,7 +9212,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -8424,11 +9222,13 @@
           "Rush",
           "In Sparking Mode",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Yamcha",
@@ -8439,14 +9239,20 @@
         "name": "Afterimage",
         "value": 2,
         "description": [
-          "Auto dodge a single atk of any kind, except for Ki Blasts."
+          "Dodge 1 ATK except Ki blasts"
         ]
       },
       {
         "name": "Power Up to the Very Limit",
         "value": 3,
         "description": [
-          "Enter Sparking Mode; melee atk power, Ki Blast atk power, Blast power, def, and move spd increase for 15 sec."
+          "Instant Sparking Mode",
+          "+Melee ATK",
+          "+Ki Blast ATK",
+          "+Blast ATK",
+          "+DEF",
+          "+Move SPEED",
+          "(15s)"
         ]
       },
       {
@@ -8464,7 +9270,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -8477,7 +9283,9 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Z-Fighters"
+    ]
   },
   {
     "name": "Zamasu",
@@ -8488,14 +9296,14 @@
         "name": "Immortal Body",
         "value": 4,
         "description": [
-          "HP recovers by 20% of max."
+          "HP recovers by 20% of max"
         ]
       },
       {
         "name": "Afterimage Strike",
         "value": 3,
         "description": [
-          "Auto dodge all atks except for Ki Blasts for 15 sec."
+          "Dodge all ATKS except Ki blasts (15s)"
         ]
       },
       {
@@ -8511,7 +9319,7 @@
         "description": [
           "Rush",
           "Played after a hit",
-          "Speed Impact"
+          "SPEED Impact"
         ]
       },
       {
@@ -8525,7 +9333,9 @@
         ]
       }
     ],
-    "category": ""
+    "category": [
+      ""
+    ]
   },
   {
     "name": "Zarbon",
@@ -8536,38 +9346,40 @@
         "name": "Wild Sense",
         "value": 2,
         "description": [
-          "Auto dodge a single melee atk from opponent and counteratk."
+          "Auto dodge a single melee ATK from opponent and counter ATK"
         ]
       },
       {
         "name": "Full Power",
         "value": 3,
         "description": [
-          "Enter Sparking Mode."
+          "Instant Sparking Mode"
         ]
       },
       {
         "name": "Shooting Star Arrow",
         "value": "?",
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       },
       {
         "name": "Bloody Dance",
         "value": "?",
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       },
       {
         "name": "Elegant Blaster",
         "value": 5,
         "description": [
-          "Coming Soon."
+          "Coming Soon"
         ]
       }
     ],
-    "category": ""
+    "category": [
+      "Namek-Saga"
+    ]
   }
 ]

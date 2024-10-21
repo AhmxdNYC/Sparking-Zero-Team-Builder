@@ -30,8 +30,12 @@ const Tracker: React.FC<TrackerProps> = ({
 	console.log('cur team', currentTeam[0]);
 	return (
 		<>
-			<p className='text-2xl text-center'>DP Available: {availableDP}</p>
-			<h2 className='text-2xl text-center'>Team</h2>
+			<p className='text-2xl italic font-bold text-center font-open-sans'>
+				DP Available: {availableDP}
+			</p>
+			<h2 className='mb-5 text-2xl italic font-bold text-center font-open-sans'>
+				Team
+			</h2>
 			<ul className='flex flex-wrap justify-center gap-4 mt-2'>
 				{currentTeam.map((character, index) => (
 					<div
@@ -49,30 +53,36 @@ const Tracker: React.FC<TrackerProps> = ({
 							</div>
 
 							{/* Character name and DP */}
-							<div className='text-center'>
-								<p className='text-lg font-semibold'>{character.name}</p>
+							<div className='italic font-bold text-center font-open-sans'>
+								<p className='text-lg'>{character.name}</p>
 								<p className='text-sm text-gray-400'>DP: {character.value}</p>
 							</div>
 
 							{/* Abilities section */}
 							<div
-								className='mt-2 overflow-auto text-center custom-scrollbar'
-								style={{ maxHeight: '100px' }}>
-								<p className='font-bold text-white text-md'>Abilities</p>
+								className='relative mt-2 overflow-auto text-center custom-scrollbar'
+								style={{ maxHeight: '100px' }} // limiting the height for scrolling
+							>
+								<p className='italic font-bold text-center text-white font-open-sans text-md'>
+									Abilities
+								</p>
 								{character.abilities.map((ability, idx) => (
 									<div
 										key={idx}
 										className='mb-2'>
-										<p className='text-sm font-bold text-white'>
+										<p className='text-sm font-bold text-white font-open-sans'>
 											{ability.name}
 										</p>
-										<div className='text-xs text-gray-300'>
+										<div className='text-xs italic text-gray-300 font-open-sans'>
 											{ability.description.map((desc, idx) => (
 												<p key={idx}>{desc}</p>
 											))}
 										</div>
 									</div>
 								))}
+
+								{/* Add a gradient effect to indicate scrollable content */}
+								{/* <div className='absolute bottom-0 left-0 w-full h-6 pointer-events-none bg-gradient-to-t from-gray-800 to-transparent'></div> */}
 							</div>
 						</li>
 
@@ -87,7 +97,7 @@ const Tracker: React.FC<TrackerProps> = ({
 
 			<button
 				onClick={resetTeam}
-				className='mt-6 bg-[rgb(0,0,255)] text-white px-6 py-3 rounded-md shadow hover:shadow-lg transition transform hover:scale-105'>
+				className='mt-6 bg-[rgb(0,0,255)] text-white px-6 py-3 rounded-md shadow hover:shadow-lg transition transform font-open-sans font-bold  hover:scale-105'>
 				Reset Team
 			</button>
 		</>

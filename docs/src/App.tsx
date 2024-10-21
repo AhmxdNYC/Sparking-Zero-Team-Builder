@@ -53,10 +53,10 @@ const App: React.FC = () => {
 	return (
 		<div className='min-h-screen p-6 text-white bg-gray-900'>
 			<div className='container max-w-5xl mx-auto'>
-				<h1 className='mb-4 text-4xl font-bold text-center'>
+				<h1 className='mb-4 text-4xl italic font-bold text-center font-open-sans'>
 					Sparking Zero Team Builder
 				</h1>
-				<p className='mb-8 text-lg text-center text-gray-300'>
+				<p className='mb-8 text-lg italic font-bold text-center text-gray-300 font-open-sans'>
 					Build and share teams easily while having access to character stats
 					and notes.
 				</p>

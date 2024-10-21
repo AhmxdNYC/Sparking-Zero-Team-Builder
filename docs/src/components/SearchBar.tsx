@@ -48,7 +48,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
 			{/* Add Character Button */}
 			<button
 				onClick={handleAddCharacterClick}
-				className=' bg-[rgb(0,0,255)] text-white p-3 rounded-md shadow hover:shadow-lg transition transform hover:scale-105'>
+				className=' bg-[rgb(0,0,255)] text-white p-3 rounded-md font-open-sans font-bold  shadow hover:shadow-lg transition transform hover:scale-105'>
 				Add Character
 			</button>
 
@@ -56,7 +56,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
 			{visible && (
 				<>
 					{/* Search Bar */}
-					<div className='z-20 flex items-center justify-center w-full gap-2 mx-auto top-15'>
+					<div className='z-20 flex items-center justify-center w-full gap-2 mx-auto mt-4'>
 						<div
 							className={`relative w-[50%] sm:w-[25%] p-1 border border-gray-300 rounded-md`}>
 							<input
@@ -75,11 +75,23 @@ const SearchBar: React.FC<SearchBarProps> = ({
 							className='px-4 py-2 text-white bg-red-500 rounded-md'>
 							Exit
 						</button>
+						{/* Dropdown Filter */}
+						<div className='relative'>
+							<select
+								className='p-2 text-white bg-gray-900 border border-gray-300 rounded-md focus:outline-none'
+								// onChange={(e) => setFilter(e.target.value)}
+							>
+								<option value='all'>All</option>
+								<option value='category1'>Coming SOON</option>
+								<option value='category2'>Coming SOON</option>
+								{/* Add more options as needed */}
+							</select>
+						</div>
 					</div>
 
 					{/* Scrollable Dropdown List */}
 					<div className='relative z-20 top-4'>
-						<div className='absolute left-0 right-0 w-[85%] mx-auto bg-gray-900 border border-gray-300 rounded-lg shadow-lg overflow-y-auto overflow-x-hidden custom-scrollbar max-h-[23rem] sm:max-h-[32.5rem] sm:w-full'>
+						<div className='absolute left-0 right-0 w-[85%] mx-auto bg-gray-900 border border-gray-300 rounded-lg shadow-lg overflow-y-auto overflow-x-hidden custom-scrollbar max-h-[32.5rem] sm:max-h-[32.5rem] sm:w-full'>
 							<ul className='grid grid-cols-1 gap-2 p-2 list-none sm:grid-cols-4'>
 								{filteredData.length > 0 ? (
 									filteredData.map((character, index) => {
@@ -89,8 +101,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
 										return (
 											<div
 												key={index}
-												className='relative Char-Card left-6 sm:left-0'
-												style={{ width: '100%', height: '120px' }}>
+												className='relative Char-Card left-6 sm:left-0 h-[120px] w-full'>
 												{/* Outline Shape */}
 												<div className='absolute inset-0 z-0 Char-Card-Outline'></div>
 
@@ -111,7 +122,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
 													}}>
 													{/* Name and DP */}
 													<li
-														className={`z-10 flex-1 text-lg font-medium max-w-[38%] text-center ${
+														className={`z-10 flex-1 text-lg font-open-sans font-bold italic max-w-[38%] text-center ${
 															tooExpensive ? 'text-gray-500' : 'text-gray-200'
 														}`}>
 														{character.name}
