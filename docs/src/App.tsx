@@ -10,6 +10,7 @@ import { Character } from './components/Tracker';
 const App: React.FC = () => {
 	const [availableDP, setAvailableDP] = useState(15);
 	const [currentTeam, setCurrentTeam] = useState<Character[]>([]);
+	const [TeamCount, setTeamCount] = useState<number>(5);
 
 	// Load the team from the URL when the app starts
 	useLoadTeamFromURL({
@@ -75,6 +76,8 @@ const App: React.FC = () => {
 						characters={characters}
 						setCurrentTeam={setCurrentTeam}
 						currentTeam={currentTeam}
+						setTeamCount={setTeamCount}
+						teamCount={TeamCount}
 					/>
 				</div>
 				<Tracker
