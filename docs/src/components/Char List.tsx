@@ -2572,7 +2572,7 @@ export const characters = [
 	{
 		name: 'Goku (Daima)',
 		value: -4,
-		img: 'https://media.graphassets.com/qe9wv9IVQJ6ThVFYMbXz',
+		img: 'https://media.graphassets.com/GY23weVJRUeVdIECEEeD',
 		abilities: [
 			{
 				name: 'Sleep',

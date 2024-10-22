@@ -1,10 +1,9 @@
 /* eslint-disable prefer-const */
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { RandomCharacterPicker } from './ranCharSelect';
 import { Character } from './Tracker';
 
-// skewed towards 2 points and above since hercule is 1 point and no one wants him
 interface GameTeamRandomizerProps {
 	availableDP: number;
 	setAvailableDP: (dp: number) => void;
@@ -50,39 +49,42 @@ const GameTeamRandomizer: React.FC<GameTeamRandomizerProps> = ({
 		const distributedPoints = [];
 		let pointsLeft = remainingPoints;
 
-		// Get minimum amount between max points and (points left - number of characters while leaving atleasst 1 point for the next character)
-		// Generate random point starting from 1 up to that minimum
-		// Changed to -2 might make better teams but not sure
 		for (let i = 0; i < numCharacters - 1; i++) {
-			let randomPoint = Math.max(
-				2,
-				Math.floor(
-					Math.random() *
-						Math.min(pointsLeft - (numCharacters - i - 2), MAX_SINGLE_CHARACTER)
-				)
-			);
+			let randomPoint;
 
-			// Make sure random point is not 1 if there is already a 1-point character
-			// Incase if 0 or 1 add 2
-			if (hasOnePointCharacter && randomPoint === MIN_SINGLE_CHARACTER) {
-				randomPoint = Math.floor(
-					Math.random() * (MAX_SINGLE_CHARACTER - MIN_SINGLE_CHARACTER) + 2
-				);
+			// If a 1-point character already exists, don't generate another
+			if (hasOnePointCharacter) {
+				// Ensure random points between 2 and MAX_SINGLE_CHARACTER
+				randomPoint =
+					Math.floor(Math.random() * (MAX_SINGLE_CHARACTER - 1)) + 2;
+			} else {
+				// Generate random points with 1-point character less likely (e.g., only 5% chance)
+				randomPoint =
+					Math.random() < 0.01
+						? 1
+						: Math.floor(Math.random() * (MAX_SINGLE_CHARACTER - 1)) + 2;
 			}
+
+			// If a 1-point character is generated, set the flag
+			if (randomPoint === 1) {
+				hasOnePointCharacter = true;
+			}
+
 			distributedPoints.push(randomPoint);
 			pointsLeft -= randomPoint;
 		}
-		// Make sure last character gets alteast 2 if 1 exists and 1 if not
+
+		// Make sure the last character's points are valid
 		let lastCharacterPoints = Math.max(1, pointsLeft);
 		if (hasOnePointCharacter && lastCharacterPoints === MIN_SINGLE_CHARACTER) {
+			// If a 1-point character already exists, adjust the last character's points
 			lastCharacterPoints =
 				Math.floor(
 					Math.random() * (MAX_SINGLE_CHARACTER - MIN_SINGLE_CHARACTER)
 				) + 2;
 		}
 
-		// Regenerate if the last character's points exceed 10
-		// atleast 2
+		// Regenerate if the last character's points exceed MAX_SINGLE_CHARACTER
 		while (lastCharacterPoints > MAX_SINGLE_CHARACTER) {
 			lastCharacterPoints =
 				Math.floor(Math.random() * MAX_SINGLE_CHARACTER) + 2;
@@ -115,7 +117,6 @@ const GameTeamRandomizer: React.FC<GameTeamRandomizerProps> = ({
 	};
 
 	const generateRandomTeam = () => {
-		// Filters out manually selected characters and calculates their total points
 		const manualSelectedCharacters = currentTeam.filter(
 			(char) => !generatedTeam.includes(char)
 		);
@@ -126,10 +127,10 @@ const GameTeamRandomizer: React.FC<GameTeamRandomizerProps> = ({
 
 		let remainingPoints = MAX_POINTS - manualSelectedPoints;
 
-		// Get remaining characters that can be added to the team by excluding characters already present (prior gen or manual)
-		const remainingCharacters = MAX_CHARACTERS - currentTeam.length; // Change to account for total team size including current characters
+		// Fix: Calculate remaining characters by subtracting only manually selected characters
+		const remainingCharacters =
+			MAX_CHARACTERS - manualSelectedCharacters.length;
 
-		// When to stop generating characters
 		if (remainingPoints <= 0 || remainingCharacters <= 0) {
 			console.log('No more characters can be added');
 			return [];
@@ -139,21 +140,16 @@ const GameTeamRandomizer: React.FC<GameTeamRandomizerProps> = ({
 		let totalDistributedPoints;
 
 		do {
-			// Randomly determine how many more characters to add
-			let numCharactersToAdd = remainingCharacters;
-			if (teamCount === 6) {
-				numCharactersToAdd = getRandomNumOfCharacters(remainingCharacters);
-			} else {
-				numCharactersToAdd = teamCount;
-			}
+			let numCharactersToAdd =
+				teamCount === 6
+					? getRandomNumOfCharacters(remainingCharacters)
+					: teamCount;
 
-			// Ensure numCharactersToAdd does not exceed MAX_CHARACTERS (5)
 			numCharactersToAdd = Math.min(
 				numCharactersToAdd,
 				MAX_CHARACTERS - manualSelectedCharacters.length
 			);
 
-			// Ensure the number of generated characters and their points don't exceed available DP
 			distributedPoints = distributePointsRandomly(
 				remainingPoints,
 				numCharactersToAdd,
@@ -165,52 +161,66 @@ const GameTeamRandomizer: React.FC<GameTeamRandomizerProps> = ({
 				0
 			);
 
-			// If the total points don't add up to the required remaining points, regenerate
 			if (totalDistributedPoints !== remainingPoints) {
 				console.log(
 					`Total points ${totalDistributedPoints} do not match remaining points. Regenerating...`
 				);
 			}
-		} while (totalDistributedPoints !== remainingPoints); // Regenerate until points match remaining DP
+		} while (totalDistributedPoints !== remainingPoints);
 
-		console.log(
-			`Generated team points: ${distributedPoints} = ${totalDistributedPoints}`
-		);
 		return distributedPoints;
 	};
 
+	// Regenerate characters on button click, replacing the generated ones
 	const handleGenerateTeam = () => {
-		// Get the manually selected characters from the current team
 		const manualSelectedCharacters = currentTeam.filter(
 			(char) => !generatedTeam.includes(char)
 		);
 
-		// Generate points for the new characters
 		const generatedTeamPoints = generateRandomTeam();
 		if (generatedTeamPoints.length > 0) {
-			// Use the RandomCharacterPicker to filter and randomly pick characters based on generated points
 			let newGeneratedCharacters = RandomCharacterPicker(
 				characters,
 				generatedTeamPoints
 			);
 
-			// Ensure no duplicate names, regenerate if necessary ✅
+			// Validate no duplicates
 			newGeneratedCharacters = validateUniqueCharacters(newGeneratedCharacters);
 
-			// Update the state for the newly generated characters and current team
-			setGeneratedTeam(newGeneratedCharacters); // Update generated characters
-			setCurrentTeam([...manualSelectedCharacters, ...newGeneratedCharacters]); // Update the team
+			// Replace old generated characters with the new ones
+			setGeneratedTeam(newGeneratedCharacters);
+			setCurrentTeam([...manualSelectedCharacters, ...newGeneratedCharacters]);
 
 			// Update available DP based on the newly generated team
 			const totalTeamPoints = generatedTeamPoints.reduce(
 				(acc, curr) => acc + curr,
 				0
 			);
-			setAvailableDP(Math.max(availableDP - totalTeamPoints, 0)); // Decrease available DP but ensure it never goes negative
+			setAvailableDP(Math.max(availableDP - totalTeamPoints, 0)); // Ensure DP doesn't go negative
 		} else {
 			console.error('Failed to generate a valid team. Try again.');
 		}
 	};
+
+	useEffect(() => {
+		// Keep only manually selected characters
+		const manualSelectedCharacters = currentTeam.filter(
+			(char) => !generatedTeam.includes(char)
+		);
+
+		// Calculate the points for manually selected characters
+		const manualSelectedPoints = manualSelectedCharacters.reduce(
+			(acc, character) => acc + Math.abs(character.value),
+			0
+		);
+
+		// Update the current team to keep only manually selected characters
+		setCurrentTeam(manualSelectedCharacters);
+
+		// Update the available DP to reflect the points of manually selected characters
+		setAvailableDP(MAX_POINTS - manualSelectedPoints); // Subtract from MAX_POINTS
+		setGeneratedTeam([]); // Clear the previously generated characters
+	}, [teamCount]);
 
 	return (
 		<div>
@@ -228,7 +238,7 @@ const GameTeamRandomizer: React.FC<GameTeamRandomizerProps> = ({
 			</div>
 			<button
 				onClick={handleGenerateTeam}
-				className='mt-6  bg-[rgb(0,0,255)] text-white px-6 py-3 rounded-md font-open-sans font-bold  shadow hover:shadow-lg transition transform hover:scale-105'>
+				className='mt-6 bg-[rgb(0,0,255)] text-white px-6 py-3 rounded-md font-open-sans font-bold shadow hover:shadow-lg transition transform hover:scale-105'>
 				Random Gen (Char or Team)
 			</button>
 		</div>
