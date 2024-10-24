@@ -39,7 +39,7 @@ const Tracker: React.FC<TrackerProps> = ({
 			<ul className='flex flex-wrap justify-center gap-4 mt-2'>
 				{currentTeam.map((character, index) => (
 					<div
-						key={character.name}
+						key={index}
 						className='flex flex-col items-center p-4 transition duration-300 ease-in-out bg-gray-800 rounded-lg shadow-lg hover:bg-gray-700'
 						style={{ width: '190px', height: '340px', overflow: 'hidden' }}>
 						<li className='flex flex-col items-center'>
