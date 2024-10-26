@@ -27,7 +27,7 @@ const Tracker: React.FC<TrackerProps> = ({
 	resetTeam,
 	removeCharacter,
 }) => {
-	console.log('cur team', currentTeam[0]);
+	console.log('cur team', currentTeam);
 	return (
 		<>
 			<p className='text-2xl italic font-bold text-center font-open-sans'>

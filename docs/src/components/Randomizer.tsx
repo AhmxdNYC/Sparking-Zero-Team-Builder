@@ -24,6 +24,9 @@ const GameTeamRandomizer: React.FC<GameTeamRandomizerProps> = ({
 	setTeamCount,
 }) => {
 	const [generatedTeam, setGeneratedTeam] = useState<Character[]>([]);
+	const [manualSelectedCharacters, setManualSelectedCharacters] = useState<
+		Character[]
+	>([]);
 
 	const MAX_POINTS = 15;
 	const MAX_CHARACTERS = teamCount;
@@ -108,7 +111,8 @@ const GameTeamRandomizer: React.FC<GameTeamRandomizerProps> = ({
 			const generatedTeamPoints = generateRandomTeam();
 			const newSelectedCharacters = RandomCharacterPicker(
 				characters,
-				generatedTeamPoints
+				generatedTeamPoints,
+				manualSelectedCharacters // Pre-selected characters to exclude by name
 			);
 			return validateUniqueCharacters(newSelectedCharacters, retries - 1);
 		}
@@ -177,11 +181,14 @@ const GameTeamRandomizer: React.FC<GameTeamRandomizerProps> = ({
 			(char) => !generatedTeam.includes(char)
 		);
 
+		setManualSelectedCharacters(manualSelectedCharacters);
+
 		const generatedTeamPoints = generateRandomTeam();
 		if (generatedTeamPoints.length > 0) {
 			let newGeneratedCharacters = RandomCharacterPicker(
 				characters,
-				generatedTeamPoints
+				generatedTeamPoints,
+				manualSelectedCharacters // Pre-selected characters to exclude by name
 			);
 
 			// Validate no duplicates
