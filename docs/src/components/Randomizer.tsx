@@ -15,7 +15,7 @@ interface GameTeamRandomizerProps {
 }
 
 const GameTeamRandomizer: React.FC<GameTeamRandomizerProps> = ({
-	// availableDP,
+	availableDP,
 	setAvailableDP,
 	characters,
 	setCurrentTeam,
@@ -120,10 +120,19 @@ const GameTeamRandomizer: React.FC<GameTeamRandomizerProps> = ({
 		return selectedCharacters; // Return the valid, unique team
 	};
 	const generateRandomTeam = () => {
+		// Filter out any manually selected characters from the current team
 		const manualSelectedCharacters = currentTeam.filter(
 			(char) => !generatedTeam.includes(char)
 		);
 
+		// **Special case for team count of 1**
+		// If `teamCount` is 1 and there is already a character, return it without generating a new one
+		if (teamCount === 1 && manualSelectedCharacters.length === 1) {
+			const preSelectedPoints = [Math.abs(manualSelectedCharacters[0].value)];
+			return preSelectedPoints;
+		}
+
+		// Sum the points of manually selected characters to calculate remaining points
 		const manualSelectedPoints = manualSelectedCharacters.reduce(
 			(acc, character) => acc + Math.abs(character.value),
 			0
@@ -133,6 +142,17 @@ const GameTeamRandomizer: React.FC<GameTeamRandomizerProps> = ({
 		const remainingCharacters =
 			MAX_CHARACTERS - manualSelectedCharacters.length;
 
+		// **Handle team of 1 without a pre-selected character**
+		console.log('manual seleccted characters:', manualSelectedCharacters);
+		if (teamCount === 1 && availableDP === 0) {
+			// Generate a single character with random points between 1 and 10
+			const randomPoints =
+				Math.floor(
+					Math.random() * (MAX_SINGLE_CHARACTER - MIN_SINGLE_CHARACTER + 1)
+				) + MIN_SINGLE_CHARACTER;
+			return [randomPoints];
+		}
+
 		if (remainingPoints <= 0 || remainingCharacters <= 0) {
 			console.log('No more characters can be added');
 			return [];
@@ -140,7 +160,7 @@ const GameTeamRandomizer: React.FC<GameTeamRandomizerProps> = ({
 
 		let distributedPoints;
 
-		// Special handling for a team of 2 with a low-point pre-selected character
+		// **Special handling for team of 2 with a low-point pre-selected character**
 		if (
 			teamCount === 2 &&
 			manualSelectedCharacters.length === 1 &&
@@ -185,6 +205,7 @@ const GameTeamRandomizer: React.FC<GameTeamRandomizerProps> = ({
 
 		return distributedPoints;
 	};
+
 	const handleGenerateTeam = () => {
 		// Get the manually selected characters
 		const manualSelectedCharacters = currentTeam.filter(
@@ -262,6 +283,7 @@ const GameTeamRandomizer: React.FC<GameTeamRandomizerProps> = ({
 					className='p-2 text-white bg-gray-900 border border-gray-300 rounded-md focus:outline-none'
 					onChange={(e) => setTeamCount(+e.target.value)}
 					value={teamCount}>
+					{/* <option value='1'>1</option> */}
 					<option value='2'>2</option>
 					<option value='3'>3</option>
 					<option value='4'>4</option>

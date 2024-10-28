@@ -7018,7 +7018,7 @@ export const characters = [
 			},
 			{
 				name: 'Senzu Beans',
-				value: 5,
+				value: 6,
 				description: ['HP fully recovers'],
 			},
 			{
