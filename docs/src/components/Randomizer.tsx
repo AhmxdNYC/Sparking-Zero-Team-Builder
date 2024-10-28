@@ -211,7 +211,26 @@ const GameTeamRandomizer: React.FC<GameTeamRandomizerProps> = ({
 		const manualSelectedCharacters = currentTeam.filter(
 			(char) => !generatedTeam.includes(char)
 		);
-
+		// Calculate the points for manually selected characters
+		const manualSelectedPoints1 = manualSelectedCharacters.reduce(
+			(acc, character) => acc + Math.abs(character.value),
+			0
+		);
+		console.log('manualSelectedPoints1:', manualSelectedPoints1);
+		if (manualSelectedPoints1 >= 9 && teamCount === 5) {
+			setTeamCount(4);
+			alert(
+				'Team 5 is not allowed to have more than 9 points, Click again for team 4'
+			);
+			return;
+		}
+		if (manualSelectedPoints1 < 5 && teamCount === 2) {
+			setTeamCount(3);
+			alert(
+				'Team 2 is not allowed to have less than 5 points, Click again for team 3'
+			);
+			return;
+		}
 		setManualSelectedCharacters(manualSelectedCharacters);
 
 		// Generate points for the additional characters needed
