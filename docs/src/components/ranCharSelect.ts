@@ -1,12 +1,13 @@
 import { Character } from './Tracker';
-
 export const RandomCharacterPicker = (
 	characters: Character[],
 	points: number[],
-	manualSelectedCharacters: Character[] // Pass in pre-selected characters to exclude them
+	manualSelectedCharacters: Character[]
 ): Character[] => {
 	const selectedTeam: Character[] = [];
-	const availableCharacters = characters.filter(
+
+	// Filter out pre-selected characters from available characters
+	let availableCharacters = characters.filter(
 		(character) =>
 			!manualSelectedCharacters.some(
 				(selected) => selected.name === character.name
@@ -14,9 +15,9 @@ export const RandomCharacterPicker = (
 	);
 
 	points.forEach((point) => {
-		const absPoint = Math.abs(point); // Use absolute points
+		const absPoint = Math.abs(point);
 
-		// Filter characters by point value and exclude already selected ones
+		// Filter characters by exact point match
 		const matchingCharacters = availableCharacters.filter(
 			(character) =>
 				Math.abs(character.value) === absPoint &&
@@ -24,20 +25,18 @@ export const RandomCharacterPicker = (
 		);
 
 		if (matchingCharacters.length > 0) {
-			// Randomly pick a character and add to selectedTeam
 			const randomIndex = Math.floor(Math.random() * matchingCharacters.length);
 			const selectedCharacter = matchingCharacters[randomIndex];
 			selectedTeam.push(selectedCharacter);
 
-			// Remove the selected character from availableCharacters to avoid duplicates
-			const indexToRemove = availableCharacters.findIndex(
-				(char) => char.name === selectedCharacter.name
+			// Remove the selected character to avoid duplicates
+			availableCharacters = availableCharacters.filter(
+				(char) => char.name !== selectedCharacter.name
 			);
-			if (indexToRemove > -1) {
-				availableCharacters.splice(indexToRemove, 1);
-			}
+		} else {
+			console.warn(`No character found with ${point} points`);
 		}
 	});
 
-	return selectedTeam; // Return the selected team without duplicates
+	return selectedTeam;
 };

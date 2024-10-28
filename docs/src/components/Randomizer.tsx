@@ -15,7 +15,7 @@ interface GameTeamRandomizerProps {
 }
 
 const GameTeamRandomizer: React.FC<GameTeamRandomizerProps> = ({
-	availableDP,
+	// availableDP,
 	setAvailableDP,
 	characters,
 	setCurrentTeam,
@@ -119,19 +119,17 @@ const GameTeamRandomizer: React.FC<GameTeamRandomizerProps> = ({
 
 		return selectedCharacters; // Return the valid, unique team
 	};
-
 	const generateRandomTeam = () => {
 		const manualSelectedCharacters = currentTeam.filter(
 			(char) => !generatedTeam.includes(char)
 		);
+
 		const manualSelectedPoints = manualSelectedCharacters.reduce(
 			(acc, character) => acc + Math.abs(character.value),
 			0
 		);
 
 		let remainingPoints = MAX_POINTS - manualSelectedPoints;
-
-		// Fix: Calculate remaining characters by subtracting only manually selected characters
 		const remainingCharacters =
 			MAX_CHARACTERS - manualSelectedCharacters.length;
 
@@ -141,69 +139,97 @@ const GameTeamRandomizer: React.FC<GameTeamRandomizerProps> = ({
 		}
 
 		let distributedPoints;
-		let totalDistributedPoints;
 
-		do {
-			let numCharactersToAdd =
-				teamCount === 6
-					? getRandomNumOfCharacters(remainingCharacters)
-					: teamCount;
+		// Special handling for a team of 2 with a low-point pre-selected character
+		if (
+			teamCount === 2 &&
+			manualSelectedCharacters.length === 1 &&
+			manualSelectedPoints <= 5
+		) {
+			distributedPoints = [10]; // Set the second character to have 10 points
+		} else {
+			let totalDistributedPoints;
+			do {
+				let numCharactersToAdd =
+					teamCount === 6
+						? getRandomNumOfCharacters(remainingCharacters)
+						: teamCount;
 
-			numCharactersToAdd = Math.min(
-				numCharactersToAdd,
-				MAX_CHARACTERS - manualSelectedCharacters.length
-			);
+				if (manualSelectedCharacters.length > 0) {
+					numCharactersToAdd = Math.max(
+						1,
+						numCharactersToAdd - manualSelectedCharacters.length
+					);
+				}
 
-			distributedPoints = distributePointsRandomly(
-				remainingPoints,
-				numCharactersToAdd,
-				hasOnePointCharacter
-			);
+				numCharactersToAdd = Math.min(numCharactersToAdd, remainingCharacters);
 
-			totalDistributedPoints = distributedPoints.reduce(
-				(acc, val) => acc + val,
-				0
-			);
-
-			if (totalDistributedPoints !== remainingPoints) {
-				console.log(
-					`Total points ${totalDistributedPoints} do not match remaining points. Regenerating...`
+				distributedPoints = distributePointsRandomly(
+					remainingPoints,
+					numCharactersToAdd,
+					hasOnePointCharacter
 				);
-			}
-		} while (totalDistributedPoints !== remainingPoints);
+
+				totalDistributedPoints = distributedPoints.reduce(
+					(acc, val) => acc + val,
+					0
+				);
+
+				if (totalDistributedPoints !== remainingPoints) {
+					console.log(
+						`Total points ${totalDistributedPoints} do not match remaining points. Regenerating...`
+					);
+				}
+			} while (totalDistributedPoints !== remainingPoints);
+		}
 
 		return distributedPoints;
 	};
-
-	// Regenerate characters on button click, replacing the generated ones
 	const handleGenerateTeam = () => {
+		// Get the manually selected characters
 		const manualSelectedCharacters = currentTeam.filter(
 			(char) => !generatedTeam.includes(char)
 		);
 
 		setManualSelectedCharacters(manualSelectedCharacters);
 
+		// Generate points for the additional characters needed
 		const generatedTeamPoints = generateRandomTeam();
+
 		if (generatedTeamPoints.length > 0) {
+			// Pick characters based on generated points
 			let newGeneratedCharacters = RandomCharacterPicker(
 				characters,
 				generatedTeamPoints,
-				manualSelectedCharacters // Pre-selected characters to exclude by name
+				manualSelectedCharacters
 			);
 
-			// Validate no duplicates
+			// Ensure no duplicates in the new team
 			newGeneratedCharacters = validateUniqueCharacters(newGeneratedCharacters);
 
-			// Replace old generated characters with the new ones
-			setGeneratedTeam(newGeneratedCharacters);
-			setCurrentTeam([...manualSelectedCharacters, ...newGeneratedCharacters]);
+			// Merge manual selections with generated characters for updated team
+			const updatedTeam = [
+				...manualSelectedCharacters,
+				...newGeneratedCharacters,
+			];
 
-			// Update available DP based on the newly generated team
-			const totalTeamPoints = generatedTeamPoints.reduce(
-				(acc, curr) => acc + curr,
+			// Log for debugging
+			console.log('Manual Selected Characters:', manualSelectedCharacters);
+			console.log('Generated Characters:', newGeneratedCharacters);
+			console.log('Updated Team:', updatedTeam);
+
+			// Set the updated team and clear previous generation
+			setCurrentTeam(updatedTeam);
+			setGeneratedTeam(newGeneratedCharacters);
+
+			// Dynamically calculate available DP
+			const totalPointsUsed = updatedTeam.reduce(
+				(acc, char) => acc + Math.abs(char.value),
 				0
 			);
-			setAvailableDP(Math.max(availableDP - totalTeamPoints, 0)); // Ensure DP doesn't go negative
+			const updatedAvailableDP = MAX_POINTS - totalPointsUsed;
+
+			setAvailableDP(Math.max(updatedAvailableDP, 0)); // Ensure DP does not go negative
 		} else {
 			console.error('Failed to generate a valid team. Try again.');
 		}
