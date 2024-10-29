@@ -41,7 +41,6 @@ export interface ControlPanelProps {
 	onResetTeam: () => void;
 	onAddCharacter: () => void;
 	onGenerateLink: () => void;
-	OnGenerateRandomTeam: () => void;
 	availableDP: number;
 	setAvailableDP: (dp: number) => void;
 	characters: Character[];

@@ -69,10 +69,8 @@ const App: React.FC = () => {
 		}
 	};
 
-	const generateRandomTeam = () => {};
-
 	return (
-		<div className='min-h-screen p-6 text-white bg-gray-900'>
+		<div className='min-h-screen p-6 overflow-auto text-white bg-gray-900'>
 			<div className='container max-w-5xl mx-auto'>
 				<h1 className='mb-4 text-4xl italic font-bold text-center font-open-sans'>
 					Sparking Zero Team Builder
@@ -86,7 +84,6 @@ const App: React.FC = () => {
 					onResetTeam={resetTeam}
 					onAddCharacter={handleAddCharacterClick}
 					onGenerateLink={handleGenerateLink}
-					OnGenerateRandomTeam={generateRandomTeam}
 					availableDP={availableDP}
 					setAvailableDP={setAvailableDP}
 					characters={characters}
@@ -126,13 +123,6 @@ const App: React.FC = () => {
 					resetTeam={resetTeam}
 					removeCharacter={removeCharacter}
 				/>
-
-				{/* <ShareableLinkGenerator
-					currentTeam={currentTeam}
-					// @ts-expect-error sds
-					setCurrentTeam={setCurrentTeam}
-					allCharacters={characters} */}
-				{/* /> */}
 			</div>
 		</div>
 	);

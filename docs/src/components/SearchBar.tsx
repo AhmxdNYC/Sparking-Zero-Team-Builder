@@ -62,14 +62,16 @@ const SearchBar: React.FC<SearchBarProps> = ({
 					</div>
 
 					{/* Dropdown List */}
-					<DropdownList
-						data={data}
-						searchTerm={searchTerm}
-						filterBy={filterBy}
-						availableDP={availableDP}
-						onSelectCharacter={onSelectCharacter}
-						handleExit={handleExit}
-					/>
+					<div className='relative max-h-screen '>
+						<DropdownList
+							data={data}
+							searchTerm={searchTerm}
+							filterBy={filterBy}
+							availableDP={availableDP}
+							onSelectCharacter={onSelectCharacter}
+							handleExit={handleExit}
+						/>
+					</div>
 				</>
 			)}
 		</div>
