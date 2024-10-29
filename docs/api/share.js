@@ -7170,12 +7170,10 @@ export default async function handler(req, res) {
 	const { team } = req.query;
 
 	// If no team parameter is provided, redirect to the home page
-	if (!team) {
-		// Redirect to the home page
-		res.writeHead(302, { Location: '/' });
-		res.end();
-		return; // Exit the function after redirecting
-	}
+
+	// Redirect to the home page
+	res.writeHead(302, { Location: '/' });
+	res.end();
 
 	const teamNames = decodeURIComponent(team).split(',');
 
