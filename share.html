@@ -15,7 +15,6 @@
 			property="og:image"
 			content=""
 			id="ogImage" />
-		<!-- Placeholder -->
 		<meta
 			property="og:type"
 			content="website" />
@@ -28,16 +27,37 @@
 		<h1>Check Out My Team!</h1>
 		<p>This is a preview of my team setup!</p>
 
-		<script>
-			// Extract the `og:image` parameter from the URL query string
-			const urlParams = new URLSearchParams(window.location.search);
-			const teamImageURL = urlParams.get('og:image');
+		<!-- Container for the team data -->
+		<div id="teamContainer"></div>
 
-			// Set the `og:image` meta tag dynamically if the parameter exists
+		<script>
+			// Extract parameters from the URL
+			const urlParams = new URLSearchParams(window.location.search);
+			const teamImageURL = urlParams.get('teamImage');
+			const teamNames = urlParams.get('team')?.split(',') || [];
+
+			// Set the static og:image
 			if (teamImageURL) {
 				document
 					.getElementById('ogImage')
 					.setAttribute('content', decodeURIComponent(teamImageURL));
+			}
+
+			// Display team members' names and image
+			const teamContainer = document.getElementById('teamContainer');
+			if (teamNames.length > 0) {
+				const img = document.createElement('img');
+				img.src = teamImageURL;
+				img.alt = 'Team Image';
+				teamContainer.appendChild(img);
+
+				const namesList = document.createElement('ul');
+				teamNames.forEach((name) => {
+					const li = document.createElement('li');
+					li.textContent = name;
+					namesList.appendChild(li);
+				});
+				teamContainer.appendChild(namesList);
 			}
 		</script>
 	</body>
