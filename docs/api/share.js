@@ -7168,13 +7168,15 @@ function findCharacterImage(characterName) {
 	return character ? character.img : null;
 }
 
-// Helper function to fetch image buffer from URL
-async function fetchImageBuffer(url) {
+// Helper function to fetch and resize image buffer from URL
+async function fetchAndResizeImageBuffer(url) {
 	try {
 		const response = await axios.get(url, { responseType: 'arraybuffer' });
-		return Buffer.from(response.data, 'binary');
+		const buffer = Buffer.from(response.data, 'binary');
+		// Resize each image to 150x150 pixels to ensure consistency
+		return await sharp(buffer).resize(150, 150).toBuffer();
 	} catch (error) {
-		console.error(`Failed to fetch image at ${url}`, error);
+		console.error(`Failed to fetch or resize image at ${url}`, error);
 		return null;
 	}
 }
@@ -7187,27 +7189,27 @@ export default async function handler(req, res) {
 	console.log('Team Images:', teamImages);
 
 	if (teamImages.length > 0) {
-		// Fetch image buffers for all team images
+		// Fetch and resize image buffers for all team images
 		const imageBuffers = (
-			await Promise.all(teamImages.map(fetchImageBuffer))
+			await Promise.all(teamImages.map(fetchAndResizeImageBuffer))
 		).filter(Boolean);
 
 		if (imageBuffers.length === 0) {
 			return res.status(404).send('No valid images found');
 		}
 
-		// Create Sharp composites from fetched images
+		// Create Sharp composites from resized images
 		const composites = imageBuffers.map((buffer, index) => ({
 			input: buffer,
 			top: 0,
-			left: index * 300, // Adjust layout as needed
+			left: index * 150, // Adjust spacing based on resized image dimensions
 		}));
 
 		try {
 			const compositeBuffer = await sharp({
 				create: {
-					width: 300 * imageBuffers.length, // Dynamic width based on number of images
-					height: 300,
+					width: 150 * imageBuffers.length, // Dynamic width based on number of images
+					height: 150,
 					channels: 4,
 					background: { r: 0, g: 0, b: 0, alpha: 0 },
 				},
