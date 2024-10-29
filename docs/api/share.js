@@ -7188,57 +7188,69 @@ export default async function handler(req, res) {
 
 	console.log('Team Images:', teamImages);
 
-	if (teamImages.length > 0) {
-		// Fetch and resize image buffers for all team images
-		const imageBuffers = (
-			await Promise.all(teamImages.map(fetchAndResizeImageBuffer))
-		).filter(Boolean);
+	if (teamImages.length === 0) {
+		// Respond with a 200 status and placeholder image if no images found initially
+		return res.send(`
+      <!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta property="og:image" content="https://your-default-placeholder-image-url.png" />
+        </head>
+        <body>
+          <h1>Team Preview Unavailable</h1>
+        </body>
+      </html>
+    `);
+	}
 
-		if (imageBuffers.length === 0) {
-			return res.status(404).send('No valid images found');
-		}
+	// Fetch and resize image buffers for all team images
+	const imageBuffers = (
+		await Promise.all(teamImages.map(fetchAndResizeImageBuffer))
+	).filter(Boolean);
 
-		// Create Sharp composites from resized images
-		const composites = imageBuffers.map((buffer, index) => ({
-			input: buffer,
-			top: 0,
-			left: index * 150, // Adjust spacing based on resized image dimensions
-		}));
+	if (imageBuffers.length === 0) {
+		return res.status(404).send('No valid images found');
+	}
 
-		try {
-			const compositeBuffer = await sharp({
-				create: {
-					width: 150 * imageBuffers.length, // Dynamic width based on number of images
-					height: 150,
-					channels: 4,
-					background: { r: 0, g: 0, b: 0, alpha: 0 },
-				},
-			})
-				.composite(composites)
-				.png()
-				.toBuffer();
+	// Create Sharp composites from resized images
+	const composites = imageBuffers.map((buffer, index) => ({
+		input: buffer,
+		top: 0,
+		left: index * 150, // Adjust spacing based on resized image dimensions
+	}));
 
-			// Send HTML response with embedded base64 image
-			res.setHeader('Content-Type', 'text/html');
-			res.send(`
-        <!DOCTYPE html>
-        <html lang="en">
-          <head>
-            <meta charset="UTF-8">
-            <meta property="og:image" content="data:image/png;base64,${compositeBuffer.toString(
-							'base64'
-						)}" />
-          </head>
-          <body>
-            <h1>Team Preview</h1>
-          </body>
-        </html>
-      `);
-		} catch (error) {
-			console.error('Error creating composite image:', error);
-			res.status(500).send('Error creating composite image');
-		}
-	} else {
-		res.status(404).send('No images found');
+	try {
+		const compositeBuffer = await sharp({
+			create: {
+				width: 150 * imageBuffers.length, // Dynamic width based on number of images
+				height: 150,
+				channels: 4,
+				background: { r: 0, g: 0, b: 0, alpha: 0 },
+			},
+		})
+			.composite(composites)
+			.png()
+			.toBuffer();
+
+		// Send HTML response with embedded base64 image
+		res.setHeader('Content-Type', 'text/html');
+		res.send(`
+      <!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta property="og:image" content="data:image/png;base64,${compositeBuffer.toString(
+						'base64'
+					)}" />
+        </head>
+        <body>
+          <h1>Team Preview</h1>
+        </body>
+      </html>
+    `);
+	} catch (error) {
+		console.error('Error creating composite image:', error);
+		res.status(500).send('Error creating composite image');
 	}
 }
