@@ -39,4 +39,22 @@ export interface TrackerProps {
 export interface ControlPanelProps {
 	onResetTeam: () => void;
 	onAddCharacter: () => void;
+	onGenerateLink: () => void;
+	OnGenerateRandomTeam: () => void;
+	availableDP: number;
+	setAvailableDP: (dp: number) => void;
+	characters: Character[];
+	setCurrentTeam: (team: Character[]) => void;
+	currentTeam: Character[];
+	setTeamCount: (teamCount: number) => void;
+	teamCount: number;
+}
+
+export interface DropDownListProps {
+	data: Character[];
+	searchTerm: string;
+	filterBy: string;
+	availableDP: number;
+	onSelectCharacter: (character: Character) => void;
+	handleExit: () => void;
 }

@@ -1,16 +1,7 @@
 import React from 'react';
-import { Character } from './types';
+import { DropDownListProps } from './types';
 
-interface DropdownListProps {
-	data: Character[];
-	searchTerm: string;
-	filterBy: string;
-	availableDP: number;
-	onSelectCharacter: (character: Character) => void;
-	handleExit: () => void;
-}
-
-const DropdownList: React.FC<DropdownListProps> = ({
+const DropDownList: React.FC<DropDownListProps> = ({
 	data,
 	searchTerm,
 	filterBy,
@@ -107,4 +98,4 @@ const DropdownList: React.FC<DropdownListProps> = ({
 	);
 };
 
-export default DropdownList;
+export default DropDownList;

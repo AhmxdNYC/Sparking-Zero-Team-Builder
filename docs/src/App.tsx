@@ -2,18 +2,16 @@ import React, { useState } from 'react';
 import SearchBar from './components/SearchBar';
 import Tracker from './components/Tracker';
 import { characters } from './components/Char List';
-import GameTeamRandomizer from './components/RandomSelect/Randomizer';
-import ShareableLinkGenerator from './components/Share';
-import useLoadTeamFromURL from './components/LoadUrl'; // Import the custom hook
+import useLoadTeamFromURL from './components/Sharing/LoadUrl'; // Import the custom hook
 import { Character } from './components/types';
 import ControlPanel from './components/ControlPanel';
+import { generateShareableLink } from './components/Sharing/Share';
 
 const App: React.FC = () => {
 	const [availableDP, setAvailableDP] = useState(15);
 	const [currentTeam, setCurrentTeam] = useState<Character[]>([]);
 	const [TeamCount, setTeamCount] = useState<number>(5);
 	const [visible, setVisible] = useState<boolean>(false); // Control dropdown visibility
-
 	// Load the team from the URL when the app starts
 	useLoadTeamFromURL({
 		setCurrentTeam,
@@ -35,7 +33,6 @@ const App: React.FC = () => {
 
 	// Reset the team and available DP
 	const resetTeam = () => {
-		// Reset the team and available DP
 		setCurrentTeam([]);
 		setAvailableDP(15);
 
@@ -58,6 +55,21 @@ const App: React.FC = () => {
 		setVisible((prev) => !prev);
 	};
 
+	// Copy the link to the clipboard
+	const handleGenerateLink = async () => {
+		const link = generateShareableLink(currentTeam);
+
+		try {
+			await navigator.clipboard.writeText(link);
+			alert('Shareable link copied to clipboard!');
+		} catch (err) {
+			console.error('Failed to copy the link: ', err);
+			alert('Failed to copy the link.');
+		}
+	};
+
+	const generateRandomTeam = () => {};
+
 	return (
 		<div className='min-h-screen p-6 text-white bg-gray-900'>
 			<div className='container max-w-5xl mx-auto'>
@@ -72,6 +84,15 @@ const App: React.FC = () => {
 				<ControlPanel
 					onResetTeam={resetTeam}
 					onAddCharacter={handleAddCharacterClick}
+					onGenerateLink={handleGenerateLink}
+					OnGenerateRandomTeam={generateRandomTeam}
+					availableDP={availableDP}
+					setAvailableDP={setAvailableDP}
+					characters={characters}
+					setCurrentTeam={setCurrentTeam}
+					currentTeam={currentTeam}
+					setTeamCount={setTeamCount}
+					teamCount={TeamCount}
 				/>
 
 				<div className='flex justify-center mb-8'>
@@ -84,7 +105,7 @@ const App: React.FC = () => {
 					/>
 				</div>
 
-				<div className='mb-8'>
+				{/* <div className='mb-8'>
 					<GameTeamRandomizer
 						availableDP={availableDP}
 						setAvailableDP={setAvailableDP}
@@ -94,7 +115,7 @@ const App: React.FC = () => {
 						setTeamCount={setTeamCount}
 						teamCount={TeamCount}
 					/>
-				</div>
+				</div> */}
 				<Tracker
 					availableDP={availableDP}
 					currentTeam={currentTeam}
@@ -102,12 +123,12 @@ const App: React.FC = () => {
 					removeCharacter={removeCharacter}
 				/>
 
-				<ShareableLinkGenerator
+				{/* <ShareableLinkGenerator
 					currentTeam={currentTeam}
 					// @ts-expect-error sds
 					setCurrentTeam={setCurrentTeam}
-					allCharacters={characters}
-				/>
+					allCharacters={characters} */}
+				{/* /> */}
 			</div>
 		</div>
 	);

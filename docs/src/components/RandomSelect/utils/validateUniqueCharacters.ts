@@ -1,5 +1,5 @@
 import { Character } from '../../types';
-import { RandomCharacterPicker } from '../../ranCharSelect';
+import { RandomCharacterPicker } from './ranCharacterPicker';
 
 const validateUniqueCharacters = (
 	selectedCharacters: Character[],

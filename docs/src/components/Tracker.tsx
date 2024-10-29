@@ -5,7 +5,6 @@ import { TrackerProps } from './types';
 const Tracker: React.FC<TrackerProps> = ({
 	availableDP,
 	currentTeam,
-	resetTeam,
 	removeCharacter,
 }) => {
 	console.log('cur team', currentTeam);
@@ -72,12 +71,6 @@ const Tracker: React.FC<TrackerProps> = ({
 					</div>
 				))}
 			</ul>
-
-			<button
-				onClick={resetTeam}
-				className='mt-6 bg-[rgb(0,0,255)] text-white px-6 py-3 rounded-md shadow hover:shadow-lg transition transform font-open-sans font-bold  hover:scale-105'>
-				Reset Team
-			</button>
 		</>
 	);
 };
