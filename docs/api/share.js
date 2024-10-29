@@ -7198,6 +7198,7 @@ export default async function handler(req, res) {
         <head>
           <meta charset="UTF-8">
           <meta property="og:image" content="https://your-default-placeholder-image-url.png" />
+          <meta property="og:title" content="Team Preview Unavailable" />
         </head>
         <body>
           <h1>Team Preview Unavailable</h1>
@@ -7237,9 +7238,9 @@ export default async function handler(req, res) {
 			.png()
 			.toBuffer();
 
-		// Send HTML response with embedded base64 image
-		console.log('Sending composite image');
-		console.log('Composite Buffer:', compositeBuffer);
+		// Send HTML response with embedded base64 image and character names
+		const teamTitle = `Team: ${teamNames.join(', ')}`;
+		console.log('Sending composite image with team title:', teamTitle);
 
 		res.setHeader('Content-Type', 'text/html');
 		res.send(`
@@ -7250,9 +7251,10 @@ export default async function handler(req, res) {
       <meta property="og:image" content="data:image/png;base64,${compositeBuffer.toString(
 				'base64'
 			)}" />
+      <meta property="og:title" content="${teamTitle}" />
     </head>
     <body>
-      <h1>Team Preview</h1>
+      <h1>${teamTitle}</h1>
       <img src="data:image/png;base64,${compositeBuffer.toString(
 				'base64'
 			)}" alt="Team Image" />
