@@ -12,15 +12,9 @@ const serializeTeam = (team: Character[]): string => {
 
 // Generate the shareable link
 export const generateShareableLink = (currentTeam: Character[]): string => {
-	// Serialize the team for URL query parameter
 	const serializedTeam = serializeTeam(currentTeam);
-
-	// Get the image URLs for each character (we’re not combining them here)
-	// const teamImages = currentTeam.map((character) => character.img);
-
-	// Construct the shareable link to your static site, including the serialized team data
-	const shareableLink = `https://ahmxdnyc.github.io/Sparking-Zero-Team-Builder/share.html?team=${serializedTeam}`;
-
+	// Use the Vercel deployment URL instead
+	const shareableLink = `https://sparking-zero-team-builder.vercel.app/api/share?team=${serializedTeam}`;
 	console.log('Generated shareable link:', shareableLink);
 	return shareableLink;
 };
