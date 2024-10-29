@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { SearchBarProps } from './types';
-import DropdownList from './dropDownList';
+import DropDownList from './DropDownList';
 
 const SearchBar: React.FC<SearchBarProps> = ({
 	data,
@@ -63,7 +63,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
 
 					{/* Dropdown List */}
 					<div className='relative max-h-screen '>
-						<DropdownList
+						<DropDownList
 							data={data}
 							searchTerm={searchTerm}
 							filterBy={filterBy}
