@@ -10,6 +10,13 @@ const serializeTeam = (team: Character[]): string => {
 	const characterNames = team.map((character) => character.name).join(',');
 	return encodeURIComponent(characterNames);
 };
+const assignImagePublicId = (team: Character[]): Character[] => {
+	return team.map((character) => ({
+		...character,
+		imagePublicId:
+			character.name.replace(/\s+/g, '_').toLowerCase() + '_public_id',
+	}));
+};
 
 export const generateTeamImageURL = (characters: Character[]): string => {
 	const baseURL = 'https://res.cloudinary.com/dtrjyrqlh/image/upload';
@@ -26,11 +33,13 @@ export const generateTeamImageURL = (characters: Character[]): string => {
 
 	return `${baseURL}/${overlays}/team_image.png`;
 };
-
 // Generate the shareable link
 export const generateShareableLink = (currentTeam: Character[]): string => {
+	// First, assign public IDs to each character in the team
+	const teamWithPublicIds = assignImagePublicId(currentTeam);
+
 	// Generate the Cloudinary composite image URL for the team
-	const teamImageURL = generateTeamImageURL(currentTeam);
+	const teamImageURL = generateTeamImageURL(teamWithPublicIds);
 
 	// Serialize the team for URL query parameter (optional if needed for additional team data)
 	const serializedTeam = serializeTeam(currentTeam);
