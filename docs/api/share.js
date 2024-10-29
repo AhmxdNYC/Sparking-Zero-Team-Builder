@@ -7167,16 +7167,19 @@ function findCharacterImage(characterName) {
 }
 export default async function handler(req, res) {
 	const { team } = req.query;
-	const teamNames = team ? decodeURIComponent(team).split(',') : [];
+	let teamNames = team ? decodeURIComponent(team).split(',') : [];
+
+	// Sort the team names alphabetically (A-Z)
+	teamNames = teamNames.sort((a, b) => a.localeCompare(b));
 
 	// Log the parsed team names for debugging
-	console.log('Parsed team names:', teamNames);
+	console.log('Parsed and sorted team names:', teamNames);
 
 	// Get the image URLs for each character in the team
 	const teamImages = teamNames.map(findCharacterImage).filter(Boolean);
 	const teamDescription = teamNames.join(', ');
 
-	// Build a URL with the `team` parameter for redirect
+	// Build a URL with the `team` parameter in sorted order for redirect
 	const redirectURL = `/#/default?page&team=${encodeURIComponent(
 		teamNames.join(',')
 	)}`;
@@ -7199,7 +7202,7 @@ export default async function handler(req, res) {
 	      // Redirect to home page with team data after a delay to allow metadata loading
 	      setTimeout(() => {
 	        window.location.href = "${redirectURL}";
-	      }, 2000); // Adjust the delay as needed (2 seconds in this case)
+	      }, 250); 
 	    </script>
 	  </head>
 	  <body>
