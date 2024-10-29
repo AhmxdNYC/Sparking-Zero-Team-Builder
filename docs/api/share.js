@@ -7159,9 +7159,11 @@ export const characters = [
 		category: ['Namek-Saga'],
 	},
 ];
+
 // Function to find character details by name
 function findCharacterImage(characterName) {
 	const character = characters.find((char) => char.name === characterName);
+	console.log(`Looking for character: ${characterName}, found:`, character);
 	return character ? character.img : null;
 }
 
@@ -7169,11 +7171,17 @@ export default async function handler(req, res) {
 	const { team } = req.query;
 	const teamNames = team ? team.split(',') : [];
 
+	console.log('Team Names:', teamNames);
+
 	// Get the image URLs for each character in the team
-	const teamImages = teamNames.map(findCharacterImage).filter(Boolean);
+	const teamImages = teamNames.map(findCharacterImage);
+
+	// Check for any missing images
+	const validImages = teamImages.filter(Boolean);
+	console.log('Valid Images:', validImages);
+
 	const teamDescription = teamNames.join(', ');
 
-	// Set the Content-Type header for HTML response
 	res.setHeader('Content-Type', 'text/html');
 	res.send(`
     <!DOCTYPE html>
@@ -7185,7 +7193,7 @@ export default async function handler(req, res) {
         <meta property="og:title" content="Check Out My Team!" />
         <meta property="og:description" content="See my custom team setup: ${teamDescription}" />
         <meta property="og:image" content="${
-					teamImages[0] || 'https://your-default-image-url.png'
+					validImages[0] || 'default-image-url'
 				}" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -7196,7 +7204,7 @@ export default async function handler(req, res) {
           ${teamNames.map((name) => `<li>${name}</li>`).join('')}
         </ul>
         <div>
-          ${teamImages
+          ${validImages
 						.map(
 							(imgUrl) =>
 								`<img src="${imgUrl}" alt="Character Image" width="100">`
