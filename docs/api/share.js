@@ -7165,7 +7165,6 @@ function findCharacterImage(characterName) {
 	const character = characters.find((char) => char.name === characterName);
 	return character ? character.img : null;
 }
-//
 export default async function handler(req, res) {
 	const { team } = req.query;
 	const teamNames = team ? decodeURIComponent(team).split(',') : [];
@@ -7177,8 +7176,10 @@ export default async function handler(req, res) {
 	const teamImages = teamNames.map(findCharacterImage).filter(Boolean);
 	const teamDescription = teamNames.join(', ');
 
-	// Log the resulting character images for debugging
-	console.log('Team images:', teamImages);
+	// Build a URL with the `team` parameter for redirect
+	const redirectURL = `/#/default?page&team=${encodeURIComponent(
+		teamNames.join(',')
+	)}`;
 
 	// Set the Content-Type header for HTML response
 	res.setHeader('Content-Type', 'text/html');
@@ -7195,9 +7196,9 @@ export default async function handler(req, res) {
 				teamImages[0] || 'https://your-default-image-url.png'
 			}" />
 	    <script>
-	      // Redirect to home page after a delay to allow metadata loading
+	      // Redirect to home page with team data after a delay to allow metadata loading
 	      setTimeout(() => {
-	        window.location.href = "/";
+	        window.location.href = "${redirectURL}";
 	      }, 2000); // Adjust the delay as needed (2 seconds in this case)
 	    </script>
 	  </head>
