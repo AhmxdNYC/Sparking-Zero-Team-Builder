@@ -7168,7 +7168,16 @@ function findCharacterImage(characterName) {
 //
 export default async function handler(req, res) {
 	const { team } = req.query;
-	const teamNames = team ? decodeURIComponent(team).split(',') : [];
+
+	// If no team parameter is provided, redirect to the home page
+	if (!team) {
+		// Redirect to the home page
+		res.writeHead(302, { Location: '/' });
+		res.end();
+		return; // Exit the function after redirecting
+	}
+
+	const teamNames = decodeURIComponent(team).split(',');
 
 	// Log the parsed team names for debugging
 	console.log('Parsed team names:', teamNames);
@@ -7183,28 +7192,28 @@ export default async function handler(req, res) {
 	// Set the Content-Type header for HTML response
 	res.setHeader('Content-Type', 'text/html');
 	res.send(`
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Check Out My Team!</title>
-      <meta property="og:title" content="Check Out My Team!" />
-      <meta property="og:description" content="See my custom team setup: ${teamDescription}" />
-      <meta property="og:image" content="${
+	<!DOCTYPE html>
+	<html lang="en">
+	  <head>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <title>Check Out My Team!</title>
+	    <meta property="og:title" content="Check Out My Team!" />
+	    <meta property="og:description" content="See my custom team setup: ${teamDescription}" />
+	    <meta property="og:image" content="${
 				teamImages[0] || 'https://your-default-image-url.png'
 			}" />
-    </head>
-    <body>
-      <h1>Check Out My Team!</h1>
-      <p>${teamDescription}</p>
-      ${teamImages
+	  </head>
+	  <body>
+	    <h1>Check Out My Team!</h1>
+	    <p>${teamDescription}</p>
+	    ${teamImages
 				.map(
 					(img) =>
 						`<img src="${img}" alt="Character Image" style="width:100px;height:100px;" />`
 				)
 				.join('')}
-    </body>
-  </html>
+	  </body>
+	</html>
 `);
 }
