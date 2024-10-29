@@ -3,7 +3,7 @@ interface Character {
 	value: number;
 	img: string; // URL for general use, like displaying in the UI
 }
-
+//
 // Serialize the team to a URL-friendly string
 const serializeTeam = (team: Character[]): string => {
 	const characterNames = team.map((character) => character.name).join(',');
