@@ -7238,22 +7238,28 @@ export default async function handler(req, res) {
 			.toBuffer();
 
 		// Send HTML response with embedded base64 image
+		// Send HTML response with embedded base64 image
 		console.log('Sending composite image');
+		console.log('Composite Buffer:', compositeBuffer);
+
 		res.setHeader('Content-Type', 'text/html');
 		res.send(`
-      <!DOCTYPE html>
-      <html lang="en">
-        <head>
-          <meta charset="UTF-8">
-          <meta property="og:image" content="data:image/png;base64,${compositeBuffer.toString(
-						'base64'
-					)}" />
-        </head>
-        <body>
-          <h1>Team Preview</h1>
-        </body>
-      </html>
-    `);
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta property="og:image" content="data:image/png;base64,${compositeBuffer.toString(
+				'base64'
+			)}" />
+    </head>
+    <body>
+      <h1>Team Preview</h1>
+      <img src="data:image/png;base64,${compositeBuffer.toString(
+				'base64'
+			)}" alt="Team Image" />
+    </body>
+  </html>
+`);
 	} catch (error) {
 		console.error('Error creating composite image:', error);
 		res.status(500).send('Error creating composite image');
