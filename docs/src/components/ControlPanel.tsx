@@ -16,10 +16,11 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
 	currentTeam,
 	setTeamCount,
 	teamCount,
+	visibleControlPanel,
+	setVisibleControlPanel,
 }) => {
 	const [generatedTeam, setGeneratedTeam] = useState<Character[]>([]);
 	const [, setManualSelectedCharacters] = useState<Character[]>([]);
-
 	const MAX_POINTS = 15;
 	const MAX_CHARACTERS = teamCount;
 	const MAX_SINGLE_CHARACTER = 10;
@@ -197,40 +198,51 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [teamCount]);
 
+	const AddCharaacterToggle = () => {
+		onAddCharacter();
+		setVisibleControlPanel(!visibleControlPanel);
+	};
+
 	return (
-		<div className='flex flex-col items-center gap-4 p-4 mx-auto bg-gray-800 rounded-lg shadow-md sm:flex-row sm:justify-around w-[50%] sm:w-full'>
-			<button
-				onClick={onAddCharacter}
-				className='w-full px-6 py-3 text-white transition transform bg-blue-500 rounded-md shadow hover:shadow-lg hover:scale-105 sm:w-auto'>
-				Add Character
-			</button>
-			<button
-				onClick={onGenerateLink}
-				className='w-full px-6 py-3 text-white transition transform bg-green-500 rounded-md shadow hover:shadow-lg hover:scale-105 sm:w-auto'>
-				Share Team!
-			</button>
-			<button
-				onClick={onResetTeam}
-				className='w-full px-6 py-3 text-white transition transform bg-red-500 rounded-md shadow hover:shadow-lg hover:scale-105 sm:w-auto'>
-				Reset Team
-			</button>
-			<button
-				onClick={handleGenerateTeam}
-				className='w-full px-6 py-3 text-white transition transform bg-purple-500 rounded-md shadow hover:shadow-lg hover:scale-105 sm:w-auto'>
-				Random Gen (Char or Team)
-			</button>
-			<div className='relative w-full sm:w-auto'>
-				<select
-					className='w-full p-2 text-white bg-gray-900 border border-gray-300 rounded-md focus:outline-none'
-					onChange={(e) => setTeamCount(+e.target.value)}
-					value={teamCount}>
-					<option value='2'>2</option>
-					<option value='3'>3</option>
-					<option value='4'>4</option>
-					<option value='5'>5</option>
-					<option value='6'>2-5</option>
-				</select>
-			</div>
+		<div>
+			{visibleControlPanel ? (
+				<div className='flex flex-col items-center gap-4 p-4 mx-auto bg-gray-800 rounded-lg shadow-md sm:flex-row sm:justify-around w-[80%] sm:w-full'>
+					<button
+						onClick={AddCharaacterToggle}
+						className='w-full px-6 py-3 text-white transition transform bg-blue-500 rounded-md shadow hover:shadow-lg hover:scale-105 sm:w-auto'>
+						Add Character
+					</button>
+					<button
+						onClick={onGenerateLink}
+						className='w-full px-6 py-3 text-white transition transform bg-green-500 rounded-md shadow hover:shadow-lg hover:scale-105 sm:w-auto'>
+						Share Team!
+					</button>
+					<button
+						onClick={onResetTeam}
+						className='w-full px-6 py-3 text-white transition transform bg-red-500 rounded-md shadow hover:shadow-lg hover:scale-105 sm:w-auto'>
+						Reset Team
+					</button>
+					<button
+						onClick={handleGenerateTeam}
+						className='w-full px-6 py-3 text-white transition transform bg-purple-500 rounded-md shadow hover:shadow-lg hover:scale-105 sm:w-auto'>
+						Random Gen (Char or Team)
+					</button>
+					<div className='relative w-full sm:w-auto'>
+						<select
+							className='w-full p-2 text-white bg-gray-900 border border-gray-300 rounded-md focus:outline-none'
+							onChange={(e) => setTeamCount(+e.target.value)}
+							value={teamCount}>
+							<option value='2'>2</option>
+							<option value='3'>3</option>
+							<option value='4'>4</option>
+							<option value='5'>5</option>
+							<option value='6'>2-5</option>
+						</select>
+					</div>
+				</div>
+			) : (
+				<div></div>
+			)}
 		</div>
 	);
 };

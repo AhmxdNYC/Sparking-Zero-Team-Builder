@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { DropDownListProps } from './types';
 
 const DropDownList: React.FC<DropDownListProps> = ({
@@ -26,8 +27,8 @@ const DropDownList: React.FC<DropDownListProps> = ({
 	return (
 		<>
 			{/* Scrollable Dropdown List */}
-			<div className='relative z-20 top-4'>
-				<div className='absolute left-0 right-0 w-[85%] mx-auto bg-gray-900 border border-gray-300 rounded-lg shadow-lg overflow-y-auto overflow-x-hidden custom-scrollbar max-h-[27.5rem] sm:max-h-[32.5rem] sm:w-full'>
+			<div className='relative z-20 top-4 sm:top-4'>
+				<div className='absolute left-0 right-0 w-[85%] mx-auto bg-gray-900 border border-gray-300 rounded-lg shadow-lg overflow-y-auto overflow-x-hidden custom-scrollbar max-h-[40rem] sm:max-h-[32.5rem] sm:w-full'>
 					<ul className='grid grid-cols-1 gap-2 p-2 list-none sm:grid-cols-4'>
 						{filteredData.length > 0 ? (
 							filteredData.map((character, index) => {

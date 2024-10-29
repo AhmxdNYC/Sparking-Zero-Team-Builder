@@ -12,6 +12,7 @@ const App: React.FC = () => {
 	const [currentTeam, setCurrentTeam] = useState<Character[]>([]);
 	const [TeamCount, setTeamCount] = useState<number>(5);
 	const [visible, setVisible] = useState<boolean>(false); // Control dropdown visibility
+	const [visibleControlPanel, setVisibleControlPanel] = useState<boolean>(true);
 	// Load the team from the URL when the app starts
 	useLoadTeamFromURL({
 		setCurrentTeam,
@@ -93,6 +94,8 @@ const App: React.FC = () => {
 					currentTeam={currentTeam}
 					setTeamCount={setTeamCount}
 					teamCount={TeamCount}
+					setVisibleControlPanel={setVisibleControlPanel}
+					visibleControlPanel={visibleControlPanel}
 				/>
 
 				<div className='flex justify-center mb-8'>
@@ -102,6 +105,7 @@ const App: React.FC = () => {
 						availableDP={availableDP}
 						visible={visible}
 						setVisible={setVisible}
+						setvisibleControlPanel={setVisibleControlPanel}
 					/>
 				</div>
 

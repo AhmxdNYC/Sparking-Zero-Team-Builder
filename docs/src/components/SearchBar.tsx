@@ -8,6 +8,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
 	onSelectCharacter,
 	visible,
 	setVisible,
+	setvisibleControlPanel,
 }) => {
 	const [searchTerm, setSearchTerm] = useState<string>('');
 	const [filterBy, setFilterBy] = useState<string>('name'); // 'name' by default, can switch to 'ability'
@@ -20,6 +21,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
 		if (inputRef.current) {
 			inputRef.current.blur(); // Blur the input if focused
 		}
+		setvisibleControlPanel(true); // Show the control panel
 	};
 
 	return (
@@ -27,7 +29,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
 			{visible && (
 				<>
 					{/* Search Bar */}
-					<div className='z-20 flex items-center justify-center w-full gap-2 mx-auto mt-4'>
+					<div className='relative z-20 flex items-center justify-center w-full gap-2 mx-auto mt-4  sm:bottom-[0.10rem]'>
 						<div
 							className={`relative w-[50%] sm:w-[25%] p-1 border border-gray-300 rounded-md`}>
 							<input

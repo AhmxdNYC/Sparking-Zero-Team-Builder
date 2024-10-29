@@ -27,6 +27,7 @@ export interface SearchBarProps {
 	onSelectCharacter: (character: Character) => void;
 	setVisible: (visible: boolean) => void;
 	visible: boolean;
+	setvisibleControlPanel: (visible: boolean) => void;
 }
 
 export interface TrackerProps {
@@ -48,6 +49,8 @@ export interface ControlPanelProps {
 	currentTeam: Character[];
 	setTeamCount: (teamCount: number) => void;
 	teamCount: number;
+	visibleControlPanel: boolean;
+	setVisibleControlPanel: (visible: boolean) => void;
 }
 
 export interface DropDownListProps {
