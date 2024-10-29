@@ -1,4 +1,4 @@
-import { Character } from './types';
+import { Character } from '../../types';
 export const RandomCharacterPicker = (
 	characters: Character[],
 	points: number[],

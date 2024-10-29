@@ -1,25 +1,6 @@
 'use client';
 import React from 'react';
-
-export type Ability = {
-	name: string;
-	value: number | string; // in case it's '?'
-	description: string[]; // array of description strings
-};
-
-export type Character = {
-	name: string;
-	value: number;
-	img: string;
-	abilities: Ability[];
-};
-
-interface TrackerProps {
-	availableDP: number;
-	currentTeam: Array<Character>;
-	resetTeam: () => void;
-	removeCharacter: (index: number) => void;
-}
+import { TrackerProps } from './types';
 
 const Tracker: React.FC<TrackerProps> = ({
 	availableDP,
@@ -80,9 +61,6 @@ const Tracker: React.FC<TrackerProps> = ({
 										</div>
 									</div>
 								))}
-
-								{/* Add a gradient effect to indicate scrollable content */}
-								{/* <div className='absolute bottom-0 left-0 w-full h-6 pointer-events-none bg-gradient-to-t from-gray-800 to-transparent'></div> */}
 							</div>
 						</li>
 

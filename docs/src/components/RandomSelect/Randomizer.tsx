@@ -1,8 +1,9 @@
-/* eslint-disable prefer-const */
-'use client';
 import React, { useEffect, useState } from 'react';
-import { RandomCharacterPicker } from './ranCharSelect';
-import { Character } from './Tracker';
+import { RandomCharacterPicker } from './utils/ranCharacterPicker';
+import { Character } from '../types';
+import getRandomNumOfCharacters from './utils/getRandomNumOfCharacters';
+import distributePointsRandomly from './utils/distributePointsRandomly';
+import validateUniqueCharacters from './utils/validateUniqueCharacters';
 
 interface GameTeamRandomizerProps {
 	availableDP: number;
@@ -24,128 +25,33 @@ const GameTeamRandomizer: React.FC<GameTeamRandomizerProps> = ({
 	setTeamCount,
 }) => {
 	const [generatedTeam, setGeneratedTeam] = useState<Character[]>([]);
-	const [manualSelectedCharacters, setManualSelectedCharacters] = useState<
-		Character[]
-	>([]);
+	const [, setManualSelectedCharacters] = useState<Character[]>([]);
 
 	const MAX_POINTS = 15;
 	const MAX_CHARACTERS = teamCount;
 	const MAX_SINGLE_CHARACTER = 10;
 	const MIN_SINGLE_CHARACTER = 1;
 
-	// Randomly determine how many more characters can be added
-	const getRandomNumOfCharacters = (remainingCharacters: number) => {
-		return Math.min(Math.floor(Math.random() * remainingCharacters) + 1, 5);
-	};
-
-	// Check if the team already has a 1-point character
-	const hasOnePointCharacter = currentTeam.some(
-		(character) => Math.abs(character.value) === MIN_SINGLE_CHARACTER
-	);
-
-	// Distribute points randomly across new characters, ensuring only one 1-point character
-	const distributePointsRandomly = (
-		remainingPoints: number,
-		numCharacters: number,
-		hasOnePointCharacter: boolean
-	) => {
-		const distributedPoints = [];
-		let pointsLeft = remainingPoints;
-
-		for (let i = 0; i < numCharacters - 1; i++) {
-			let randomPoint;
-
-			// If a 1-point character already exists, don't generate another
-			if (hasOnePointCharacter) {
-				// Ensure random points between 2 and MAX_SINGLE_CHARACTER
-				randomPoint =
-					Math.floor(Math.random() * (MAX_SINGLE_CHARACTER - 1)) + 2;
-			} else {
-				// Generate random points with 1-point character less likely (e.g., only 5% chance)
-				randomPoint =
-					Math.random() < 0.01
-						? 1
-						: Math.floor(Math.random() * (MAX_SINGLE_CHARACTER - 1)) + 2;
-			}
-
-			// If a 1-point character is generated, set the flag
-			if (randomPoint === 1) {
-				hasOnePointCharacter = true;
-			}
-
-			distributedPoints.push(randomPoint);
-			pointsLeft -= randomPoint;
-		}
-
-		// Make sure the last character's points are valid
-		let lastCharacterPoints = Math.max(1, pointsLeft);
-		if (hasOnePointCharacter && lastCharacterPoints === MIN_SINGLE_CHARACTER) {
-			// If a 1-point character already exists, adjust the last character's points
-			lastCharacterPoints =
-				Math.floor(
-					Math.random() * (MAX_SINGLE_CHARACTER - MIN_SINGLE_CHARACTER)
-				) + 2;
-		}
-
-		// Regenerate if the last character's points exceed MAX_SINGLE_CHARACTER
-		while (lastCharacterPoints > MAX_SINGLE_CHARACTER) {
-			lastCharacterPoints =
-				Math.floor(Math.random() * MAX_SINGLE_CHARACTER) + 2;
-		}
-
-		distributedPoints.push(lastCharacterPoints);
-
-		return distributedPoints;
-	};
-
-	// Validate that no characters have the same name, regenerate if duplicates exist
-	const validateUniqueCharacters = (
-		selectedCharacters: Character[],
-		retries = 5
-	): Character[] => {
-		const names = selectedCharacters.map((character) => character.name);
-		const uniqueNames = new Set(names);
-
-		if (names.length !== uniqueNames.size && retries > 0) {
-			console.log('Duplicate characters found, regenerating team...');
-			const generatedTeamPoints = generateRandomTeam();
-			const newSelectedCharacters = RandomCharacterPicker(
-				characters,
-				generatedTeamPoints,
-				manualSelectedCharacters // Pre-selected characters to exclude by name
-			);
-			return validateUniqueCharacters(newSelectedCharacters, retries - 1);
-		}
-
-		return selectedCharacters; // Return the valid, unique team
-	};
 	const generateRandomTeam = () => {
-		// Filter out any manually selected characters from the current team
 		const manualSelectedCharacters = currentTeam.filter(
 			(char) => !generatedTeam.includes(char)
 		);
 
-		// **Special case for team count of 1**
-		// If `teamCount` is 1 and there is already a character, return it without generating a new one
 		if (teamCount === 1 && manualSelectedCharacters.length === 1) {
 			const preSelectedPoints = [Math.abs(manualSelectedCharacters[0].value)];
 			return preSelectedPoints;
 		}
 
-		// Sum the points of manually selected characters to calculate remaining points
 		const manualSelectedPoints = manualSelectedCharacters.reduce(
 			(acc, character) => acc + Math.abs(character.value),
 			0
 		);
 
-		let remainingPoints = MAX_POINTS - manualSelectedPoints;
+		const remainingPoints = MAX_POINTS - manualSelectedPoints;
 		const remainingCharacters =
 			MAX_CHARACTERS - manualSelectedCharacters.length;
 
-		// **Handle team of 1 without a pre-selected character**
-		console.log('manual seleccted characters:', manualSelectedCharacters);
 		if (teamCount === 1 && availableDP === 0) {
-			// Generate a single character with random points between 1 and 10
 			const randomPoints =
 				Math.floor(
 					Math.random() * (MAX_SINGLE_CHARACTER - MIN_SINGLE_CHARACTER + 1)
@@ -160,13 +66,17 @@ const GameTeamRandomizer: React.FC<GameTeamRandomizerProps> = ({
 
 		let distributedPoints;
 
-		// **Special handling for team of 2 with a low-point pre-selected character**
+		// Check if the team already has a 1-point character
+		const hasOnePointCharacter = currentTeam.some(
+			(character) => Math.abs(character.value) === MIN_SINGLE_CHARACTER
+		);
+
 		if (
 			teamCount === 2 &&
 			manualSelectedCharacters.length === 1 &&
 			manualSelectedPoints <= 5
 		) {
-			distributedPoints = [10]; // Set the second character to have 10 points
+			distributedPoints = [10];
 		} else {
 			let totalDistributedPoints;
 			do {
@@ -187,7 +97,9 @@ const GameTeamRandomizer: React.FC<GameTeamRandomizerProps> = ({
 				distributedPoints = distributePointsRandomly(
 					remainingPoints,
 					numCharactersToAdd,
-					hasOnePointCharacter
+					hasOnePointCharacter,
+					MAX_SINGLE_CHARACTER,
+					MIN_SINGLE_CHARACTER
 				);
 
 				totalDistributedPoints = distributedPoints.reduce(
@@ -207,11 +119,10 @@ const GameTeamRandomizer: React.FC<GameTeamRandomizerProps> = ({
 	};
 
 	const handleGenerateTeam = () => {
-		// Get the manually selected characters
 		const manualSelectedCharacters = currentTeam.filter(
 			(char) => !generatedTeam.includes(char)
 		);
-		// Calculate the points for manually selected characters
+
 		const manualSelectedPoints1 = manualSelectedCharacters.reduce(
 			(acc, character) => acc + Math.abs(character.value),
 			0
@@ -224,7 +135,11 @@ const GameTeamRandomizer: React.FC<GameTeamRandomizerProps> = ({
 			);
 			return;
 		}
-		if (manualSelectedPoints1 < 5 && teamCount === 2) {
+		if (
+			manualSelectedPoints1 < 5 &&
+			manualSelectedPoints1 !== 0 &&
+			teamCount === 2
+		) {
 			setTeamCount(3);
 			alert(
 				'Team 2 is not allowed to have less than 5 points, Click again for team 3'
@@ -233,66 +148,60 @@ const GameTeamRandomizer: React.FC<GameTeamRandomizerProps> = ({
 		}
 		setManualSelectedCharacters(manualSelectedCharacters);
 
-		// Generate points for the additional characters needed
 		const generatedTeamPoints = generateRandomTeam();
 
 		if (generatedTeamPoints.length > 0) {
-			// Pick characters based on generated points
 			let newGeneratedCharacters = RandomCharacterPicker(
 				characters,
 				generatedTeamPoints,
 				manualSelectedCharacters
 			);
 
-			// Ensure no duplicates in the new team
-			newGeneratedCharacters = validateUniqueCharacters(newGeneratedCharacters);
+			newGeneratedCharacters = validateUniqueCharacters(
+				newGeneratedCharacters,
+				characters,
+				generatedTeamPoints,
+				manualSelectedCharacters
+			);
 
-			// Merge manual selections with generated characters for updated team
 			const updatedTeam = [
 				...manualSelectedCharacters,
 				...newGeneratedCharacters,
 			];
 
-			// Log for debugging
 			console.log('Manual Selected Characters:', manualSelectedCharacters);
 			console.log('Generated Characters:', newGeneratedCharacters);
 			console.log('Updated Team:', updatedTeam);
 
-			// Set the updated team and clear previous generation
 			setCurrentTeam(updatedTeam);
 			setGeneratedTeam(newGeneratedCharacters);
 
-			// Dynamically calculate available DP
 			const totalPointsUsed = updatedTeam.reduce(
 				(acc, char) => acc + Math.abs(char.value),
 				0
 			);
 			const updatedAvailableDP = MAX_POINTS - totalPointsUsed;
 
-			setAvailableDP(Math.max(updatedAvailableDP, 0)); // Ensure DP does not go negative
+			setAvailableDP(Math.max(updatedAvailableDP, 0));
 		} else {
 			console.error('Failed to generate a valid team. Try again.');
 		}
 	};
 
 	useEffect(() => {
-		// Keep only manually selected characters
 		const manualSelectedCharacters = currentTeam.filter(
 			(char) => !generatedTeam.includes(char)
 		);
 
-		// Calculate the points for manually selected characters
 		const manualSelectedPoints = manualSelectedCharacters.reduce(
 			(acc, character) => acc + Math.abs(character.value),
 			0
 		);
 
-		// Update the current team to keep only manually selected characters
 		setCurrentTeam(manualSelectedCharacters);
-
-		// Update the available DP to reflect the points of manually selected characters
-		setAvailableDP(MAX_POINTS - manualSelectedPoints); // Subtract from MAX_POINTS
-		setGeneratedTeam([]); // Clear the previously generated characters
+		setAvailableDP(MAX_POINTS - manualSelectedPoints);
+		setGeneratedTeam([]);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [teamCount]);
 
 	return (
@@ -302,7 +211,6 @@ const GameTeamRandomizer: React.FC<GameTeamRandomizerProps> = ({
 					className='p-2 text-white bg-gray-900 border border-gray-300 rounded-md focus:outline-none'
 					onChange={(e) => setTeamCount(+e.target.value)}
 					value={teamCount}>
-					{/* <option value='1'>1</option> */}
 					<option value='2'>2</option>
 					<option value='3'>3</option>
 					<option value='4'>4</option>

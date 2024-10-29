@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Character } from './Tracker';
+import { Character } from './types';
 
 interface UseLoadTeamFromURLProps {
 	setCurrentTeam: (team: Character[]) => void; // Function to set the team

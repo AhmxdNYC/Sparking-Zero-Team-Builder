@@ -2,15 +2,17 @@ import React, { useState } from 'react';
 import SearchBar from './components/SearchBar';
 import Tracker from './components/Tracker';
 import { characters } from './components/Char List';
-import GameTeamRandomizer from './components/Randomizer';
+import GameTeamRandomizer from './components/RandomSelect/Randomizer';
 import ShareableLinkGenerator from './components/Share';
 import useLoadTeamFromURL from './components/LoadUrl'; // Import the custom hook
-import { Character } from './components/Tracker';
+import { Character } from './components/types';
+import ControlPanel from './components/ControlPanel';
 
 const App: React.FC = () => {
 	const [availableDP, setAvailableDP] = useState(15);
 	const [currentTeam, setCurrentTeam] = useState<Character[]>([]);
 	const [TeamCount, setTeamCount] = useState<number>(5);
+	const [visible, setVisible] = useState<boolean>(false); // Control dropdown visibility
 
 	// Load the team from the URL when the app starts
 	useLoadTeamFromURL({
@@ -51,6 +53,11 @@ const App: React.FC = () => {
 		setAvailableDP((prevDP) => prevDP + removedCharacterValue);
 	};
 
+	// Toggle the visibility of the search bar and dropdown
+	const handleAddCharacterClick = () => {
+		setVisible((prev) => !prev);
+	};
+
 	return (
 		<div className='min-h-screen p-6 text-white bg-gray-900'>
 			<div className='container max-w-5xl mx-auto'>
@@ -61,11 +68,19 @@ const App: React.FC = () => {
 					Build and share teams easily while having access to character stats
 					and notes.
 				</p>
+
+				<ControlPanel
+					onResetTeam={resetTeam}
+					onAddCharacter={handleAddCharacterClick}
+				/>
+
 				<div className='flex justify-center mb-8'>
 					<SearchBar
 						data={characters}
 						onSelectCharacter={handleSelectCharacter}
 						availableDP={availableDP}
+						visible={visible}
+						setVisible={setVisible}
 					/>
 				</div>
 
