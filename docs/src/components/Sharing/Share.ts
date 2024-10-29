@@ -45,12 +45,10 @@ export const generateShareableLink = (currentTeam: Character[]): string => {
 	const serializedTeam = serializeTeam(currentTeam);
 
 	// Construct the shareable link to your GitHub Pages or static site, including team image URL
-	const shareableLink = `https://ahmxdnyc.github.io/Sparking-Zero-Team-Builder/share.html?teamImage=${encodeURIComponent(
+	const shareableLink = `https://ahmxdnyc.github.io/Sparking-Zero-Team-Builder/share.html?og:image=${encodeURIComponent(
 		teamImageURL
 	)}&team=${serializedTeam}`;
 
-	// Log the full shareable link to ensure it's correct
 	console.log('Generated shareable link:', shareableLink);
-
 	return shareableLink;
 };
