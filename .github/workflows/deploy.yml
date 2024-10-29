@@ -26,6 +26,10 @@ jobs:
           npm install  # Install project dependencies
           npm run build  # Build the project (output will go to docs/dist)
 
+      - name: Copy share.html to dist folder
+        run: |
+          cp share.html docs/dist/share.html
+
       - name: Disable Jekyll
         run: |
           touch docs/.nojekyll  # Create .nojekyll file in the docs folder to disable Jekyll

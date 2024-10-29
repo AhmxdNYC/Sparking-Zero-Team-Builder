@@ -13,7 +13,8 @@
 			content="See my custom team setup!" />
 		<meta
 			property="og:image"
-			content="${YOUR_DYNAMIC_IMAGE_URL}" />
+			content=""
+			id="ogImage" />
 		<!-- Placeholder -->
 		<meta
 			property="og:type"
@@ -25,5 +26,19 @@
 	</head>
 	<body>
 		<h1>Check Out My Team!</h1>
+		<p>This is a preview of my team setup!</p>
+
+		<script>
+			// Extract the `og:image` parameter from the URL query string
+			const urlParams = new URLSearchParams(window.location.search);
+			const teamImageURL = urlParams.get('og:image');
+
+			// Set the `og:image` meta tag dynamically if the parameter exists
+			if (teamImageURL) {
+				document
+					.getElementById('ogImage')
+					.setAttribute('content', decodeURIComponent(teamImageURL));
+			}
+		</script>
 	</body>
 </html>
