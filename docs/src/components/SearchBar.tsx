@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { SearchBarProps } from './types';
-import DropDownList from './TempDropDownList';
+import DropDownList from './DropDownList';
 // idk
 const SearchBar: React.FC<SearchBarProps> = ({
 	data,
