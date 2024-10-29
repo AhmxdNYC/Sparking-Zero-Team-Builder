@@ -7168,14 +7168,7 @@ function findCharacterImage(characterName) {
 //
 export default async function handler(req, res) {
 	const { team } = req.query;
-
-	// If no team parameter is provided, redirect to the home page
-
-	// Redirect to the home page
-	res.writeHead(302, { Location: '/' });
-	res.end();
-
-	const teamNames = decodeURIComponent(team).split(',');
+	const teamNames = team ? decodeURIComponent(team).split(',') : [];
 
 	// Log the parsed team names for debugging
 	console.log('Parsed team names:', teamNames);
@@ -7201,6 +7194,12 @@ export default async function handler(req, res) {
 	    <meta property="og:image" content="${
 				teamImages[0] || 'https://your-default-image-url.png'
 			}" />
+	    <script>
+	      // Redirect to home page after a delay to allow metadata loading
+	      setTimeout(() => {
+	        window.location.href = "/";
+	      }, 2000); // Adjust the delay as needed (2 seconds in this case)
+	    </script>
 	  </head>
 	  <body>
 	    <h1>Check Out My Team!</h1>
