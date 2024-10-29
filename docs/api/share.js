@@ -7202,7 +7202,7 @@ export default async function handler(req, res) {
 	      // Redirect to home page with team data after a delay to allow metadata loading
 	      setTimeout(() => {
 	        window.location.href = "${redirectURL}";
-	      }, 250); 
+	      }, 0); 
 	    </script>
 	  </head>
 	  <body>
