@@ -7159,102 +7159,52 @@ const characters = [
 		category: ['Namek-Saga'],
 	},
 ];
-import axios from 'axios';
-import sharp from 'sharp';
-import fs from 'fs';
-import path from 'path';
-import { v4 as uuidv4 } from 'uuid';
 
-// Function to find character image URL by name
+// Function to find character details by name
 function findCharacterImage(characterName) {
 	const character = characters.find((char) => char.name === characterName);
 	return character ? character.img : null;
 }
-
-// Helper function to fetch and resize image buffer from URL
-async function fetchAndResizeImageBuffer(url) {
-	try {
-		const response = await axios.get(url, { responseType: 'arraybuffer' });
-		const buffer = Buffer.from(response.data, 'binary');
-		return await sharp(buffer).resize(150, 150).toBuffer();
-	} catch (error) {
-		console.error(`Failed to fetch or resize image at ${url}`, error);
-		return null;
-	}
-}
-
+//
 export default async function handler(req, res) {
 	const { team } = req.query;
 	const teamNames = team ? decodeURIComponent(team).split(',') : [];
+
+	// Log the parsed team names for debugging
+	console.log('Parsed team names:', teamNames);
+
+	// Get the image URLs for each character in the team
 	const teamImages = teamNames.map(findCharacterImage).filter(Boolean);
+	const teamDescription = teamNames.join(', ');
 
-	if (teamImages.length === 0) {
-		return res.send(`
-      <!DOCTYPE html>
-      <html lang="en">
-        <head>
-          <meta charset="UTF-8">
-          <meta property="og:image" content="https://your-default-placeholder-image-url.png" />
-          <meta property="og:title" content="Team Preview Unavailable" />
-        </head>
-        <body>
-          <h1>Team Preview Unavailable</h1>
-        </body>
-      </html>
-    `);
-	}
+	// Log the resulting character images for debugging
+	console.log('Team images:', teamImages);
 
-	const imageBuffers = (
-		await Promise.all(teamImages.map(fetchAndResizeImageBuffer))
-	).filter(Boolean);
-
-	const composites = imageBuffers.map((buffer, index) => ({
-		input: buffer,
-		top: Math.floor(index / 2) * 150,
-		left: (index % 2) * 150,
-	}));
-
-	try {
-		const compositeBuffer = await sharp({
-			create: {
-				width: 300,
-				height: 150 * Math.ceil(imageBuffers.length / 2),
-				channels: 4,
-				background: { r: 0, g: 0, b: 0, alpha: 0 },
-			},
-		})
-			.composite(composites)
-			.png()
-			.toBuffer();
-
-		// Generate a unique filename for the composite image
-		const filename = `${uuidv4()}.png`;
-		const filePath = path.join('/tmp', filename);
-
-		// Write the image to a temporary location
-		fs.writeFileSync(filePath, compositeBuffer);
-
-		// Serve the file path as a URL (replace with your domain as needed)
-		const imageUrl = `https://your-domain.com/temp/${filename}`;
-
-		const teamTitle = `Team: ${teamNames.join(', ')}`;
-		res.setHeader('Content-Type', 'text/html');
-		res.send(`
-      <!DOCTYPE html>
-      <html lang="en">
-        <head>
-          <meta charset="UTF-8">
-          <meta property="og:image" content="${imageUrl}" />
-          <meta property="og:title" content="${teamTitle}" />
-        </head>
-        <body>
-          <h1>${teamTitle}</h1>
-          <img src="${imageUrl}" alt="Team Image" />
-        </body>
-      </html>
-    `);
-	} catch (error) {
-		console.error('Error creating composite image:', error);
-		res.status(500).send('Error creating composite image');
-	}
+	// Set the Content-Type header for HTML response
+	res.setHeader('Content-Type', 'text/html');
+	res.send(`
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Check Out My Team!</title>
+      <meta property="og:title" content="Check Out My Team!" />
+      <meta property="og:description" content="See my custom team setup: ${teamDescription}" />
+      <meta property="og:image" content="${
+				teamImages[0] || 'https://your-default-image-url.png'
+			}" />
+    </head>
+    <body>
+      <h1>Check Out My Team!</h1>
+      <p>${teamDescription}</p>
+      ${teamImages
+				.map(
+					(img) =>
+						`<img src="${img}" alt="Character Image" style="width:100px;height:100px;" />`
+				)
+				.join('')}
+    </body>
+  </html>
+`);
 }
