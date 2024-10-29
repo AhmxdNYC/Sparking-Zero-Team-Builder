@@ -7161,6 +7161,9 @@ const characters = [
 ];
 import axios from 'axios';
 import sharp from 'sharp';
+import fs from 'fs';
+import path from 'path';
+import { v4 as uuidv4 } from 'uuid';
 
 // Function to find character image URL by name
 function findCharacterImage(characterName) {
@@ -7173,7 +7176,6 @@ async function fetchAndResizeImageBuffer(url) {
 	try {
 		const response = await axios.get(url, { responseType: 'arraybuffer' });
 		const buffer = Buffer.from(response.data, 'binary');
-		// Resize each image to 150x150 pixels to ensure consistency
 		return await sharp(buffer).resize(150, 150).toBuffer();
 	} catch (error) {
 		console.error(`Failed to fetch or resize image at ${url}`, error);
@@ -7184,14 +7186,9 @@ async function fetchAndResizeImageBuffer(url) {
 export default async function handler(req, res) {
 	const { team } = req.query;
 	const teamNames = team ? decodeURIComponent(team).split(',') : [];
-	console.log('Parsed team names:', teamNames);
-
-	// Fetch the image URLs
 	const teamImages = teamNames.map(findCharacterImage).filter(Boolean);
-	console.log('Fetched team image URLs:', teamImages);
 
 	if (teamImages.length === 0) {
-		console.log('No team images found, sending placeholder');
 		return res.send(`
       <!DOCTYPE html>
       <html lang="en">
@@ -7207,29 +7204,21 @@ export default async function handler(req, res) {
     `);
 	}
 
-	// Fetch and resize images
 	const imageBuffers = (
 		await Promise.all(teamImages.map(fetchAndResizeImageBuffer))
 	).filter(Boolean);
-	console.log('Resized image buffers:', imageBuffers.length);
 
-	if (imageBuffers.length === 0) {
-		console.log('No valid image buffers, sending placeholder');
-		return res.status(404).send('No valid images found');
-	}
-
-	// Composite images in rows of two to prevent excessive width
 	const composites = imageBuffers.map((buffer, index) => ({
 		input: buffer,
-		top: Math.floor(index / 2) * 150, // Rows of 2
+		top: Math.floor(index / 2) * 150,
 		left: (index % 2) * 150,
 	}));
 
 	try {
 		const compositeBuffer = await sharp({
 			create: {
-				width: 300, // Fixed width for 2 images per row
-				height: 150 * Math.ceil(imageBuffers.length / 2), // Dynamic height based on image count
+				width: 300,
+				height: 150 * Math.ceil(imageBuffers.length / 2),
 				channels: 4,
 				background: { r: 0, g: 0, b: 0, alpha: 0 },
 			},
@@ -7238,29 +7227,32 @@ export default async function handler(req, res) {
 			.png()
 			.toBuffer();
 
-		// Send HTML response with embedded base64 image and character names
-		const teamTitle = `Team: ${teamNames.join(', ')}`;
-		console.log('Sending composite image with team title:', teamTitle);
+		// Generate a unique filename for the composite image
+		const filename = `${uuidv4()}.png`;
+		const filePath = path.join('/tmp', filename);
 
+		// Write the image to a temporary location
+		fs.writeFileSync(filePath, compositeBuffer);
+
+		// Serve the file path as a URL (replace with your domain as needed)
+		const imageUrl = `https://your-domain.com/temp/${filename}`;
+
+		const teamTitle = `Team: ${teamNames.join(', ')}`;
 		res.setHeader('Content-Type', 'text/html');
 		res.send(`
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta property="og:image" content="data:image/png;base64,${compositeBuffer.toString(
-				'base64'
-			)}" />
-      <meta property="og:title" content="${teamTitle}" />
-    </head>
-    <body>
-      <h1>${teamTitle}</h1>
-      <img src="data:image/png;base64,${compositeBuffer.toString(
-				'base64'
-			)}" alt="Team Image" />
-    </body>
-  </html>
-`);
+      <!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta property="og:image" content="${imageUrl}" />
+          <meta property="og:title" content="${teamTitle}" />
+        </head>
+        <body>
+          <h1>${teamTitle}</h1>
+          <img src="${imageUrl}" alt="Team Image" />
+        </body>
+      </html>
+    `);
 	} catch (error) {
 		console.error('Error creating composite image:', error);
 		res.status(500).send('Error creating composite image');
