@@ -7159,8 +7159,8 @@ const characters = [
 		category: ['Namek-Saga'],
 	},
 ];
-import sharp from 'sharp';
 import axios from 'axios';
+import sharp from 'sharp';
 
 // Function to find character image URL by name
 function findCharacterImage(characterName) {
@@ -7237,7 +7237,6 @@ export default async function handler(req, res) {
 			.png()
 			.toBuffer();
 
-		// Send HTML response with embedded base64 image
 		// Send HTML response with embedded base64 image
 		console.log('Sending composite image');
 		console.log('Composite Buffer:', compositeBuffer);
