@@ -7165,7 +7165,7 @@ function findCharacterImage(characterName) {
 	const character = characters.find((char) => char.name === characterName);
 	return character ? character.img : null;
 }
-
+//
 export default async function handler(req, res) {
 	const { team } = req.query;
 	const teamNames = team ? decodeURIComponent(team).split(',') : [];
