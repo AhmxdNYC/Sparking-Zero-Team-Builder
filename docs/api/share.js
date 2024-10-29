@@ -7184,12 +7184,14 @@ async function fetchAndResizeImageBuffer(url) {
 export default async function handler(req, res) {
 	const { team } = req.query;
 	const teamNames = team ? decodeURIComponent(team).split(',') : [];
-	const teamImages = teamNames.map(findCharacterImage).filter(Boolean);
+	console.log('Parsed team names:', teamNames);
 
-	console.log('Team Images:', teamImages);
+	// Fetch the image URLs
+	const teamImages = teamNames.map(findCharacterImage).filter(Boolean);
+	console.log('Fetched team image URLs:', teamImages);
 
 	if (teamImages.length === 0) {
-		// Respond with a 200 status and placeholder image if no images found initially
+		console.log('No team images found, sending placeholder');
 		return res.send(`
       <!DOCTYPE html>
       <html lang="en">
@@ -7204,27 +7206,29 @@ export default async function handler(req, res) {
     `);
 	}
 
-	// Fetch and resize image buffers for all team images
+	// Fetch and resize images
 	const imageBuffers = (
 		await Promise.all(teamImages.map(fetchAndResizeImageBuffer))
 	).filter(Boolean);
+	console.log('Resized image buffers:', imageBuffers.length);
 
 	if (imageBuffers.length === 0) {
+		console.log('No valid image buffers, sending placeholder');
 		return res.status(404).send('No valid images found');
 	}
 
-	// Create Sharp composites from resized images
+	// Composite images in rows of two to prevent excessive width
 	const composites = imageBuffers.map((buffer, index) => ({
 		input: buffer,
-		top: 0,
-		left: index * 150, // Adjust spacing based on resized image dimensions
+		top: Math.floor(index / 2) * 150, // Rows of 2
+		left: (index % 2) * 150,
 	}));
 
 	try {
 		const compositeBuffer = await sharp({
 			create: {
-				width: 150 * imageBuffers.length, // Dynamic width based on number of images
-				height: 150,
+				width: 300, // Fixed width for 2 images per row
+				height: 150 * Math.ceil(imageBuffers.length / 2), // Dynamic height based on image count
 				channels: 4,
 				background: { r: 0, g: 0, b: 0, alpha: 0 },
 			},
@@ -7234,6 +7238,7 @@ export default async function handler(req, res) {
 			.toBuffer();
 
 		// Send HTML response with embedded base64 image
+		console.log('Sending composite image');
 		res.setHeader('Content-Type', 'text/html');
 		res.send(`
       <!DOCTYPE html>
