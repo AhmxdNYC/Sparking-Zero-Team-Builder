@@ -7159,52 +7159,49 @@ const characters = [
 		category: ['Namek-Saga'],
 	},
 ];
+import sharp from 'sharp';
 
-// Function to find character details by name
 function findCharacterImage(characterName) {
 	const character = characters.find((char) => char.name === characterName);
 	return character ? character.img : null;
 }
-//
+
 export default async function handler(req, res) {
 	const { team } = req.query;
 	const teamNames = team ? decodeURIComponent(team).split(',') : [];
-
-	// Log the parsed team names for debugging
-	console.log('Parsed team names:', teamNames);
-
-	// Get the image URLs for each character in the team
 	const teamImages = teamNames.map(findCharacterImage).filter(Boolean);
-	const teamDescription = teamNames.join(', ');
 
-	// Log the resulting character images for debugging
-	console.log('Team images:', teamImages);
+	// Create composite if we have at least one image
+	if (teamImages.length > 0) {
+		const images = teamImages.map((url) => ({ input: url, gravity: 'center' }));
+		const compositeBuffer = await sharp({
+			create: {
+				width: 300 * teamImages.length, // Adjust based on layout
+				height: 300,
+				channels: 4,
+				background: { r: 0, g: 0, b: 0, alpha: 0 },
+			},
+		})
+			.composite(images)
+			.png()
+			.toBuffer();
 
-	// Set the Content-Type header for HTML response
-	res.setHeader('Content-Type', 'text/html');
-	res.send(`
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Check Out My Team!</title>
-      <meta property="og:title" content="Check Out My Team!" />
-      <meta property="og:description" content="See my custom team setup: ${teamDescription}" />
-      <meta property="og:image" content="${
-				teamImages[0] || 'https://your-default-image-url.png'
-			}" />
-    </head>
-    <body>
-      <h1>Check Out My Team!</h1>
-      <p>${teamDescription}</p>
-      ${teamImages
-				.map(
-					(img) =>
-						`<img src="${img}" alt="Character Image" style="width:100px;height:100px;" />`
-				)
-				.join('')}
-    </body>
-  </html>
-`);
+		res.setHeader('Content-Type', 'text/html');
+		res.send(`
+      <!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta property="og:image" content="data:image/png;base64,${compositeBuffer.toString(
+						'base64'
+					)}" />
+        </head>
+        <body>
+          <!-- The rest of your HTML content -->
+        </body>
+      </html>
+    `);
+	} else {
+		res.status(404).send('No images found');
+	}
 }
