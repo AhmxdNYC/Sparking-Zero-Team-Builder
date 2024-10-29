@@ -39,3 +39,4 @@ jobs:
         with:
           github_token: ${{ secrets.GHUB_TOKEN }}
           publish_dir: ./docs/dist # Point directly to the docs/dist folder for deployment
+# forgot run build
