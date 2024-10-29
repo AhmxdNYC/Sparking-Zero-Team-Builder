@@ -28,7 +28,7 @@ jobs:
 
       - name: Copy share.html to dist folder
         run: |
-          cp ../share.html dist/share.html
+          cp share.html dist/share.html
         working-directory: docs
 
       - name: Disable Jekyll
