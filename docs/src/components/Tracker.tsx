@@ -18,7 +18,6 @@ const Tracker: React.FC<TrackerProps> = ({
 			</h2>
 			<ul className='flex flex-wrap justify-center gap-4 mt-2'>
 				{currentTeam
-					.slice()
 					.sort((a, b) => a.name.localeCompare(b.name))
 					.map((character, index) => (
 						<div
