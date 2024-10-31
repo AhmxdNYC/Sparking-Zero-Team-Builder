@@ -7170,8 +7170,9 @@ export default async function handler(req, res) {
 	let teamNames = team ? decodeURIComponent(team).split(',') : [];
 	teamNames = teamNames.sort((a, b) => a.localeCompare(b));
 
-	const teamDescription = teamNames.join(', ');
 	const teamImages = teamNames.map(findCharacterImage).filter(Boolean);
+	const teamDescription = teamNames.join(', ');
+
 	const redirectURL = `/#/default?page&team=${encodeURIComponent(
 		teamNames.join(',')
 	)}`;
@@ -7183,13 +7184,13 @@ export default async function handler(req, res) {
 		);
 
 	if (isSocialMediaBot) {
-		// Serve Open Graph metadata for bots
 		res.setHeader('Content-Type', 'text/html');
 		res.send(`
 			<!DOCTYPE html>
 			<html lang="en" style="background-color: #1a1a1a;">
 			  <head>
 			    <meta charset="UTF-8">
+			    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 			    <title>Check Out My Team!</title>
 			    <meta property="og:title" content="Check Out My Team!" />
 			    <meta property="og:description" content="See my custom team setup: ${teamDescription}" />
@@ -7197,12 +7198,22 @@ export default async function handler(req, res) {
 						teamImages[0] || 'https://your-default-image-url.png'
 					}" />
 			  </head>
-			  <body style="background-color: #1a1a1a; margin: 0;"></body>
+			  <body style="margin: 0; background-color: #1a1a1a;"></body>
 			</html>
 		`);
 	} else {
-		// Perform an HTTP redirect for regular users
-		res.writeHead(302, { Location: redirectURL });
-		res.end();
+		res.setHeader('Content-Type', 'text/html');
+		res.send(`
+			<!DOCTYPE html>
+			<html lang="en" style="background-color: #1a1a1a;">
+			  <head>
+			    <meta charset="UTF-8">
+			    <meta http-equiv="refresh" content="0; url=${redirectURL}">
+			    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+			    <title>Redirecting...</title>
+			  </head>
+			  <body style="margin: 0; background-color: #1a1a1a;"></body>
+			</html>
+		`);
 	}
 }
