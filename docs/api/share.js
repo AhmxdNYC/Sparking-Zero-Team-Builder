@@ -7172,42 +7172,52 @@ export default async function handler(req, res) {
 	// Sort the team names alphabetically (A-Z)
 	teamNames = teamNames.sort((a, b) => a.localeCompare(b));
 
+	// Log the parsed team names for debugging
+	console.log('Parsed and sorted team names:', teamNames);
+
 	// Get the image URLs for each character in the team
 	const teamImages = teamNames.map(findCharacterImage).filter(Boolean);
 	const teamDescription = teamNames.join(', ');
 
-	// Build the redirect URL with sorted team names
+	// Build a URL with the `team` parameter in sorted order for redirect
 	const redirectURL = `/#/default?page&team=${encodeURIComponent(
 		teamNames.join(',')
 	)}`;
 
-	// Check User-Agent to determine if the request is from a bot
-	const userAgent = req.headers['user-agent'] || '';
-	const isBot = /bot|crawl|spider|discord|facebook|twitter|slack|apple/i.test(
-		userAgent
-	);
+	// Fast HTML redirect
+	res.writeHead(302, { Location: redirectURL });
+	res.end();
 
-	if (isBot) {
-		// Serve minimal HTML with Open Graph metadata for bots
-		res.setHeader('Content-Type', 'text/html');
-		res.send(`
-		<!DOCTYPE html>
-		<html lang="en">
-		  <head>
-			<meta charset="UTF-8">
-			<title>Check Out My Team!</title>
-			<meta property="og:title" content="Check Out My Team!" />
-			<meta property="og:description" content="See my custom team setup: ${teamDescription}" />
-			<meta property="og:image" content="${
+	res.setHeader('Content-Type', 'text/html');
+	res.send(`
+	<!DOCTYPE html>
+	<html lang="en">
+	  <head>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <title>Check Out My Team!</title>
+	    <meta property="og:title" content="Check Out My Team!" />
+	    <meta property="og:description" content="See my custom team setup: ${teamDescription}" />
+	    <meta property="og:image" content="${
 				teamImages[0] || 'https://your-default-image-url.png'
 			}" />
-		  </head>
-		  <body></body>
-		</html>
-	  `);
-	} else {
-		// Redirect immediately for regular users
-		res.writeHead(302, { Location: redirectURL });
-		res.end();
-	}
+	    <script>
+	      // Redirect to home page with team data after a delay to allow metadata loading
+	      setTimeout(() => {
+	        window.location.href = "${redirectURL}";
+	      }, 0); 
+	    </script>
+	  </head>
+	  <body style="background-color: #1a1a1a; color: white;">
+	    <h1>Check Out My Team!</h1>
+	    <p>${teamDescription}</p>
+	    ${teamImages
+				.map(
+					(img) =>
+						`<img src="${img}" alt="Character Image" style="width:100px;height:100px;" />`
+				)
+				.join('')}
+	  </body>
+	</html>
+`);
 }
