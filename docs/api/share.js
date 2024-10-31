@@ -7168,20 +7168,15 @@ function findCharacterImage(characterName) {
 export default async function handler(req, res) {
 	const { team } = req.query;
 	let teamNames = team ? decodeURIComponent(team).split(',') : [];
-
-	// Sort the team names alphabetically (A-Z)
 	teamNames = teamNames.sort((a, b) => a.localeCompare(b));
 
-	// Get the image URLs for each character in the team
 	const teamImages = teamNames.map(findCharacterImage).filter(Boolean);
 	const teamDescription = teamNames.join(', ');
 
-	// Build a URL with the `team` parameter in sorted order for redirect
 	const redirectURL = `/#/default?page&team=${encodeURIComponent(
 		teamNames.join(',')
 	)}`;
 
-	// Check User-Agent to determine if the request is from a known social media bot or iMessage
 	const userAgent = req.headers['user-agent'] || '';
 	const isSocialMediaBot =
 		/(Discordbot|Twitterbot|facebookexternalhit|Slackbot|WhatsApp|Applebot|iMessage)/i.test(
@@ -7189,7 +7184,6 @@ export default async function handler(req, res) {
 		);
 
 	if (isSocialMediaBot) {
-		// Serve minimal HTML with Open Graph metadata for known social media bots
 		res.setHeader('Content-Type', 'text/html');
 		res.send(`
 			<!DOCTYPE html>
@@ -7204,13 +7198,22 @@ export default async function handler(req, res) {
 						teamImages[0] || 'https://your-default-image-url.png'
 					}" />
 			  </head>
-			  <body style="margin: 0; background-color: #1a1a1a; color: white;">
-			  </body>
+			  <body style="margin: 0; background-color: #1a1a1a;"></body>
 			</html>
 		`);
 	} else {
-		// Redirect immediately for regular browsers and users
-		res.writeHead(302, { Location: redirectURL });
-		res.end();
+		res.setHeader('Content-Type', 'text/html');
+		res.send(`
+			<!DOCTYPE html>
+			<html lang="en" style="background-color: #1a1a1a;">
+			  <head>
+			    <meta charset="UTF-8">
+			    <meta http-equiv="refresh" content="0; url=${redirectURL}">
+			    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+			    <title>Redirecting...</title>
+			  </head>
+			  <body style="margin: 0; background-color: #1a1a1a;"></body>
+			</html>
+		`);
 	}
 }
