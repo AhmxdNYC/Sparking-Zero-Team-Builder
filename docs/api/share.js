@@ -7193,7 +7193,7 @@ export default async function handler(req, res) {
 		res.setHeader('Content-Type', 'text/html');
 		res.send(`
 			<!DOCTYPE html>
-			<html lang="en">
+			<html lang="en" style="background-color: #1a1a1a;">
 			  <head>
 			    <meta charset="UTF-8">
 			    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7204,9 +7204,7 @@ export default async function handler(req, res) {
 						teamImages[0] || 'https://your-default-image-url.png'
 					}" />
 			  </head>
-			  <body style="background-color: #1a1a1a; color: white;">
-			    <h1>Check Out My Team!</h1>
-			    <p>${teamDescription}</p>
+			  <body style="margin: 0; background-color: #1a1a1a; color: white;">
 			  </body>
 			</html>
 		`);
