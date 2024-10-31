@@ -111,7 +111,22 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
 
 		return distributedPoints;
 	};
+	/*
+combos that break 
+1 char 10 pre selected  on team 5
 
+on team 4 only combo is 10 2 2 1 , which works 1 time then crashes
+
+
+1 char 8 or 9 on team 5 as well
+
+on team 5 the combo could be 8 2 2 3 
+
+make it so that it checks for minimum amount of points needed for a 5 man team first so pre select would work
+
+
+
+*/
 	const handleGenerateTeam = () => {
 		const manualSelectedCharacters = currentTeam.filter(
 			(char) => !generatedTeam.includes(char)
@@ -121,11 +136,15 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
 			(acc, character) => acc + Math.abs(character.value),
 			0
 		);
-		console.log('manualSelectedPoints1:', manualSelectedPoints1);
-		if (manualSelectedPoints1 >= 9 && teamCount === 5) {
+
+		const hasCharacterWithMoreThan8Points = manualSelectedCharacters.some(
+			(character) => Math.abs(character.value) >= 8
+		);
+
+		if (hasCharacterWithMoreThan8Points && teamCount === 5) {
 			setTeamCount(4);
 			alert(
-				'Team 5 is not allowed to have more than 9 points, Click again for team 4'
+				'Team 5 is not allowed to have a character with more than 8 points, Click again for team 4'
 			);
 			return;
 		}

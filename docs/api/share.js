@@ -7183,8 +7183,10 @@ export default async function handler(req, res) {
 	const redirectURL = `/#/default?page&team=${encodeURIComponent(
 		teamNames.join(',')
 	)}`;
+	// Fast HTML redirect
+	res.writeHead(302, { Location: redirectURL });
+	res.end();
 
-	// Set the Content-Type header for HTML response
 	res.setHeader('Content-Type', 'text/html');
 	res.send(`
 	<!DOCTYPE html>

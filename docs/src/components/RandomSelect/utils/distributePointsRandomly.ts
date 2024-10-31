@@ -1,5 +1,3 @@
-// import { Character } from '../Tracker';
-
 const distributePointsRandomly = (
 	remainingPoints: number,
 	numCharacters: number,
