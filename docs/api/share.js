@@ -7183,19 +7183,18 @@ export default async function handler(req, res) {
 
 	// Check User-Agent to determine if the request is from a bot
 	const userAgent = req.headers['user-agent'] || '';
-	const isBot = /bot|crawl|spider|discord|facebook|twitter|slack/i.test(
+	const isBot = /bot|crawl|spider|discord|facebook|twitter|slack|apple/i.test(
 		userAgent
 	);
 
 	if (isBot) {
-		// Serve HTML with Open Graph metadata for bots to generate the embed preview
+		// Serve minimal HTML with Open Graph metadata for bots
 		res.setHeader('Content-Type', 'text/html');
 		res.send(`
 		<!DOCTYPE html>
 		<html lang="en">
 		  <head>
 			<meta charset="UTF-8">
-			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 			<title>Check Out My Team!</title>
 			<meta property="og:title" content="Check Out My Team!" />
 			<meta property="og:description" content="See my custom team setup: ${teamDescription}" />
@@ -7203,10 +7202,7 @@ export default async function handler(req, res) {
 				teamImages[0] || 'https://your-default-image-url.png'
 			}" />
 		  </head>
-		  <body>
-			<h1>Check Out My Team!</h1>
-			<p>${teamDescription}</p>
-		  </body>
+		  <body></body>
 		</html>
 	  `);
 	} else {
