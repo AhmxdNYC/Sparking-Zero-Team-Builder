@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { SearchBarProps } from './types';
 import DropDownList from './TempDropDownList';
-// idkk
+
 const SearchBar: React.FC<SearchBarProps> = ({
 	data,
 	availableDP,
@@ -19,9 +19,9 @@ const SearchBar: React.FC<SearchBarProps> = ({
 		setVisible(false);
 		setSearchTerm('');
 		if (inputRef.current) {
-			inputRef.current.blur(); // Blur the input if focused
+			inputRef.current.blur();
 		}
-		setvisibleControlPanel(true); // Show the control panel
+		setvisibleControlPanel(true);
 	};
 
 	return (

@@ -1,6 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { HashRouter } from 'react-router-dom'; // Use HashRouter instead of BrowserRouter
+import { HashRouter } from 'react-router-dom';
 
 import App from './App.tsx';
 import './index.css';
@@ -8,8 +8,6 @@ import './index.css';
 createRoot(document.getElementById('root')!).render(
 	<StrictMode>
 		<HashRouter>
-			{' '}
-			{/* Replace BrowserRouter with HashRouter */}
 			<App />
 		</HashRouter>
 	</StrictMode>

@@ -7160,7 +7160,6 @@ const characters = [
 	},
 ];
 
-// Function to find character details by name
 function findCharacterImage(characterName) {
 	const character = characters.find((char) => char.name === characterName);
 	return character ? character.img : null;
@@ -7168,7 +7167,7 @@ function findCharacterImage(characterName) {
 export default async function handler(req, res) {
 	const { team } = req.query;
 	let teamNames = team ? decodeURIComponent(team).split(',') : [];
-	teamNames = teamNames.sort((a, b) => a.localeCompare(b));
+	teamNames = teamNames;
 
 	const teamImages = teamNames.map(findCharacterImage).filter(Boolean);
 	const teamDescription = teamNames.join(', ');

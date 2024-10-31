@@ -1,7 +1,7 @@
 export type Ability = {
 	name: string;
-	value: number | string; // in case it's '?'
-	description: string[]; // array of description strings
+	value: number | string;
+	description: string[];
 };
 
 export type Character = {
@@ -59,4 +59,16 @@ export interface DropDownListProps {
 	availableDP: number;
 	onSelectCharacter: (character: Character) => void;
 	handleExit: () => void;
+}
+
+export interface CharacterURL {
+	name: string;
+	value: number;
+	img: string;
+}
+
+export interface UseLoadTeamFromURLProps {
+	setCurrentTeam: (team: Character[]) => void;
+	setAvailableDP: (dp: number) => void;
+	allCharacters: Character[];
 }

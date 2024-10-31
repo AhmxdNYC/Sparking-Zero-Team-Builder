@@ -10,7 +10,7 @@ const DropDownList: React.FC<DropDownListProps> = ({
 	onSelectCharacter,
 	handleExit,
 }) => {
-	// Filter characters based on search term and filter type (name or ability)
+	// Filter characters based on search and filter type (name or ability)
 	const filteredData = data
 		.filter((character) => {
 			if (filterBy === 'name') {
